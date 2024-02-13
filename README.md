@@ -1,4 +1,5 @@
-movian-plugin-StreamPRO
+StreamPRO
+
 User-Friendly IPTV Player for Movian / M7 Media Center featuring a collection of Free-to-Air Stream Providers!
 
 Features:
