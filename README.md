@@ -8,7 +8,7 @@ Features:
 * Browse from a wide range of world-wide Free-To-Air Stream Providers.
 * Stay up-to-date with the build-in update service.
 
-Installation:
+Installation / Use:
 1) Download streampro.zip and save it to your USB drive.
 
 2) Plug in your USB drive to the PS3 System.
