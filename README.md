@@ -17,8 +17,9 @@ Installation:
 
 4) Select StreamPRO, and select Install.
 
-Region Select:
-Go to Movian > Settings > StreamPRO > 'Select Provider Region'.
+5) Select your region - Go to Movian > Settings > StreamPRO > 'Select Provider Region'.
+
+6) Open the StreamPRO plugin from the Movian/M7 home screen.
 
 StreamPRO Currently Serves:
 * United States
