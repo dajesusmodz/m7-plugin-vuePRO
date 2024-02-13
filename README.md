@@ -13,7 +13,7 @@ Screenshots:
 Features:
 * Catalogue and watch streams from your own .m3u/.xml files.
 * Add your favourite channels to the Start Page.
-* Browse from a wide range of world-wide Free-To-Air Stream Providers.
+* Browse a range of world-wide Free-To-Air Stream Providers.
 * Stay up-to-date with the build-in update service.
 
 Installation / Use:
