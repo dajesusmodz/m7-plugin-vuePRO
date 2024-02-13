@@ -1,5 +1,8 @@
 StreamPRO
 
+[logo]: [https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png](https://github.com/dajesusmodz/movian-plugin-StreamPro/blob/master/logo.png?raw=true](https://github.com/dajesusmodz/movian-plugin-StreamPro/blob/master/logo.png?raw=true) ""
+
+
 User-Friendly IPTV Player for Movian / M7 Media Center featuring a collection of Free-to-Air Stream Providers!
 
 Features:
