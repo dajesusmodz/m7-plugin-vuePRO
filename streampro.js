@@ -598,8 +598,7 @@ function showPlaylist(page) {
   var playlist = eval(playlists.list);
 
   if (!playlist || !playlist.toString()) {
-    popup.notify('You can add your M3U or XML playlist in the right side menu', 15);
-    popup.notify('Change the Provider Region in Settings', 15);
+    popup.notify('Change the Provider Region in Settings', 12);
   }
 
   var pos = 0;
@@ -1483,12 +1482,15 @@ new page.Route(plugin.id + ':start', function(page) {
   page.options.createAction('update', "Update StreamPRO", function() 
     {
       popup.notify("Updating, please wait...", 5);
-      page.redirect('https://github.com/dajesusmodz/ps3PRO/raw/main/Plugins/streampro.zip');
+      page.redirect('https://github.com/dajesusmodz/movian-plugin-StreamPro/releases/latest/download/streampro.zip');
     });
 
   if (!service.disableMyFavorites) {
   page.appendItem('', 'separator', {
-    title: 'My Favorites',
+    title: 'My Favorites:',
+  });
+  page.appendItem('', 'separator', {
+    title: '',
   });
 
   if (!service.disableMyFavorites);
@@ -1496,7 +1498,7 @@ new page.Route(plugin.id + ':start', function(page) {
 
     if (!list || !list.toString()) {
       page.appendItem('', 'separator', {
-        title: 'Save your favorite channels here.',
+        title: 'Save your favorite channels here!',
       });
     }
     var pos = 0;
@@ -1513,8 +1515,21 @@ new page.Route(plugin.id + ':start', function(page) {
   }
 
   page.appendItem('', 'separator', {
-    title: 'User Playlists',
+    title: 'User Playlists:',
   });
+  page.appendItem('', 'separator', {
+    title: '',
+  });
+  var list = eval(playlists.list);
+
+    if (!list || !list.toString()) {
+      page.appendItem('', 'separator', {
+        title: 'You can add your own .M3U/.XML playlist in the side menu!',
+      });
+      page.appendItem('', 'separator', {
+        title: '',
+      });
+    }
 
   addActionToTheItem(page, 'Add Custom M3U Playlist', '1Hbuve6', 'M3U');
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
@@ -1537,10 +1552,14 @@ new page.Route(plugin.id + ':start', function(page) {
 
   showPlaylist(page);
 
+  page.appendItem('', 'separator', {
+    title: 'Stream Providers:',
+  });
+  page.appendItem('', 'separator', {
+    title: '',
+  });
+
   if (service.selectRegion == "United States") {
-    page.appendItem('', 'separator', {
-      title: 'Stream Providers',
-    });
     page.appendItem('m3u::Vidaa', 'directory', {
       title: 'Vidaa (Coming Soon)',
       icon: 'https://hisense.com.au/wp-content/uploads/2017/02/Hisense_VIDAA_Blog_1200x630.jpg',
@@ -1561,22 +1580,11 @@ new page.Route(plugin.id + ':start', function(page) {
         title: 'Roku',
         icon: 'https://www.gamespot.com/a/uploads/screen_kubrick/1600/16003485/3822125-roku-logo-lead.jpg',
     });
-    page.appendItem('m3u:https%3A%2F%2Fraw.githubusercontent.com%2Fpsfreestore%2Fmovianstuff%2Fmain%2Fusbc.m3u:Broadcast Television', 'directory', {
-        title: 'Broadcast Television',
-        icon: 'https://wallpaperaccess.com/full/4060978.jpg',
-    });
   }
   if (service.selectRegion == "United Kingdom") {
-    page.appendItem('', 'separator', {
-      title: 'Stream Providers',
-    });
     page.appendItem('m3u::Rakuten TV', 'directory', {
         title: 'Rakuten TV (Coming Soon)',
         icon: 'https://i0.wp.com/www.seenit.co.uk/wp-content/uploads/Rakuten_TV_logo_675.jpg',
-    });
-    page.appendItem('m3u:https%3A%2F%2Fraw.githubusercontent.com%2Fpsfreestore%2Fmovianstuff%2Fmain%2Fukbc.m3u:Broadcast Television', 'directory', {
-        title: 'Broadcast Television',
-        icon: 'https://wallpaperaccess.com/full/4060978.jpg',
     });
     page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fgb.m3u8:Pluto TV', 'directory', {
         title: 'Pluto TV',
