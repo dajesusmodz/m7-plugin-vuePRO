@@ -599,6 +599,7 @@ function showPlaylist(page) {
 
   if (!playlist || !playlist.toString()) {
     popup.notify('Change the Provider Region in Settings', 12);
+    popup.notify('You can add your own .M3U/.XML playlist in the side menu!', 12);  
   }
 
   var pos = 0;
@@ -1500,6 +1501,9 @@ new page.Route(plugin.id + ':start', function(page) {
       page.appendItem('', 'separator', {
         title: 'Save your favorite channels here!',
       });
+      page.appendItem('', 'separator', {
+        title: '',
+      });
     }
     var pos = 0;
     for (var i in list) {
@@ -1513,44 +1517,6 @@ new page.Route(plugin.id + ':start', function(page) {
       pos++;
     }
   }
-
-  page.appendItem('', 'separator', {
-    title: 'User Playlists:',
-  });
-  page.appendItem('', 'separator', {
-    title: '',
-  });
-  var list = eval(playlists.list);
-
-    if (!list || !list.toString()) {
-      page.appendItem('', 'separator', {
-        title: 'You can add your own .M3U/.XML playlist in the side menu!',
-      });
-      page.appendItem('', 'separator', {
-        title: '',
-      });
-    }
-
-  addActionToTheItem(page, 'Add Custom M3U Playlist', '1Hbuve6', 'M3U');
-  addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
-
-  // menu to delete playlists
-  page.options.createAction('rmPlaylist', 'Remove Playlist...', function() {
-    var list = eval(playlists.list);
-    for (var i in list) {
-      var result = popup.message('Do you want to remove \'' + decodeURIComponent(JSON.parse(list[i]).title) + '\' playlist?', true, true);
-      if (result) {
-        popup.notify('\'' + decodeURIComponent(JSON.parse(list[i]).title) + '\' has been removed from from the list.', 2);
-        list.splice(i, 1);
-        playlists.list = JSON.stringify(list);
-        page.flush();
-        page.redirect(plugin.id + ':start');
-      }
-    }
-    if (!i) popup.notify('There are no playlists to delete.', 2);
-  });
-
-  showPlaylist(page);
 
   page.appendItem('', 'separator', {
     title: 'Stream Providers:',
@@ -1595,6 +1561,44 @@ new page.Route(plugin.id + ':start', function(page) {
       icon: 'https://bestmediainfo.com/uploads/2023/04/1682423568.stp.jpg',
     });
   }
+
+  page.appendItem('', 'separator', {
+    title: 'User Playlists:',
+  });
+  page.appendItem('', 'separator', {
+    title: '',
+  });
+  var list = eval(playlists.list);
+
+    if (!list || !list.toString()) {
+      page.appendItem('', 'separator', {
+        title: 'You can add your own .M3U/.XML playlist in the side menu!',
+      });
+      page.appendItem('', 'separator', {
+        title: '',
+      });
+    }
+
+  addActionToTheItem(page, 'Add Custom M3U Playlist', '1Hbuve6', 'M3U');
+  addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
+
+  // menu to delete playlists
+  page.options.createAction('rmPlaylist', 'Remove Playlist...', function() {
+    var list = eval(playlists.list);
+    for (var i in list) {
+      var result = popup.message('Do you want to remove \'' + decodeURIComponent(JSON.parse(list[i]).title) + '\' playlist?', true, true);
+      if (result) {
+        popup.notify('\'' + decodeURIComponent(JSON.parse(list[i]).title) + '\' has been removed from from the list.', 2);
+        list.splice(i, 1);
+        playlists.list = JSON.stringify(list);
+        page.flush();
+        page.redirect(plugin.id + ':start');
+      }
+    }
+    if (!i) popup.notify('There are no playlists to delete.', 2);
+  });
+
+  showPlaylist(page);
 });
 
 // TIVIX
