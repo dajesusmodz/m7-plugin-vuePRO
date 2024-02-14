@@ -1517,7 +1517,9 @@ new page.Route(plugin.id + ':start', function(page) {
       pos++;
     }
   }
-
+  page.appendItem('', 'separator', {
+    title: '',
+  });
   page.appendItem('', 'separator', {
     title: 'Stream Providers:',
   });
@@ -1526,42 +1528,48 @@ new page.Route(plugin.id + ':start', function(page) {
   });
 
   if (service.selectRegion == "United States") {
-    page.appendItem('m3u::Vidaa', 'directory', {
-      title: 'Vidaa (Coming Soon)',
-      icon: 'https://hisense.com.au/wp-content/uploads/2017/02/Hisense_VIDAA_Blog_1200x630.jpg',
-    });
     page.appendItem('m3u::Tablo TV', 'directory', {
       title: 'Tablo TV (Coming Soon)',
       icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/4c/5f/99/4c5f99ad-0b01-082e-831d-0a534a76248f/AppIcon-0-0-1x_U007epad-0-10-0-sRGB-85-220.png/1200x600wa.png',
     });
-    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fus.m3u8:Samsung TV Plus', 'directory', {
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:USA', 'directory', {
       title: 'Samsung TV Plus',
       icon: 'https://bestmediainfo.com/uploads/2023/04/1682423568.stp.jpg',
     });
-    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fus.m3u8:Pluto TV', 'directory', {
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:USA', 'directory', {
         title: 'Pluto TV',
         icon: 'https://i.pcmag.com/imagery/reviews/05IbsCrM5q7vmdnKWUGc23y-16.fit_scale.size_760x427.v1642015336.png',
     });
-    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:Roku', 'directory', {
+    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:Unable to Group - USA', 'directory', {
         title: 'Roku',
         icon: 'https://www.gamespot.com/a/uploads/screen_kubrick/1600/16003485/3822125-roku-logo-lead.jpg',
     });
+    page.appendItem('m3u:https%3A%2F%2Fwww.apsattv.com%2Fredbox.m3u:Unable to Group - USA', 'directory', {
+        title: 'Redbox',
+        icon: 'https://logos-world.net/wp-content/uploads/2021/10/Redbox-Symbol.png',
+    });
   }
   if (service.selectRegion == "United Kingdom") {
-    page.appendItem('m3u::Rakuten TV', 'directory', {
-        title: 'Rakuten TV (Coming Soon)',
+    page.appendItem('m3uGroup:https%3A%2F%2Fwww.apsattv.com%2Frakuten-uk.m3u:RakutenTV%20UK', 'directory', {
+        title: 'Rakuten TV',
         icon: 'https://i0.wp.com/www.seenit.co.uk/wp-content/uploads/Rakuten_TV_logo_675.jpg',
     });
-    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fgb.m3u8:Pluto TV', 'directory', {
+    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:Unable to Group - UK', 'directory', {
+        title: 'Roku',
+        icon: 'https://www.gamespot.com/a/uploads/screen_kubrick/1600/16003485/3822125-roku-logo-lead.jpg',
+    });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Great%20Britain', 'directory', {
         title: 'Pluto TV',
         icon: 'https://i.pcmag.com/imagery/reviews/05IbsCrM5q7vmdnKWUGc23y-16.fit_scale.size_760x427.v1642015336.png',
     });
-    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fgb.m3u8:Samsung TV Plus', 'directory', {
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20Kingdom', 'directory', {
       title: 'Samsung TV Plus',
       icon: 'https://bestmediainfo.com/uploads/2023/04/1682423568.stp.jpg',
     });
   }
-
+  page.appendItem('', 'separator', {
+    title: '',
+  });
   page.appendItem('', 'separator', {
     title: 'User Playlists:',
   });
