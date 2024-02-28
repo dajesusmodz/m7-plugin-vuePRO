@@ -4,7 +4,7 @@
 	"homepage": "n/a",
 	"title": "StreamPRO",
 	"synopsis": "User-Friendly M3U/XML IPTV Player.",
-	"version": "2.4",
+	"version": "2.7",
 	"file": "streampro.js",
 	"M7Version": "7.0.24",
 	"type": "ecmascript",

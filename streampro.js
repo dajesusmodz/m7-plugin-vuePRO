@@ -6,7 +6,7 @@
 /* eslint-disable one-var */
 /* eslint-disable no-var */
 /*
- *  IPTV Player for Movian Media Center
+ *  StreamPRO IPTV Player for Movian / M7 Media Center
  *
  *  Copyright (C) 2015-2018 lprot
  *  Copyright (C) 2024-2024 dajesusmodz
@@ -75,10 +75,10 @@ function trim(s) {
 service.create(plugin.title, plugin.id + ':start', 'streampro', true, logo);
 
 settings.globalSettings(plugin.id, plugin.title, logo, plugin.synopsis);
-settings.createMultiOpt('selectRegion', 'Set Stream Provider Region', [
-          ['United States', 'United States', true],
+settings.createMultiOpt('selectRegion', 'Provider Region', [
+          ['United States', 'United States'],
           ['United Kingdom', 'United Kingdom'],
-          ['Off', 'Off'],
+          ['Off', 'Off', true],
         ], function(v) {
         service.selectRegion = v;
 });
@@ -95,7 +95,7 @@ settings.createAction('cleanFavorites', 'Empty My Favorites', function() {
   store.list = '[]';
   popup.notify('Favorites has been emptied successfully', 2);
 });
-settings.createBool('debug', 'Enable debug logging', false, function(v) {
+settings.createBool('debug', 'Enable debug logging', true, function(v) {
   service.debug = v;
 });
 
@@ -597,10 +597,9 @@ function addOptionToRemovePlaylist(page, item, title, pos) {
 function showPlaylist(page) {
   var playlist = eval(playlists.list);
 
-  if (!playlist || !playlist.toString()) {
-    popup.notify('Change the Provider Region in Settings', 12);
-    popup.notify('You can add your own .M3U/.XML playlist in the side menu!', 12);  
-  }
+  if (service.selectRegion == "Off") {popup.notify('Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch Live TV', 12)};
+  if (!playlist || !playlist.toString()) {popup.notify('You can add your own .M3U/.XML playlist in the side menu!', 12)};
+  popup.notify('More Regions Coming Soon!', 6);
 
   var pos = 0;
   for (var i in playlist) {
@@ -1477,10 +1476,12 @@ new page.Route(plugin.id + ':onePlaylistStart', function(page) {
 
 // Start page
 new page.Route(plugin.id + ':start', function(page) {
-  setPageHeader(page, plugin.title);
-  page.metadata.icon = logo;
+  
+  if (service.selectRegion == "Off") {page.metadata.icon = logo; setPageHeader(page, "StreamPRO")};
+  if (service.selectRegion == "United Kingdom") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/211144/1659455637_427352.jpeg'; setPageHeader(page, "StreamPRO - UK")};
+  if (service.selectRegion == "United States") {page.metadata.icon = 'https://visa.express/georgia/wp-content/uploads/sites/5/2022/09/1579293111_57-83.jpg'; setPageHeader(page, "StreamPRO - US")};
 
-  page.options.createAction('update', "Update StreamPRO", function() 
+  page.options.createAction('update', "Check for Updates", function() 
     {
       popup.notify("Updating, please wait...", 5);
       page.redirect('https://github.com/dajesusmodz/movian-plugin-StreamPro/releases/latest/download/streampro.zip');
@@ -1488,7 +1489,7 @@ new page.Route(plugin.id + ':start', function(page) {
 
   if (!service.disableMyFavorites) {
   page.appendItem('', 'separator', {
-    title: 'My Favorites:',
+    title: '  My Favorites:                                                                                                                                                                                                                                                               ',
   });
   page.appendItem('', 'separator', {
     title: '',
@@ -1498,12 +1499,9 @@ new page.Route(plugin.id + ':start', function(page) {
   var list = eval(store.list);
 
     if (!list || !list.toString()) {
-      page.appendItem('', 'separator', {
-        title: 'Save your favorite channels here!',
-      });
-      page.appendItem('', 'separator', {
-        title: '',
-      });
+      page.appendItem('', 'separator', {title: ''});
+      page.appendItem('', 'separator', {title: 'Save your favorite channels here!'});
+      page.appendItem('', 'separator', {title: ''});
     }
     var pos = 0;
     for (var i in list) {
@@ -1517,65 +1515,113 @@ new page.Route(plugin.id + ':start', function(page) {
       pos++;
     }
   }
-  page.appendItem('', 'separator', {
-    title: '',
-  });
-  page.appendItem('', 'separator', {
-    title: 'Stream Providers:',
-  });
-  page.appendItem('', 'separator', {
-    title: '',
-  });
+  if (service.selectRegion == "Off") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch Live TV'});
+    page.appendItem('', 'separator', {title: ''});
+  }
 
   if (service.selectRegion == "United States") {
-    page.appendItem('m3u::Tablo TV', 'directory', {
-      title: 'Tablo TV (Coming Soon)',
-      icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/4c/5f/99/4c5f99ad-0b01-082e-831d-0a534a76248f/AppIcon-0-0-1x_U007epad-0-10-0-sRGB-85-220.png/1200x600wa.png',
-    });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:USA', 'directory', {
-      title: 'Samsung TV Plus',
-      icon: 'https://bestmediainfo.com/uploads/2023/04/1682423568.stp.jpg',
-    });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:USA', 'directory', {
-        title: 'Pluto TV',
-        icon: 'https://i.pcmag.com/imagery/reviews/05IbsCrM5q7vmdnKWUGc23y-16.fit_scale.size_760x427.v1642015336.png',
-    });
-    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:Unable to Group - USA', 'directory', {
-        title: 'Roku',
-        icon: 'https://www.gamespot.com/a/uploads/screen_kubrick/1600/16003485/3822125-roku-logo-lead.jpg',
-    });
-    page.appendItem('m3u:https%3A%2F%2Fwww.apsattv.com%2Fredbox.m3u:Unable to Group - USA', 'directory', {
-        title: 'Redbox',
-        icon: 'https://logos-world.net/wp-content/uploads/2021/10/Redbox-Symbol.png',
-    });
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
   }
   if (service.selectRegion == "United Kingdom") {
-    page.appendItem('m3uGroup:https%3A%2F%2Fwww.apsattv.com%2Frakuten-uk.m3u:RakutenTV%20UK', 'directory', {
-        title: 'Rakuten TV',
-        icon: 'https://i0.wp.com/www.seenit.co.uk/wp-content/uploads/Rakuten_TV_logo_675.jpg',
-    });
-    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:Unable to Group - UK', 'directory', {
-        title: 'Roku',
-        icon: 'https://www.gamespot.com/a/uploads/screen_kubrick/1600/16003485/3822125-roku-logo-lead.jpg',
-    });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Great%20Britain', 'directory', {
-        title: 'Pluto TV',
-        icon: 'https://i.pcmag.com/imagery/reviews/05IbsCrM5q7vmdnKWUGc23y-16.fit_scale.size_760x427.v1642015336.png',
-    });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20Kingdom', 'directory', {
-      title: 'Samsung TV Plus',
-      icon: 'https://bestmediainfo.com/uploads/2023/04/1682423568.stp.jpg',
-    });
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
   }
-  page.appendItem('', 'separator', {
-    title: '',
-  });
-  page.appendItem('', 'separator', {
-    title: 'User Playlists:',
-  });
-  page.appendItem('', 'separator', {
-    title: '',
-  });
+  if (service.selectRegion == "United States") {
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBC1300009VM.m3u8', 'playable', { title: 'LOL! Network', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBC1300009VM_20240213T215421SQUARE.png_20240213215422.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBB1900002KF.m3u8', 'playable', { title: 'Real Americas Voice', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBB1900002KF_20221109T013546SQUARE.png_20221109013547.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USAJ26000015Y.m3u8', 'playable', { title: 'Drama Life', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USAJ26000015Y_20221109T013415SQUARE.png_20221109013415.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBD700012OA.m3u8', 'playable', { title: 'The Bob Ross Channel', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBD700012OA_20230627T215017SQUARE.png_20230627215018.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20States', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "United Kingdom") {
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100006XM.m3u8', 'playable', { title: 'Sky Mix', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100006XM_20231213T033116SQUARE.png_20231213033116.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100003J5.m3u8', 'playable', { title: 'UKTV Play - Laughs', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100003J5_20231213T104001SQUARE.png_20231213104002.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBA330003941.m3u8', 'playable', { title: 'Catfish', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBA330003941_20221215T020813SQUARE.png_20221215020814.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBC9000062G.m3u8', 'playable', { title: 'Come Dine With Me', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBC9000062G_20230809T053358SQUARE.png_20230809053358.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20Kingdom', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+
+  if (service.selectRegion == "United States") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "United Kingdom") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "United States") {
+    page.appendItem('https://r.mjh.nz/PlutoTV/64b585f84ea480000838e446-alt.m3u8', 'playable', { title: 'Pluto TV - Icons', icon: 'https://images.pluto.tv/channels/64b585f84ea480000838e446/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/633354b63df9700007f6a1b7-alt.m3u8', 'playable', { title: 'Sitcom Legends', icon: 'https://images.pluto.tv/channels/633354b63df9700007f6a1b7/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/5f99e24636d67d0007a94e6d-alt.m3u8', 'playable', { title: 'Comedy Central - Animation', icon: 'https://images.pluto.tv/channels/5f99e24636d67d0007a94e6d/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/554158e864526b29254ff105-alt.m3u8', 'playable', { title: 'FailArmy', icon: 'https://images.pluto.tv/channels/554158e864526b29254ff105/colorLogoPNG.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:USA', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "United Kingdom") {
+    page.appendItem('https://r.mjh.nz/PlutoTV/64ff1d3d3a0d700008b110e9-alt.m3u8', 'playable', { title: 'Robot Wars by MECH+', icon: 'https://images.pluto.tv/channels/64ff1d3d3a0d700008b110e9/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/625567abd664ea0007605f34-alt.m3u8', 'playable', { title: 'Worlds Greatest', icon: 'https://images.pluto.tv/channels/625567abd664ea0007605f34/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/62da7819be7a97000878eb92-alt.m3u8', 'playable', { title: 'CSI - Miami', icon: 'https://images.pluto.tv/channels/62da7819be7a97000878eb92/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/64edf6eaa7ec0d000812f58c-alt.m3u8', 'playable', { title: 'South Park', icon: 'https://images.pluto.tv/channels/64edf6eaa7ec0d000812f58c/colorLogoPNG.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Great%20Britain', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+
+  if (service.selectRegion == "United Kingdom") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Rakuten TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://f06cd57c1eeb48fd89b80d9ff8ae230f.mediatailor.us-east-1.amazonaws.com/v1/master/0fb304b2320b25f067414d481a779b77db81760d/RakutenTV-eu_AdventureEarth/playlist.m3u8?ads.amznbrmid=&ads.amznregion=&ads.amznslots=&ads.app_version=&ads.brand_name=&ads.content_classification=0&ads.device_lmt=0&ads.device_make=chrome&ads.device_model=GENERIC&ads.device_type=web&ads.device_year=1970&ads.env=prod&ads.gdpr_consent=&ads.market=uk&ads.os_language=&ads.player_height=1080&ads.player_width=1920&ads.pod_type=playerpage_midroll&ads.ppid=e3dd2658-e93a-4cee-9d4b-27200826a904&ads.rtv_content_id=4739&ads.rtv_content_language=eng&ads.rtvid=271858&ads.streaming_id=0aa02f21-13d6-467e-be40-902135aea060&ads.tivo_devcountry=&ads.tivo_devmakedate=&ads.tivo_mvpd=&ads.tivo_platform=&ads.tivo_usid=&ads.tivo_uxloc=&ads.user_type=visitor&ads.wurl_channel=1299', 'playable', { title: 'Reuters', icon: 'https://images-2.rakuten.tv/storage/global-live-channel/translation/artwork_negative/14a6bea6-b1dc-4a60-a59a-bdf505a3ade3-reuters-1643363487.png', });
+    page.appendItem('https://75bced9559e343058577aeae94f36a8c.mediatailor.us-east-1.amazonaws.com/v1/master/f4e8c53a8367a5b58e20ce054ea3ce25a3e904d3/RakutenTV-gb_Popflix/playlist.m3u8?ads.amznbrmid=&ads.amznregion=&ads.amznslots=&ads.app_version=&ads.brand_name=&ads.content_classification=15&ads.device_lmt=0&ads.device_make=chrome&ads.device_model=GENERIC&ads.device_type=web&ads.device_year=1970&ads.env=prod&ads.gdpr_consent=&ads.market=uk&ads.os_language=&ads.player_height=1080&ads.player_width=1920&ads.pod_type=playerpage_midroll&ads.ppid=e3dd2658-e93a-4cee-9d4b-27200826a904&ads.rtv_content_id=4279&ads.rtv_content_language=eng&ads.rtvid=271858&ads.streaming_id=914e56b1-9153-4296-9d97-7f7788633477&ads.tivo_devcountry=&ads.tivo_devmakedate=&ads.tivo_mvpd=&ads.tivo_platform=&ads.tivo_usid=&ads.tivo_uxloc=&ads.user_type=visitor&ads.wurl_channel=1068', 'playable', { title: 'Popflix', icon: 'https://images-3.rakuten.tv/storage/global-live-channel/translation/artwork-negative/f91913cf-c985-4973-8f70-6688d38548ae.png', });
+    page.appendItem('https://lonestar-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lonestar-rakuten/CDN/playlist.m3u8?ads_amagi_channel=725&ads_amznbrmid=&ads_amznregion=&ads_amznslots=&ads_app_version=&ads_brand_name=&ads_content_classification=12&ads_device_lmt=0&ads_device_make=chrome&ads_device_model=GENERIC&ads_device_type=web&ads_device_year=1970&ads_env=prod&ads_gdpr_consent=&ads_market=uk&ads_os_language=&ads_player_height=1080&ads_player_width=1920&ads_pod_type=playerpage_midroll&ads_ppid=e3dd2658-e93a-4cee-9d4b-27200826a904&ads_rtv_content_id=2811&ads_rtv_content_language=eng&ads_rtvid=271858&ads_streaming_id=866d2d1e-b31e-45fa-a84a-5b89ce0fcbc9&ads_tivo_devcountry=&ads_tivo_devmakedate=&ads_tivo_mvpd=&ads_tivo_platform=&ads_tivo_usid=&ads_tivo_uxloc=&ads_user_type=visitor', 'playable', { title: 'Lone Star', icon: 'https://images-3.rakuten.tv/storage/global-live-channel/translation/artwork_negative/c5e98fcd-d269-41d5-886e-0af79ca5d43b-lone-star-1643370871.png', });
+    page.appendItem('https://3bd25beecec04b169f33659a7739c10b.mediatailor.us-east-1.amazonaws.com/v1/master/04fd913bb278d8775298c26fdca9d9841f37601f/RakutenTV-eu_Filmzie/playlist.m3u8?ads.amznbrmid=&ads.amznregion=&ads.amznslots=&ads.app_version=&ads.brand_name=&ads.content_classification=12&ads.device_lmt=0&ads.device_make=chrome&ads.device_model=GENERIC&ads.device_type=web&ads.device_year=1970&ads.env=prod&ads.gdpr_consent=&ads.market=uk&ads.os_language=&ads.player_height=1080&ads.player_width=1920&ads.pod_type=playerpage_midroll&ads.ppid=e3dd2658-e93a-4cee-9d4b-27200826a904&ads.rtv_content_id=3282&ads.rtv_content_language=eng&ads.rtvid=271858&ads.streaming_id=8a452216-be6c-4ac0-8e0d-8d7ec9bd13f6&ads.tivo_devcountry=&ads.tivo_devmakedate=&ads.tivo_mvpd=&ads.tivo_platform=&ads.tivo_usid=&ads.tivo_uxloc=&ads.user_type=visitor&ads.wurl_channel=592', 'playable', { title: 'Filmzie', icon: 'https://images-0.rakuten.tv/storage/global-live-channel/translation/artwork_negative/657c9c66-75c7-4cd4-a791-5ca5aca98994-filmzie-1643623115.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fwww.apsattv.com%2Frakuten-uk.m3u:RakutenTV UK', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+
+  if (service.selectRegion == "United States") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Redbox:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://8e5a51fd84df4fd4bd64dd49cc9ccb75.mediatailor.us-east-1.amazonaws.com/v1/master/04fd913bb278d8775298c26fdca9d9841f37601f/Redbox_COPS/playlist.m3u8?ads.wurl_channel=1095&ads.wurl_name=COPS&ads.coppa=%7Bcoppa%7D&ads.subp=%7Bsubp%7D&ads.deviceid=%7Bdeviceid%7D&ads.dnt=%7Bdnt%7D&ads.sz=%7Bsz%7D&ads.idtype=%7Bidtype%7D&ads.device=%7Bdevice%7D&ads.is_roku_lat=%7Bis_roku_lat%7D&ads.us_privacy=%7Bus_privacy%7D&ads.app_bundle=%7Bapp_bundle%7D&ads.studio_name=%7Bstudio_name%7D&ads.language=%7Blanguage%7D', 'playable', { title: 'COPS', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HORIZ.jpg', });
+    page.appendItem('https://dai2.xumo.com/amagi_hls_data_xumo1212A-redboxpattrn/CDN/playlist.m3u8?p=redbox&deviceid=&is_lat=', 'playable', { title: 'Pattrn', icon: 'https://image.xumo.com/v1/channels/channel/88883604/248x140.png?type=channelTile', });
+    page.appendItem('https://qvchsn-hsn-2-us.redbox.wurl.tv/playlist.m3u8', 'playable', { title: 'HSN', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HSN_Redbox_248x140.jpg', });
+    page.appendItem('https://inverleigh-unbeaten-redbox.amagi.tv/hls/amagi_hls_data_redboxAAA-inverleigh-unbeaten-redbox/CDN/playlist.m3u8?p=Redbox&deviceid=&is_lat=', 'playable', { title: 'Unbeaten', icon: 'https://d1hj79gnft8hfg.cloudfront.net/Unbeaten February 248x140.jpeg', });
+    page.appendItem('m3u:https%3A%2F%2Fwww.apsattv.com%2Fredbox.m3u:United States', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+
+  if (service.selectRegion == "United States") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Roku:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "United Kingdom") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Roku:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "United Kingdom") {
+    page.appendItem('https://i.mjh.nz/Roku/5941b88c38ab50ad8b09b0d920abbae5.m3u8', 'playable', { title: 'WMX Rock', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/5941b88c38ab50ad8b09b0d920abbae5/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1678147364704_WMX_ROCK_LOGO_HUD.png', });
+    page.appendItem('https://i.mjh.nz/Roku/62b4eba68f3051c68d2beb22dc94ebbc.m3u8', 'playable', { title: 'Supermarket Sweep', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/62b4eba68f3051c68d2beb22dc94ebbc/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1669151901470_ROKU_SMS_HUD-MONO_260X147.png', });
+    page.appendItem('https://i.mjh.nz/Roku/4f4e0f3d9e1f5c8c9e627514fc5a071d.m3u8', 'playable', { title: 'Total Crime', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/4f4e0f3d9e1f5c8c9e627514fc5a071d/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659562945788_TotalCrime_RokuUSA_HUDcenter.png', });
+    page.appendItem('https://i.mjh.nz/Roku/e6416436e5d6510e9e22c23862deea23.m3u8', 'playable', { title: 'Tastemade', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/e6416436e5d6510e9e22c23862deea23/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659564035273_Roku_TM_260x147.png', });
+    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:Unable to Group Region', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "United States") {
+    page.appendItem('https://i.mjh.nz/Roku/5941b88c38ab50ad8b09b0d920abbae5.m3u8', 'playable', { title: 'WMX Rock', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/5941b88c38ab50ad8b09b0d920abbae5/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1678147364704_WMX_ROCK_LOGO_HUD.png', });
+    page.appendItem('https://i.mjh.nz/Roku/62b4eba68f3051c68d2beb22dc94ebbc.m3u8', 'playable', { title: 'Supermarket Sweep', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/62b4eba68f3051c68d2beb22dc94ebbc/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1669151901470_ROKU_SMS_HUD-MONO_260X147.png', });
+    page.appendItem('https://i.mjh.nz/Roku/4f4e0f3d9e1f5c8c9e627514fc5a071d.m3u8', 'playable', { title: 'Total Crime', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/4f4e0f3d9e1f5c8c9e627514fc5a071d/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659562945788_TotalCrime_RokuUSA_HUDcenter.png', });
+    page.appendItem('https://i.mjh.nz/Roku/e6416436e5d6510e9e22c23862deea23.m3u8', 'playable', { title: 'Tastemade', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/e6416436e5d6510e9e22c23862deea23/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659564035273_Roku_TM_260x147.png', });
+    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:Unable to Group Region', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+
+  page.appendItem('', 'separator', {title: ''});
+  page.appendItem('', 'separator', {title: '  User Playlists:                                                                                                                                                                                                                                                               '});
+  page.appendItem('', 'separator', {title: ''});
+
   var list = eval(playlists.list);
 
     if (!list || !list.toString()) {
