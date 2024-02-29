@@ -3,6 +3,7 @@ A User-Friendly IPTV Player for Movian / M7 Media Center featuring a collection 
 ![StreamPRO Logo](/logo.png)
 
 Screenshots:
+
 ![StreamPRO Logo](/Screenshots/1.png)
 ![StreamPRO Logo](/Screenshots/2.png)
 ![StreamPRO Logo](/Screenshots/3.png)
