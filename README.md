@@ -1,5 +1,3 @@
-StreamPRO
-
 ![StreamPRO Logo](/logo.png)
 
 
