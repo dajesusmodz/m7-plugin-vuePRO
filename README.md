@@ -36,7 +36,7 @@ StreamPRO Currently Serves:
 (More Coming Soon!)
 
 Updating:
-Use the built-in updater service by pressing the 'Update StreamPro' button in the side menu from the Start Page. 
+Use the built-in updater service by pressing the 'Check for Updates' button in the side menu from the Start Page. 
 
 Compress the following to .zip from 'main' for 'Bleeding Edge Release':
 * bg.png
