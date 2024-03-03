@@ -1523,6 +1523,31 @@ new page.Route(plugin.id + ':start', function(page) {
 
   if (service.selectRegion == "United States") {
     page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  IPTV-ORG:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "United Kingdom") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  IPTV-ORG:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "United States") {
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBC1300009VM.m3u8', 'playable', { title: 'LOL! Network', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBC1300009VM_20240213T215421SQUARE.png_20240213215422.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBB1900002KF.m3u8', 'playable', { title: 'Real Americas Voice', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBB1900002KF_20221109T013546SQUARE.png_20221109013547.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USAJ26000015Y.m3u8', 'playable', { title: 'Drama Life', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USAJ26000015Y_20221109T013415SQUARE.png_20221109013415.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBD700012OA.m3u8', 'playable', { title: 'The Bob Ross Channel', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBD700012OA_20230627T215017SQUARE.png_20230627215018.png', });
+    page.appendItem('m3u:https%3A%2F%2Fgithub.com%2Fiptv-org%2Fiptv%2Fblob%2Fce5f747518bef661667b543320c7c76883710fc5%2Fstreams%2Fus.m3u:United States', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "United Kingdom") {
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100006XM.m3u8', 'playable', { title: 'Sky Mix', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100006XM_20231213T033116SQUARE.png_20231213033116.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100003J5.m3u8', 'playable', { title: 'UKTV Play - Laughs', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100003J5_20231213T104001SQUARE.png_20231213104002.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBA330003941.m3u8', 'playable', { title: 'Catfish', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBA330003941_20221215T020813SQUARE.png_20221215020814.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBC9000062G.m3u8', 'playable', { title: 'Come Dine With Me', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBC9000062G_20230809T053358SQUARE.png_20230809053358.png', });
+    page.appendItem('m3u:https%3A%2F%2Fgithub.com%2Fiptv-org%2Fiptv%2Fblob%2Fce5f747518bef661667b543320c7c76883710fc5%2Fstreams%2Fuk.m3u:United Kingdom', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+
+  if (service.selectRegion == "United States") {
+    page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''});
   }
