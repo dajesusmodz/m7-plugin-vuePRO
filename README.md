@@ -12,7 +12,7 @@ Screenshots:
 Features:
 * Catalogue and watch streams from your own .m3u/.xml links.
 * Add your favourite channels to the Start Page.
-* Browse a range of world-wide Free-To-Air Stream Providers.
+* Browse a range of Free-To-Air Stream Providers.
 * Stay up-to-date with the build-in update service.
 
 ![Pre-Release Download - May Contain Bugs](/streampro.zip?raw=true)
