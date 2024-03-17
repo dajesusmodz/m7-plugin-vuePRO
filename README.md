@@ -18,7 +18,7 @@ Features:
 ![Pre-Release Download - May Contain Bugs](/streampro.zip?raw=true)
 
 Installation / Use:
-1) Download streampro.zip and save it to your USB drive.
+1) Download streampro.zip from 'Releases' and save it to your USB drive.
 
 2) Plug in your USB drive to the PS3 System.
 
@@ -38,10 +38,3 @@ StreamPRO Currently Serves:
 
 Updating:
 Use the built-in updater service by pressing the 'Check for Updates' button in the side menu from the Start Page. 
-
-Compress the following to .zip from 'main' for 'Bleeding Edge Release':
-* bg.png
-* logo.png
-* plugin.json
-* streampro.js
-* utils
