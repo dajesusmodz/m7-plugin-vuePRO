@@ -599,7 +599,7 @@ function showPlaylist(page) {
 
   if (service.selectRegion == "Off") {popup.notify('Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch Live TV', 12)};
   if (!playlist || !playlist.toString()) {popup.notify('You can add your own .M3U/.XML playlist in the side menu!', 12)};
-  popup.notify('More Regions Coming Soon!', 6);
+  popup.notify('Caution! Some channels may be Geo-Restricted.', 6);
 
   var pos = 0;
   for (var i in playlist) {
@@ -1523,12 +1523,12 @@ new page.Route(plugin.id + ':start', function(page) {
 
   if (service.selectRegion == "United States") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  IPTV-ORG:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  Free TV:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''});
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  IPTV-ORG:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  Free TV:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''});
   }
   if (service.selectRegion == "United States") {
@@ -1536,14 +1536,14 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBB1900002KF.m3u8', 'playable', { title: 'Real Americas Voice', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBB1900002KF_20221109T013546SQUARE.png_20221109013547.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/USAJ26000015Y.m3u8', 'playable', { title: 'Drama Life', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USAJ26000015Y_20221109T013415SQUARE.png_20221109013415.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBD700012OA.m3u8', 'playable', { title: 'The Bob Ross Channel', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBD700012OA_20230627T215017SQUARE.png_20230627215018.png', });
-    page.appendItem('m3u:https%3A%2F%2Fgithub.com%2Fiptv-org%2Fiptv%2Fblob%2Fce5f747518bef661667b543320c7c76883710fc5%2Fstreams%2Fus.m3u:United States', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3u:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_us.m3u8:United States', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "United Kingdom") {
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100006XM.m3u8', 'playable', { title: 'Sky Mix', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100006XM_20231213T033116SQUARE.png_20231213033116.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100003J5.m3u8', 'playable', { title: 'UKTV Play - Laughs', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100003J5_20231213T104001SQUARE.png_20231213104002.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBA330003941.m3u8', 'playable', { title: 'Catfish', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBA330003941_20221215T020813SQUARE.png_20221215020814.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBC9000062G.m3u8', 'playable', { title: 'Come Dine With Me', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBC9000062G_20230809T053358SQUARE.png_20230809053358.png', });
-    page.appendItem('m3u:https%3A%2F%2Fgithub.com%2Fiptv-org%2Fiptv%2Fblob%2Fce5f747518bef661667b543320c7c76883710fc5%2Fstreams%2Fuk.m3u:United Kingdom', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('http://92.114.85.81:8000/play/a01g/index.m3u8', 'playable', { title: 'Channel 5', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Channel_5_%28UK%29_2016.svg/530px-Channel_5_%28UK%29_2016.svg.png', });
+    page.appendItem('http://92.114.85.81:8000/play/a00y/index.m3u8', 'playable', { title: 'ITV 1', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/ITV1_logo_%282022%29.svg/640px-ITV1_logo_%282022%29.svg.png', });
+    page.appendItem('http://92.114.85.80:8000/play/a03s', 'playable', { title: 'Challenge', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Challenge_%282016-.n.v.%29.png/640px-Challenge_%282016-.n.v.%29.png', });
+    page.appendItem('https://lightning-now70s-samsungnz.amagi.tv/playlist.m3u8', 'playable', { title: 'Now 70s', icon: 'https://i.imgur.com/qiCCX5X.png', });
+    page.appendItem('m3u:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_uk.m3u8:United Kingdom', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
   if (service.selectRegion == "United States") {
