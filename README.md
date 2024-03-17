@@ -15,8 +15,7 @@ Features:
 * Browse a range of world-wide Free-To-Air Stream Providers.
 * Stay up-to-date with the build-in update service.
 
-Download:
-![download](/streampro.zip)
+![Download](/streampro.zip?raw=true)
 
 Installation / Use:
 1) Download streampro.zip and save it to your USB drive.
