@@ -1,4 +1,5 @@
-A User-Friendly IPTV Player for Movian / M7 Media Center featuring a collection of Free-to-Air Stream Providers!
+A User-Friendly IPTV Player for Movian / M7 Media Center featuring a collection of 3rd Party Free-to-Air Stream Providers!
+
 
 ![StreamPRO Logo](/logo.png)
 
@@ -13,6 +14,9 @@ Features:
 * Add your favourite channels to the Start Page.
 * Browse a range of world-wide Free-To-Air Stream Providers.
 * Stay up-to-date with the build-in update service.
+
+Download:
+![download](/streampro.zip)
 
 Installation / Use:
 1) Download streampro.zip and save it to your USB drive.
