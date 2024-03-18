@@ -597,9 +597,7 @@ function addOptionToRemovePlaylist(page, item, title, pos) {
 function showPlaylist(page) {
   var playlist = eval(playlists.list);
 
-  if (service.selectRegion == "Off") {popup.notify('Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch Live TV', 12)};
-  if (!playlist || !playlist.toString()) {popup.notify('You can add your own .M3U/.XML playlist in the side menu!', 12)};
-  popup.notify('Caution! Some channels may be Geo-Restricted.', 6);
+  popup.notify('Caution! Some channels may be Geo-Restricted.', 10);
 
   var pos = 0;
   for (var i in playlist) {
@@ -1484,7 +1482,7 @@ new page.Route(plugin.id + ':start', function(page) {
   page.options.createAction('update', "Check for Updates", function() 
     {
       popup.notify("Updating, please wait...", 5);
-      page.redirect('https://github.com/dajesusmodz/movian-plugin-StreamPro/releases/latest/download/streampro.zip');
+      page.redirect('https://raw.githubusercontent.com/dajesusmodz/movian-plugin-StreamPro/master/streampro.zip');
     });
 
   if (!service.disableMyFavorites) {
