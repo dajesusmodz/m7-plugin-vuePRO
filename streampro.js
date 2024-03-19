@@ -1482,7 +1482,7 @@ new page.Route(plugin.id + ':start', function(page) {
   page.options.createAction('update', "Check for Updates", function() 
     {
       popup.notify("Updating, please wait...", 5);
-      page.redirect('https://raw.githubusercontent.com/dajesusmodz/movian-plugin-StreamPro/master/streampro.zip');
+      page.redirect('https://github.com/dajesusmodz/movian-plugin-StreamPro/releases/latest/download/streampro.zip');
     });
 
   if (!service.disableMyFavorites) {
