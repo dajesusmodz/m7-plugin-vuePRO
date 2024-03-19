@@ -1487,7 +1487,7 @@ new page.Route(plugin.id + ':start', function(page) {
 
   if (!service.disableMyFavorites) {
   page.appendItem('', 'separator', {
-    title: '  My Favorites:                                                                                                                                                                                                                                                               ',
+    title: 'My Favorites',
   });
   page.appendItem('', 'separator', {
     title: '',
@@ -1497,14 +1497,14 @@ new page.Route(plugin.id + ':start', function(page) {
   var list = eval(store.list);
 
     if (!list || !list.toString()) {
-      page.appendItem('', 'separator', {title: ''});
       page.appendItem('', 'separator', {title: 'Save your favorite channels here!'});
       page.appendItem('', 'separator', {title: ''});
     }
     var pos = 0;
     for (var i in list) {
+      if (pos >= 4) break; // Stop after listing 4 items
       var itemmd = JSON.parse(list[i]);
-      var item = page.appendItem(decodeURIComponent(itemmd.link), 'video', {
+      var item = page.appendItem(decodeURIComponent(itemmd.link), 'playable', {
         title: decodeURIComponent(itemmd.title),
         icon: itemmd.icon ? decodeURIComponent(itemmd.icon) : null,
         description: new RichText(coloredStr('Link: ', orange) + decodeURIComponent(itemmd.link)),
@@ -1513,19 +1513,35 @@ new page.Route(plugin.id + ':start', function(page) {
       pos++;
     }
   }
+
+  if (!service.disableMyFavorites);
+  var list = eval(store.list);
+
+    if (list && list.length > 0) {
+      page.appendItem(plugin.id + ":myfavs", "directory", {
+        title: "See More...",
+        icon: 'https://i.postimg.cc/zGT28Cz2/favs.png'
+    });
+  }
+  
   if (service.selectRegion == "Off") {
-    page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch Live TV'});
-    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch Free-To-Air Content.'});
   }
 
   if (service.selectRegion == "United States") {
-    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Free-To-Air'});
+  }
+  if (service.selectRegion == "United Kingdom") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Free-To-Air'});
+  }
+
+  if (service.selectRegion == "United States") {
     page.appendItem('', 'separator', {title: '  Free TV:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''});
   }
   if (service.selectRegion == "United Kingdom") {
-    page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  Free TV:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''});
   }
@@ -1642,7 +1658,7 @@ new page.Route(plugin.id + ':start', function(page) {
   }
 
   page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  User Playlists:                                                                                                                                                                                                                                                               '});
+  page.appendItem('', 'separator', {title: 'User Playlists'});
   page.appendItem('', 'separator', {title: ''});
 
   var list = eval(playlists.list);
@@ -1681,6 +1697,24 @@ new page.Route(plugin.id + ':start', function(page) {
 
   showPlaylist(page);
 });
+
+// My Favorites page
+new page.Route(plugin.id + ':myfavs', function(page) {
+  page.metadata.icon = 'https://i.postimg.cc/zGT28Cz2/favs.png';
+  setPageHeader(page, "My Favorites");
+  var list = eval(store.list);
+    var pos = 0;
+    for (var i in list) {
+      var itemmd = JSON.parse(list[i]);
+      var item = page.appendItem(decodeURIComponent(itemmd.link), 'video', {
+        title: decodeURIComponent(itemmd.title),
+        icon: itemmd.icon ? decodeURIComponent(itemmd.icon) : null,
+        description: new RichText(coloredStr('Link: ', orange) + decodeURIComponent(itemmd.link)),
+      });
+      addOptionForRemovingFromMyFavorites(page, item, decodeURIComponent(itemmd.title), pos);
+      pos++;
+    }
+});  
 
 // TIVIX
 o = {
