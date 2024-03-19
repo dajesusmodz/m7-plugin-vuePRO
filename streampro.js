@@ -127,7 +127,7 @@ function addOptionForRemovingFromMyFavorites(page, item, title, pos) {
     popup.notify('\'' + title + '\' has been removed from My Favorites.', 2);
     list.splice(pos, 1);
     store.list = JSON.stringify(list);
-    page.redirect(plugin.id + ':start');
+    page.redirect(plugin.id + ':myfavs');
   });
 }
 
@@ -1676,7 +1676,7 @@ new page.Route(plugin.id + ':start', function(page) {
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
 
   page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  StreamPRO Version: 2.8 Pre-Release (Unstable)                                                                                                                                                                                                                                                               '});
+  page.appendItem('', 'separator', {title: '  StreamPRO Version: 2.8 (Release)                                                                                                                                                                                                                                                             '});
   page.appendItem('', 'separator', {title: ''});
 
   // menu to delete playlists
