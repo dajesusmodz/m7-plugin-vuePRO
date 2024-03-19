@@ -1534,7 +1534,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://bcovlive-a.akamaihd.net/5e531be3ed6c41229b2af2d9bffba88d/us-east-1/6183977686001/profile_1/chunklist.m3u8', 'playable', { title: 'Retro TV', icon: 'https://i.imgur.com/PNTYOgg.png', });
     page.appendItem('https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8', 'playable', { title: 'ABC News', icon: 'https://i.imgur.com/nki2HDQ.png', });
     page.appendItem('https://cinedigm.vo.llnwd.net/conssui/amagi_hls_data_xumo1234A-docuramaA/CDN/master.m3u8', 'playable', { title: 'Docurama', icon: 'https://i.imgur.com/bNg8mze.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fhttps%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_usa.m3u8:USA', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_usa.m3u8:USA', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('http://92.114.85.81:8000/play/a01g/index.m3u8', 'playable', { title: 'Channel 5', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Channel_5_%28UK%29_2016.svg/530px-Channel_5_%28UK%29_2016.svg.png', });
