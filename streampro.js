@@ -1659,6 +1659,10 @@ new page.Route(plugin.id + ':start', function(page) {
   addActionToTheItem(page, 'Add Custom M3U Playlist', '1Hbuve6', 'M3U');
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
 
+  page.appendItem('', 'separator', {title: ''});
+  page.appendItem('', 'separator', {title: '  StreamPRO Version: 2.8                                                                                                                                                                                                                                                               '});
+  page.appendItem('', 'separator', {title: ''});
+
   // menu to delete playlists
   page.options.createAction('rmPlaylist', 'Remove Playlist...', function() {
     var list = eval(playlists.list);
