@@ -1530,19 +1530,19 @@ new page.Route(plugin.id + ':start', function(page) {
 
   if (service.selectRegion == "United States") {
     page.appendItem('', 'separator', {title: ' '});
-    page.appendItem('', 'separator', {title: 'Free-To-Air'});
+    page.appendItem('', 'separator', {title: 'Free Channels'});
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('', 'separator', {title: ' '});
-    page.appendItem('', 'separator', {title: 'Free-To-Air'});
+    page.appendItem('', 'separator', {title: 'Free Channels'});
   }
 
   if (service.selectRegion == "United States") {
-    page.appendItem('', 'separator', {title: '  Free TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''});
   }
   if (service.selectRegion == "United Kingdom") {
-    page.appendItem('', 'separator', {title: '  Free TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''});
   }
   if (service.selectRegion == "United States") {
