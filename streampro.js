@@ -95,7 +95,7 @@ settings.createAction('cleanFavorites', 'Empty My Favorites', function() {
   store.list = '[]';
   popup.notify('Favorites has been emptied successfully', 2);
 });
-settings.createBool('debug', 'Enable debug logging', true, function(v) {
+settings.createBool('debug', 'Enable debug logging', false, function(v) {
   service.debug = v;
 });
 
