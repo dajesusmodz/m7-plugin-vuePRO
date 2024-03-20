@@ -78,6 +78,7 @@ settings.globalSettings(plugin.id, plugin.title, logo, plugin.synopsis);
 settings.createMultiOpt('selectRegion', 'Provider Region', [
           ['United States', 'United States'],
           ['United Kingdom', 'United Kingdom'],
+          ['France', 'France'],
           ['Off', 'Off', true],
         ], function(v) {
         service.selectRegion = v;
@@ -1480,6 +1481,7 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "Off") {page.metadata.icon = logo; setPageHeader(page, "StreamPRO")};
   if (service.selectRegion == "United Kingdom") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/211144/1659455637_427352.jpeg'; setPageHeader(page, "StreamPRO - UK")};
   if (service.selectRegion == "United States") {page.metadata.icon = 'https://visa.express/georgia/wp-content/uploads/sites/5/2022/09/1579293111_57-83.jpg'; setPageHeader(page, "StreamPRO - US")};
+  if (service.selectRegion == "France") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "StreamPRO - France")};
 
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
@@ -1636,13 +1638,6 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''});
-  }
-  if (service.selectRegion == "United Kingdom") {
-    page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''});
-  }
-  if (service.selectRegion == "United States") {
     page.appendItem('https://r.mjh.nz/PlutoTV/64b585f84ea480000838e446-alt.m3u8', 'playable', { title: 'Pluto TV - Icons', icon: 'https://images.pluto.tv/channels/64b585f84ea480000838e446/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/633354b63df9700007f6a1b7-alt.m3u8', 'playable', { title: 'Sitcom Legends', icon: 'https://images.pluto.tv/channels/633354b63df9700007f6a1b7/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/5f99e24636d67d0007a94e6d-alt.m3u8', 'playable', { title: 'Comedy Central - Animation', icon: 'https://images.pluto.tv/channels/5f99e24636d67d0007a94e6d/colorLogoPNG.png', });
@@ -1650,11 +1645,24 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:USA', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "United Kingdom") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
     page.appendItem('https://r.mjh.nz/PlutoTV/64ff1d3d3a0d700008b110e9-alt.m3u8', 'playable', { title: 'Robot Wars by MECH+', icon: 'https://images.pluto.tv/channels/64ff1d3d3a0d700008b110e9/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/625567abd664ea0007605f34-alt.m3u8', 'playable', { title: 'Worlds Greatest', icon: 'https://images.pluto.tv/channels/625567abd664ea0007605f34/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/62da7819be7a97000878eb92-alt.m3u8', 'playable', { title: 'CSI - Miami', icon: 'https://images.pluto.tv/channels/62da7819be7a97000878eb92/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/64edf6eaa7ec0d000812f58c-alt.m3u8', 'playable', { title: 'South Park', icon: 'https://images.pluto.tv/channels/64edf6eaa7ec0d000812f58c/colorLogoPNG.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Great%20Britain', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "France") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://r.mjh.nz/PlutoTV/5f8ed0720dc198000728f9d3-alt.m3u8', 'playable', { title: 'People are Awesome', icon: 'https://images.pluto.tv/channels/5f8ed0720dc198000728f9d3/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/5f8edb6df1ebb800072edf10-alt.m3u8', 'playable', { title: 'Les Nouveaux Detectives', icon: 'https://images.pluto.tv/channels/5f8edb6df1ebb800072edf10/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/63921a1bf76e7d0007c998a6-alt.m3u8', 'playable', { title: 'Enquêtes de Choc', icon: 'https://images.pluto.tv/channels/63921a1bf76e7d0007c998a6/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/60d359c98f262f00070c364e-alt.m3u8', 'playable', { title: 'Doctor Who', icon: 'https://images.pluto.tv/channels/60d359c98f262f00070c364e/colorLogoPNG.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:France', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
   if (service.selectRegion == "United Kingdom") {
@@ -1723,7 +1731,7 @@ new page.Route(plugin.id + ':start', function(page) {
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
 
   page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  StreamPRO Version: 2.8.1 (Release))                                                                                                                                                                                                                                                          '});
+  page.appendItem('', 'separator', {title: '  StreamPRO Version: 2.9 (Pre-Release)                                                                                                                                                                                                                                                          '});
   page.appendItem('', 'separator', {title: ''});
 
   // menu to delete playlists
