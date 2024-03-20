@@ -15,8 +15,6 @@ Features:
 * Browse a range of Free-To-Air Stream Providers.
 * Stay up-to-date with the build-in update service.
 
-![Pre-Release Download - May Contain Bugs](/streampro.zip?raw=true)
-
 Installation / Use:
 1) Download streampro.zip from 'Releases' and save it to your USB drive.
 
@@ -38,3 +36,5 @@ StreamPRO Currently Serves:
 
 Updating:
 Use the built-in updater service by pressing the 'Check for Updates' button in the side menu from the Start Page. 
+
+ ![Pre-Release Version - May Contain Bugs](/unstable.zip?raw=true)
