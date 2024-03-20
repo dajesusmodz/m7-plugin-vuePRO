@@ -91,10 +91,6 @@ settings.createMultiOpt('selectRegion', 'Provider Region', [
 settings.createBool('disableMyFavorites', 'Don\'t show My Favorites', false, function(v) {
   service.disableMyFavorites = v;
 });
-settings.createAction('cleanFavorites', 'Empty My Favorites', function() {
-  store.list = '[]';
-  popup.notify('Favorites has been emptied successfully', 2);
-});
 settings.createBool('debug', 'Enable debug logging', false, function(v) {
   service.debug = v;
 });
@@ -1676,7 +1672,7 @@ new page.Route(plugin.id + ':start', function(page) {
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
 
   page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  StreamPRO Version: 2.8 (Release)                                                                                                                                                                                                                                                             '});
+  page.appendItem('', 'separator', {title: '  StreamPRO Version: 2.9 (Pre-Release Unstable)                                                                                                                                                                                                                                                          '});
   page.appendItem('', 'separator', {title: ''});
 
   // menu to delete playlists
@@ -1702,6 +1698,13 @@ new page.Route(plugin.id + ':start', function(page) {
 new page.Route(plugin.id + ':myfavs', function(page) {
   page.metadata.icon = 'https://i.postimg.cc/zGT28Cz2/favs.png';
   setPageHeader(page, "My Favorites");
+
+  page.options.createAction('cleanFavorites', 'Empty My Favorites', function() {
+    store.list = '[]';
+    popup.notify('Favorites has been emptied successfully', 2);
+    page.redirect(plugin.id + ':start');
+  });
+
   var list = eval(store.list);
     var pos = 0;
     for (var i in list) {
