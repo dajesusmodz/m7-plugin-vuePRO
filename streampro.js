@@ -1723,7 +1723,7 @@ new page.Route(plugin.id + ':start', function(page) {
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
 
   page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  StreamPRO Version: 2.9 (Pre-Release Unstable)                                                                                                                                                                                                                                                          '});
+  page.appendItem('', 'separator', {title: '  StreamPRO Version: 2.8.1 (Release))                                                                                                                                                                                                                                                          '});
   page.appendItem('', 'separator', {title: ''});
 
   // menu to delete playlists
@@ -1754,6 +1754,10 @@ new page.Route(plugin.id + ':myfavs', function(page) {
     store.list = '[]';
     popup.notify('Favorites has been emptied successfully', 2);
     page.redirect(plugin.id + ':start');
+  });
+
+  page.appendItem('', 'separator', {
+    title: 'Empty My Favorites in the Side Bar.',
   });
 
   var list = eval(store.list);
