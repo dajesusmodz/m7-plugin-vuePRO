@@ -1617,6 +1617,16 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://lightning-now70s-samsungnz.amagi.tv/playlist.m3u8', 'playable', { title: 'Now 70s', icon: 'https://i.imgur.com/qiCCX5X.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_uk.m3u8:UK', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
+  if (service.selectRegion == "France") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 20/03/24
+    page.appendItem('https://s13.tntendirect.com/cherie25/live/playlist.m3u8', 'playable', { title: 'Chérie 25', icon: 'https://upload.wikimedia.org/wikipedia/fr/thumb/f/f0/Ch%C3%A9rie_25_logo_2015.svg/51px-Ch%C3%A9rie_25_logo_2015.svg.png', });
+    page.appendItem('https://ott.tv5monde.com/Content/HLS/Live/channel(europe)/index.m3u8', 'playable', { title: 'TV5 Monde Europe', icon: 'https://i.imgur.com/uPmwTo9.png', });
+    page.appendItem('http://livetv.ktv.zone/105/play.m3u8', 'playable', { title: 'France 3', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/France_3_2018.svg/899px-France_3_2018.svg.png', });
+    page.appendItem('http://livetv.ktv.zone/13/play.m3u8', 'playable', { title: 'TFX', icon: 'https://upload.wikimedia.org/wikipedia/fr/thumb/8/83/TFX_logo_2018.svg/640px-TFX_logo_2018.svg.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_france.m3u8:France', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
 
   if (service.selectRegion == "United States") {
     page.appendItem('', 'separator', {title: ''});
