@@ -1572,7 +1572,7 @@ new page.Route(plugin.id + ':start', function(page) {
 
       if (list && list.length > 0) {
         page.appendItem(plugin.id + ":myfavs", "directory", {
-          title: "See More...",
+          title: "Show All...",
           icon: 'https://i.postimg.cc/zGT28Cz2/favs.png'
       });
     }
@@ -1608,14 +1608,14 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://bcovlive-a.akamaihd.net/5e531be3ed6c41229b2af2d9bffba88d/us-east-1/6183977686001/profile_1/chunklist.m3u8', 'playable', { title: 'Retro TV', icon: 'https://i.imgur.com/PNTYOgg.png', });
     page.appendItem('https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8', 'playable', { title: 'ABC News', icon: 'https://i.imgur.com/nki2HDQ.png', });
     page.appendItem('https://cinedigm.vo.llnwd.net/conssui/amagi_hls_data_xumo1234A-docuramaA/CDN/master.m3u8', 'playable', { title: 'Docurama', icon: 'https://i.imgur.com/bNg8mze.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_usa.m3u8:USA', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_usa.m3u8:USA', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('http://92.114.85.81:8000/play/a01g/index.m3u8', 'playable', { title: 'Channel 5', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Channel_5_%28UK%29_2016.svg/530px-Channel_5_%28UK%29_2016.svg.png', });
     page.appendItem('http://92.114.85.81:8000/play/a00y/index.m3u8', 'playable', { title: 'ITV 1', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/ITV1_logo_%282022%29.svg/640px-ITV1_logo_%282022%29.svg.png', });
     page.appendItem('http://92.114.85.80:8000/play/a03s', 'playable', { title: 'Challenge', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Challenge_%282016-.n.v.%29.png/640px-Challenge_%282016-.n.v.%29.png', });
     page.appendItem('https://lightning-now70s-samsungnz.amagi.tv/playlist.m3u8', 'playable', { title: 'Now 70s', icon: 'https://i.imgur.com/qiCCX5X.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_uk.m3u8:UK', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_uk.m3u8:UK', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ''});
@@ -1625,7 +1625,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://ott.tv5monde.com/Content/HLS/Live/channel(europe)/index.m3u8', 'playable', { title: 'TV5 Monde Europe', icon: 'https://i.imgur.com/uPmwTo9.png', });
     page.appendItem('http://livetv.ktv.zone/105/play.m3u8', 'playable', { title: 'France 3', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/France_3_2018.svg/899px-France_3_2018.svg.png', });
     page.appendItem('http://livetv.ktv.zone/13/play.m3u8', 'playable', { title: 'TFX', icon: 'https://upload.wikimedia.org/wikipedia/fr/thumb/8/83/TFX_logo_2018.svg/640px-TFX_logo_2018.svg.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_france.m3u8:France', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_france.m3u8:France', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
   if (service.selectRegion == "United States") {
@@ -1643,14 +1643,14 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBB1900002KF.m3u8', 'playable', { title: 'Real Americas Voice', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBB1900002KF_20221109T013546SQUARE.png_20221109013547.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/USAJ26000015Y.m3u8', 'playable', { title: 'Drama Life', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USAJ26000015Y_20221109T013415SQUARE.png_20221109013415.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBD700012OA.m3u8', 'playable', { title: 'The Bob Ross Channel', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBD700012OA_20230627T215017SQUARE.png_20230627215018.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20States', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100006XM.m3u8', 'playable', { title: 'Sky Mix', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100006XM_20231213T033116SQUARE.png_20231213033116.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100003J5.m3u8', 'playable', { title: 'UKTV Play - Laughs', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100003J5_20231213T104001SQUARE.png_20231213104002.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBA330003941.m3u8', 'playable', { title: 'Catfish', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBA330003941_20221215T020813SQUARE.png_20221215020814.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBC9000062G.m3u8', 'playable', { title: 'Come Dine With Me', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBC9000062G_20230809T053358SQUARE.png_20230809053358.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20Kingdom', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20Kingdom', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ''});
@@ -1660,7 +1660,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBC4700002RF.m3u8', 'playable', { title: 'Alerte à Malibu', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC4700002RF_20231213T103950SQUARE.png_20231213103951.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBC47000054S.m3u8', 'playable', { title: 'Les filles d-à côté', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC47000054S_20230510T043943SQUARE.png_20230510043944.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBD410000436.m3u8', 'playable', { title: 'Les secrets de nos régions', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD410000436_20231115T012249SQUARE.png_20231115012250.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:France', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:France', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
   if (service.selectRegion == "United States") {
@@ -1671,7 +1671,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://r.mjh.nz/PlutoTV/633354b63df9700007f6a1b7-alt.m3u8', 'playable', { title: 'Sitcom Legends', icon: 'https://images.pluto.tv/channels/633354b63df9700007f6a1b7/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/5f99e24636d67d0007a94e6d-alt.m3u8', 'playable', { title: 'Comedy Central - Animation', icon: 'https://images.pluto.tv/channels/5f99e24636d67d0007a94e6d/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/554158e864526b29254ff105-alt.m3u8', 'playable', { title: 'FailArmy', icon: 'https://images.pluto.tv/channels/554158e864526b29254ff105/colorLogoPNG.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:USA', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:USA', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('', 'separator', {title: ''});
@@ -1681,7 +1681,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://r.mjh.nz/PlutoTV/625567abd664ea0007605f34-alt.m3u8', 'playable', { title: 'Worlds Greatest', icon: 'https://images.pluto.tv/channels/625567abd664ea0007605f34/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/62da7819be7a97000878eb92-alt.m3u8', 'playable', { title: 'CSI - Miami', icon: 'https://images.pluto.tv/channels/62da7819be7a97000878eb92/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/64edf6eaa7ec0d000812f58c-alt.m3u8', 'playable', { title: 'South Park', icon: 'https://images.pluto.tv/channels/64edf6eaa7ec0d000812f58c/colorLogoPNG.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Great%20Britain', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Great%20Britain', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ''});
@@ -1691,7 +1691,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://r.mjh.nz/PlutoTV/5f8edb6df1ebb800072edf10-alt.m3u8', 'playable', { title: 'Les Nouveaux Detectives', icon: 'https://images.pluto.tv/channels/5f8edb6df1ebb800072edf10/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/63921a1bf76e7d0007c998a6-alt.m3u8', 'playable', { title: 'Enquêtes de Choc', icon: 'https://images.pluto.tv/channels/63921a1bf76e7d0007c998a6/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/60d359c98f262f00070c364e-alt.m3u8', 'playable', { title: 'Doctor Who', icon: 'https://images.pluto.tv/channels/60d359c98f262f00070c364e/colorLogoPNG.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:France', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:France', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
   if (service.selectRegion == "United Kingdom") {
@@ -1702,7 +1702,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://75bced9559e343058577aeae94f36a8c.mediatailor.us-east-1.amazonaws.com/v1/master/f4e8c53a8367a5b58e20ce054ea3ce25a3e904d3/RakutenTV-gb_Popflix/playlist.m3u8?ads.amznbrmid=&ads.amznregion=&ads.amznslots=&ads.app_version=&ads.brand_name=&ads.content_classification=15&ads.device_lmt=0&ads.device_make=chrome&ads.device_model=GENERIC&ads.device_type=web&ads.device_year=1970&ads.env=prod&ads.gdpr_consent=&ads.market=uk&ads.os_language=&ads.player_height=1080&ads.player_width=1920&ads.pod_type=playerpage_midroll&ads.ppid=e3dd2658-e93a-4cee-9d4b-27200826a904&ads.rtv_content_id=4279&ads.rtv_content_language=eng&ads.rtvid=271858&ads.streaming_id=914e56b1-9153-4296-9d97-7f7788633477&ads.tivo_devcountry=&ads.tivo_devmakedate=&ads.tivo_mvpd=&ads.tivo_platform=&ads.tivo_usid=&ads.tivo_uxloc=&ads.user_type=visitor&ads.wurl_channel=1068', 'playable', { title: 'Popflix', icon: 'https://images-3.rakuten.tv/storage/global-live-channel/translation/artwork-negative/f91913cf-c985-4973-8f70-6688d38548ae.png', });
     page.appendItem('https://lonestar-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-lonestar-rakuten/CDN/playlist.m3u8?ads_amagi_channel=725&ads_amznbrmid=&ads_amznregion=&ads_amznslots=&ads_app_version=&ads_brand_name=&ads_content_classification=12&ads_device_lmt=0&ads_device_make=chrome&ads_device_model=GENERIC&ads_device_type=web&ads_device_year=1970&ads_env=prod&ads_gdpr_consent=&ads_market=uk&ads_os_language=&ads_player_height=1080&ads_player_width=1920&ads_pod_type=playerpage_midroll&ads_ppid=e3dd2658-e93a-4cee-9d4b-27200826a904&ads_rtv_content_id=2811&ads_rtv_content_language=eng&ads_rtvid=271858&ads_streaming_id=866d2d1e-b31e-45fa-a84a-5b89ce0fcbc9&ads_tivo_devcountry=&ads_tivo_devmakedate=&ads_tivo_mvpd=&ads_tivo_platform=&ads_tivo_usid=&ads_tivo_uxloc=&ads_user_type=visitor', 'playable', { title: 'Lone Star', icon: 'https://images-3.rakuten.tv/storage/global-live-channel/translation/artwork_negative/c5e98fcd-d269-41d5-886e-0af79ca5d43b-lone-star-1643370871.png', });
     page.appendItem('https://3bd25beecec04b169f33659a7739c10b.mediatailor.us-east-1.amazonaws.com/v1/master/04fd913bb278d8775298c26fdca9d9841f37601f/RakutenTV-eu_Filmzie/playlist.m3u8?ads.amznbrmid=&ads.amznregion=&ads.amznslots=&ads.app_version=&ads.brand_name=&ads.content_classification=12&ads.device_lmt=0&ads.device_make=chrome&ads.device_model=GENERIC&ads.device_type=web&ads.device_year=1970&ads.env=prod&ads.gdpr_consent=&ads.market=uk&ads.os_language=&ads.player_height=1080&ads.player_width=1920&ads.pod_type=playerpage_midroll&ads.ppid=e3dd2658-e93a-4cee-9d4b-27200826a904&ads.rtv_content_id=3282&ads.rtv_content_language=eng&ads.rtvid=271858&ads.streaming_id=8a452216-be6c-4ac0-8e0d-8d7ec9bd13f6&ads.tivo_devcountry=&ads.tivo_devmakedate=&ads.tivo_mvpd=&ads.tivo_platform=&ads.tivo_usid=&ads.tivo_uxloc=&ads.user_type=visitor&ads.wurl_channel=592', 'playable', { title: 'Filmzie', icon: 'https://images-0.rakuten.tv/storage/global-live-channel/translation/artwork_negative/657c9c66-75c7-4cd4-a791-5ca5aca98994-filmzie-1643623115.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fwww.apsattv.com%2Frakuten-uk.m3u:RakutenTV UK', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fwww.apsattv.com%2Frakuten-uk.m3u:RakutenTV UK', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
   if (service.selectRegion == "United States") {
@@ -1713,7 +1713,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://dai2.xumo.com/amagi_hls_data_xumo1212A-redboxpattrn/CDN/playlist.m3u8?p=redbox&deviceid=&is_lat=', 'playable', { title: 'Pattrn', icon: 'https://image.xumo.com/v1/channels/channel/88883604/248x140.png?type=channelTile', });
     page.appendItem('https://qvchsn-hsn-2-us.redbox.wurl.tv/playlist.m3u8', 'playable', { title: 'HSN', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HSN_Redbox_248x140.jpg', });
     page.appendItem('https://inverleigh-unbeaten-redbox.amagi.tv/hls/amagi_hls_data_redboxAAA-inverleigh-unbeaten-redbox/CDN/playlist.m3u8?p=Redbox&deviceid=&is_lat=', 'playable', { title: 'Unbeaten', icon: 'https://d1hj79gnft8hfg.cloudfront.net/Unbeaten February 248x140.jpeg', });
-    page.appendItem('m3u:https%3A%2F%2Fwww.apsattv.com%2Fredbox.m3u:United States', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3u:https%3A%2F%2Fwww.apsattv.com%2Fredbox.m3u:United States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
   if (service.selectRegion == "United States") {
@@ -1727,7 +1727,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/Roku/62b4eba68f3051c68d2beb22dc94ebbc.m3u8', 'playable', { title: 'Supermarket Sweep', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/62b4eba68f3051c68d2beb22dc94ebbc/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1669151901470_ROKU_SMS_HUD-MONO_260X147.png', });
     page.appendItem('https://i.mjh.nz/Roku/4f4e0f3d9e1f5c8c9e627514fc5a071d.m3u8', 'playable', { title: 'Total Crime', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/4f4e0f3d9e1f5c8c9e627514fc5a071d/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659562945788_TotalCrime_RokuUSA_HUDcenter.png', });
     page.appendItem('https://i.mjh.nz/Roku/e6416436e5d6510e9e22c23862deea23.m3u8', 'playable', { title: 'Tastemade', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/e6416436e5d6510e9e22c23862deea23/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659564035273_Roku_TM_260x147.png', });
-    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:United States', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:United States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
   page.appendItem('', 'separator', {title: ''});
