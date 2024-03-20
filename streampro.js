@@ -1523,56 +1523,61 @@ new page.Route(plugin.id + ':start', function(page) {
     }
   }
 
-  if (!service.disableMyFavorites);
-  var list = eval(store.list);
-
-    if (!list || !list.toString()) {
-      page.appendItem(plugin.id + ":start", "directory", {
-        title: "Refresh",
-        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
-    });
-  }
-
-  if (!service.disableMyFavorites);
-  var list = eval(store.list);
-
-    if (list && list.length === 1) {
-      page.appendItem(plugin.id + ":start", "directory", {
-        title: "Refresh",
-        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
-    });
-  }
-
-  if (!service.disableMyFavorites);
-  var list = eval(store.list);
-
-    if (list && list.length === 2) {
-      page.appendItem(plugin.id + ":start", "directory", {
-        title: "Refresh",
-        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
-    });
-  }
-
-  if (!service.disableMyFavorites);
-  var list = eval(store.list);
-
-    if (list && list.length === 3) {
-      page.appendItem(plugin.id + ":start", "directory", {
-        title: "Refresh",
-        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
-    });
-  }
-
-  if (!service.disableMyFavorites);
-  var list = eval(store.list);
-
-    if (list && list.length > 0) {
-      page.appendItem(plugin.id + ":myfavs", "directory", {
-        title: "See More...",
-        icon: 'https://i.postimg.cc/zGT28Cz2/favs.png'
-    });
-  }
+  if (!service.disableMyFavorites) {
+    var list = eval(store.list);
   
+    if (!list || list.length === 0) {
+      page.appendItem(plugin.id + ":start", "directory", {
+        title: "Refresh",
+        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
+      });
+    }
+  }
+
+  if (!service.disableMyFavorites) {
+    var list = eval(store.list);
+  
+    if (!list || list.length === 1) {
+      page.appendItem(plugin.id + ":start", "directory", {
+        title: "Refresh",
+        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
+      });
+    }
+  }
+
+  if (!service.disableMyFavorites) {
+    var list = eval(store.list);
+  
+    if (!list || list.length === 2) {
+      page.appendItem(plugin.id + ":start", "directory", {
+        title: "Refresh",
+        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
+      });
+    }
+  }
+
+  if (!service.disableMyFavorites) {
+    var list = eval(store.list);
+  
+    if (!list || list.length === 3) {
+      page.appendItem(plugin.id + ":start", "directory", {
+        title: "Refresh",
+        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
+      });
+    }
+  }
+
+  if (!service.disableMyFavorites) {
+    var list = eval(store.list);
+
+      if (list && list.length > 0) {
+        page.appendItem(plugin.id + ":myfavs", "directory", {
+          title: "See More...",
+          icon: 'https://i.postimg.cc/zGT28Cz2/favs.png'
+      });
+    }
+  }
+
   if (service.selectRegion == "Off") {
     page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch Free-To-Air Content.'});
   }
@@ -1582,6 +1587,10 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: 'Free Channels'});
   }
   if (service.selectRegion == "United Kingdom") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Free Channels'});
+  }
+  if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ' '});
     page.appendItem('', 'separator', {title: 'Free Channels'});
   }
@@ -1633,6 +1642,16 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBC9000062G.m3u8', 'playable', { title: 'Come Dine With Me', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBC9000062G_20230809T053358SQUARE.png_20230809053358.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20Kingdom', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
+  if (service.selectRegion == "France") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 20/03/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBA3300035UK.m3u8', 'playable', { title: 'Juste Pour Rire', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBA3300035UK_20230412T042644SQUARE.png_20230412042645.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBC4700002RF.m3u8', 'playable', { title: 'Alerte à Malibu', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC4700002RF_20231213T103950SQUARE.png_20231213103951.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBC47000054S.m3u8', 'playable', { title: 'Les filles d-à côté', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC47000054S_20230510T043943SQUARE.png_20230510043944.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBD410000436.m3u8', 'playable', { title: 'Les secrets de nos régions', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD410000436_20231115T012249SQUARE.png_20231115012250.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:France', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
 
   if (service.selectRegion == "United States") {
     page.appendItem('', 'separator', {title: ''});
@@ -1657,7 +1676,7 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: ''}); // 20/03/24
     page.appendItem('https://r.mjh.nz/PlutoTV/5f8ed0720dc198000728f9d3-alt.m3u8', 'playable', { title: 'People are Awesome', icon: 'https://images.pluto.tv/channels/5f8ed0720dc198000728f9d3/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/5f8edb6df1ebb800072edf10-alt.m3u8', 'playable', { title: 'Les Nouveaux Detectives', icon: 'https://images.pluto.tv/channels/5f8edb6df1ebb800072edf10/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/63921a1bf76e7d0007c998a6-alt.m3u8', 'playable', { title: 'Enquêtes de Choc', icon: 'https://images.pluto.tv/channels/63921a1bf76e7d0007c998a6/colorLogoPNG.png', });
@@ -1692,24 +1711,13 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: '  Roku:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''});
   }
-  if (service.selectRegion == "United Kingdom") {
-    page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Roku:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''});
-  }
-  if (service.selectRegion == "United Kingdom") {
-    page.appendItem('https://i.mjh.nz/Roku/5941b88c38ab50ad8b09b0d920abbae5.m3u8', 'playable', { title: 'WMX Rock', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/5941b88c38ab50ad8b09b0d920abbae5/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1678147364704_WMX_ROCK_LOGO_HUD.png', });
-    page.appendItem('https://i.mjh.nz/Roku/62b4eba68f3051c68d2beb22dc94ebbc.m3u8', 'playable', { title: 'Supermarket Sweep', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/62b4eba68f3051c68d2beb22dc94ebbc/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1669151901470_ROKU_SMS_HUD-MONO_260X147.png', });
-    page.appendItem('https://i.mjh.nz/Roku/4f4e0f3d9e1f5c8c9e627514fc5a071d.m3u8', 'playable', { title: 'Total Crime', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/4f4e0f3d9e1f5c8c9e627514fc5a071d/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659562945788_TotalCrime_RokuUSA_HUDcenter.png', });
-    page.appendItem('https://i.mjh.nz/Roku/e6416436e5d6510e9e22c23862deea23.m3u8', 'playable', { title: 'Tastemade', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/e6416436e5d6510e9e22c23862deea23/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659564035273_Roku_TM_260x147.png', });
-    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:Unable to Group Region', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
-  }
+
   if (service.selectRegion == "United States") {
     page.appendItem('https://i.mjh.nz/Roku/5941b88c38ab50ad8b09b0d920abbae5.m3u8', 'playable', { title: 'WMX Rock', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/5941b88c38ab50ad8b09b0d920abbae5/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1678147364704_WMX_ROCK_LOGO_HUD.png', });
     page.appendItem('https://i.mjh.nz/Roku/62b4eba68f3051c68d2beb22dc94ebbc.m3u8', 'playable', { title: 'Supermarket Sweep', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/62b4eba68f3051c68d2beb22dc94ebbc/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1669151901470_ROKU_SMS_HUD-MONO_260X147.png', });
     page.appendItem('https://i.mjh.nz/Roku/4f4e0f3d9e1f5c8c9e627514fc5a071d.m3u8', 'playable', { title: 'Total Crime', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/4f4e0f3d9e1f5c8c9e627514fc5a071d/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659562945788_TotalCrime_RokuUSA_HUDcenter.png', });
     page.appendItem('https://i.mjh.nz/Roku/e6416436e5d6510e9e22c23862deea23.m3u8', 'playable', { title: 'Tastemade', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/e6416436e5d6510e9e22c23862deea23/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659564035273_Roku_TM_260x147.png', });
-    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:Unable to Group Region', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:United States', 'directory', { title: 'See More...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
   page.appendItem('', 'separator', {title: ''});
@@ -1766,6 +1774,9 @@ new page.Route(plugin.id + ':myfavs', function(page) {
 
   page.appendItem('', 'separator', {
     title: 'Empty My Favorites in the Side Bar.',
+  });
+  page.appendItem('', 'separator', {
+    title: '',
   });
 
   var list = eval(store.list);
