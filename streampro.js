@@ -82,6 +82,12 @@ settings.createMultiOpt('selectRegion', 'Provider Region', [
         ], function(v) {
         service.selectRegion = v;
 });
+settings.createMultiOpt('updatechannel', 'Select Update Channel', [
+  ['Stable', 'Stable'],
+  ['Pre-Release', 'Pre-Release'],
+], function(v) {
+service.updatechannel = v;
+});
 //settings.createBool('disableEPG', 'Don\'t fetch EPG', true, function(v) {
   //service.disableEPG = v;
 //});
@@ -1475,11 +1481,21 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "United Kingdom") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/211144/1659455637_427352.jpeg'; setPageHeader(page, "StreamPRO - UK")};
   if (service.selectRegion == "United States") {page.metadata.icon = 'https://visa.express/georgia/wp-content/uploads/sites/5/2022/09/1579293111_57-83.jpg'; setPageHeader(page, "StreamPRO - US")};
 
-  page.options.createAction('update', "Check for Updates", function() 
+  if (service.updatechannel == "Stable") {
+    page.options.createAction('update', "Check for Updates", function() 
     {
       popup.notify("Updating, please wait...", 5);
       page.redirect('https://github.com/dajesusmodz/movian-plugin-StreamPro/releases/latest/download/streampro.zip');
     });
+  }
+
+  if (service.updatechannel == "Pre-Release") {
+    page.options.createAction('update', "Check for Updates", function() 
+    {
+      popup.notify("Updating, please wait...", 5);
+      page.redirect('https://raw.githubusercontent.com/dajesusmodz/movian-plugin-StreamPro/master/unstable.zip');
+    });
+  }
 
   if (!service.disableMyFavorites) {
   page.appendItem('', 'separator', {
@@ -1491,11 +1507,6 @@ new page.Route(plugin.id + ':start', function(page) {
 
   if (!service.disableMyFavorites);
   var list = eval(store.list);
-
-    if (!list || !list.toString()) {
-      page.appendItem('', 'separator', {title: 'Save your favorite channels here!'});
-      page.appendItem('', 'separator', {title: ''});
-    }
     var pos = 0;
     for (var i in list) {
       if (pos >= 4) break; // Stop after listing 4 items
@@ -1508,6 +1519,46 @@ new page.Route(plugin.id + ':start', function(page) {
       addOptionForRemovingFromMyFavorites(page, item, decodeURIComponent(itemmd.title), pos);
       pos++;
     }
+  }
+
+  if (!service.disableMyFavorites);
+  var list = eval(store.list);
+
+    if (!list || !list.toString()) {
+      page.appendItem(plugin.id + ":start", "directory", {
+        title: "Refresh",
+        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
+    });
+  }
+
+  if (!service.disableMyFavorites);
+  var list = eval(store.list);
+
+    if (list && list.length === 1) {
+      page.appendItem(plugin.id + ":start", "directory", {
+        title: "Refresh",
+        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
+    });
+  }
+
+  if (!service.disableMyFavorites);
+  var list = eval(store.list);
+
+    if (list && list.length === 2) {
+      page.appendItem(plugin.id + ":start", "directory", {
+        title: "Refresh",
+        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
+    });
+  }
+
+  if (!service.disableMyFavorites);
+  var list = eval(store.list);
+
+    if (list && list.length === 3) {
+      page.appendItem(plugin.id + ":start", "directory", {
+        title: "Refresh",
+        icon: 'https://i.postimg.cc/T1j3TpwG/refresh.png'
+    });
   }
 
   if (!service.disableMyFavorites);
