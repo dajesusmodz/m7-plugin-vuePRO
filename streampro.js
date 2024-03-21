@@ -1579,20 +1579,20 @@ new page.Route(plugin.id + ':start', function(page) {
   }
 
   if (service.selectRegion == "Off") {
-    page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch Free-To-Air Content.'});
+    page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch TV Channels.'});
   }
 
   if (service.selectRegion == "United States") {
     page.appendItem('', 'separator', {title: ' '});
-    page.appendItem('', 'separator', {title: 'Free Channels'});
+    page.appendItem('', 'separator', {title: 'TV Channels'});
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('', 'separator', {title: ' '});
-    page.appendItem('', 'separator', {title: 'Free Channels'});
+    page.appendItem('', 'separator', {title: 'TV Channels'});
   }
   if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ' '});
-    page.appendItem('', 'separator', {title: 'Free Channels'});
+    page.appendItem('', 'separator', {title: 'TV Channels'});
   }
 
   if (service.selectRegion == "United States") {
@@ -1728,6 +1728,30 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/Roku/4f4e0f3d9e1f5c8c9e627514fc5a071d.m3u8', 'playable', { title: 'Total Crime', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/4f4e0f3d9e1f5c8c9e627514fc5a071d/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659562945788_TotalCrime_RokuUSA_HUDcenter.png', });
     page.appendItem('https://i.mjh.nz/Roku/e6416436e5d6510e9e22c23862deea23.m3u8', 'playable', { title: 'Tastemade', icon: 'https://images.sr.roku.com/idType/roku/context/trc/id/e6416436e5d6510e9e22c23862deea23/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1659564035273_Roku_TM_260x147.png', });
     page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:United States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+
+  if (service.selectRegion == "United States") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Radio'});
+  }
+  if (service.selectRegion == "United Kingdom") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Radio'});
+  }
+  if (service.selectRegion == "France") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Radio'});
+  }
+
+  if (service.selectRegion == "United States") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Radio-Placeholder1:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('link1', 'playable', { title: 'COPS', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HORIZ.jpg', });
+    page.appendItem('link2', 'playable', { title: 'Pattrn', icon: 'https://image.xumo.com/v1/channels/channel/88883604/248x140.png?type=channelTile', });
+    page.appendItem('link3', 'playable', { title: 'HSN', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HSN_Redbox_248x140.jpg', });
+    page.appendItem('link4', 'playable', { title: 'Unbeaten', icon: 'https://d1hj79gnft8hfg.cloudfront.net/Unbeaten February 248x140.jpeg', });
+    page.appendItem('m3u:https%3A%2F%2Fwww.apsattv.com%2Fredbox.m3u:United States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
   page.appendItem('', 'separator', {title: ''});
