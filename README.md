@@ -38,6 +38,7 @@ Available Languages:
 * English
 
 Updating:
+
 Use the built-in updater service by pressing the 'Check for Updates' button in the side menu from the Start Page. 
 
  ![Pre-Release Version - May Contain Bugs](/unstable.zip?raw=true)
