@@ -4,7 +4,7 @@
 	"homepage": "https://github.com/dajesusmodz/movian-plugin-StreamPro",
 	"title": "StreamPRO",
 	"synopsis": "User-Friendly M3U/XML IPTV Player.",
-	"version": "2.9 (Release)",
+	"version": "3.0 (Pre-Release)",
 	"file": "streampro.js",
 	"M7Version": "7.0.24",
 	"type": "ecmascript",

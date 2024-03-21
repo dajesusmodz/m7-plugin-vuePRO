@@ -1749,7 +1749,7 @@ new page.Route(plugin.id + ':start', function(page) {
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
 
   page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  StreamPRO Version:  2.9 (Release)                                                                                                                                                                                                                                                          '});
+  page.appendItem('', 'separator', {title: '  StreamPRO Version:  3.0 (Pre-Release)                                                                                                                                                                                                                                                        '});
   page.appendItem('', 'separator', {title: ''});
 
   // menu to delete playlists
