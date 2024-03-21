@@ -600,7 +600,7 @@ function addOptionToRemovePlaylist(page, item, title, pos) {
 function showPlaylist(page) {
   var playlist = eval(playlists.list);
 
-  popup.notify('Caution! Some channels may be Geo-Restricted.', 10);
+  popup.notify('Some channels may be Geo-Restricted.', 10);
 
   var pos = 0;
   for (var i in playlist) {
@@ -1749,7 +1749,7 @@ new page.Route(plugin.id + ':start', function(page) {
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
 
   page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  StreamPRO Version: 2.9 (Pre-Release)                                                                                                                                                                                                                                                          '});
+  page.appendItem('', 'separator', {title: '  StreamPRO Version:  2.9 (Release)                                                                                                                                                                                                                                                          '});
   page.appendItem('', 'separator', {title: ''});
 
   // menu to delete playlists

@@ -31,7 +31,7 @@ Installation / Use:
 StreamPRO Currently Serves:
 * United States
 * United Kingdom
-* France (Pre-Release)
+* France
 (More Coming Soon)
 
 Available Languages:
