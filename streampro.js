@@ -1588,15 +1588,19 @@ new page.Route(plugin.id + ':start', function(page) {
 
   if (service.selectRegion == "United States") {
     page.appendItem('', 'separator', {title: ' '});
-    page.appendItem('', 'separator', {title: 'TV Channels'});
+    page.appendItem('', 'separator', {title: 'Channels'});
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('', 'separator', {title: ' '});
-    page.appendItem('', 'separator', {title: 'TV Channels'});
+    page.appendItem('', 'separator', {title: 'Channels'});
   }
   if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ' '});
-    page.appendItem('', 'separator', {title: 'TV Channels'});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
+  if (service.selectRegion == "Canada") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
   }
 
   // Free-TV
@@ -1828,7 +1832,7 @@ new page.Route(plugin.id + ':myfavs', function(page) {
     var pos = 0;
     for (var i in list) {
       var itemmd = JSON.parse(list[i]);
-      var item = page.appendItem(decodeURIComponent(itemmd.link), 'video', {
+      var item = page.appendItem(decodeURIComponent(itemmd.link), 'playable', {
         title: decodeURIComponent(itemmd.title),
         icon: itemmd.icon ? decodeURIComponent(itemmd.icon) : null,
         description: new RichText(coloredStr('Link: ', orange) + decodeURIComponent(itemmd.link)),
