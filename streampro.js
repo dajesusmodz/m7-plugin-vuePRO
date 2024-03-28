@@ -1480,10 +1480,10 @@ new page.Route(plugin.id + ':onePlaylistStart', function(page) {
 new page.Route(plugin.id + ':start', function(page) {
   
   if (service.selectRegion == "Off") {page.metadata.icon = logo; setPageHeader(page, "StreamPRO")};
-  if (service.selectRegion == "United Kingdom") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/211144/1659455637_427352.jpeg'; setPageHeader(page, "StreamPRO - UK")};
-  if (service.selectRegion == "United States") {page.metadata.icon = 'https://visa.express/georgia/wp-content/uploads/sites/5/2022/09/1579293111_57-83.jpg'; setPageHeader(page, "StreamPRO - US")};
+  if (service.selectRegion == "United Kingdom") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/211144/1659455637_427352.jpeg'; setPageHeader(page, "StreamPRO - United Kingdom")};
+  if (service.selectRegion == "United States") {page.metadata.icon = 'https://visa.express/georgia/wp-content/uploads/sites/5/2022/09/1579293111_57-83.jpg'; setPageHeader(page, "StreamPRO - United States")};
   if (service.selectRegion == "France") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "StreamPRO - France")};
-  if (service.selectRegion == "Canada") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "StreamPRO - Canada")};
+  if (service.selectRegion == "Canada") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png'; setPageHeader(page, "StreamPRO - Canada")};
 
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
