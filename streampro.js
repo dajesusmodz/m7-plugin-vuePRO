@@ -400,26 +400,6 @@ new page.Route(plugin.id + ':ts:(.*):(.*)', function(page, url, title) {
   playUrl(page, unescape(url), plugin.id + ':ts:' + url + ':' + title, unescape(title), 'video/mp2t');
 });
 
-function fill_fav(page) {
-  var list = eval(store.list);
-
-  if (!list || !list.toString()) {
-    page.error('My Favorites is Empty');
-    return;
-  }
-  var pos = 0;
-  for (var i in list) {
-    var itemmd = JSON.parse(list[i]);
-    var item = page.appendItem(decodeURIComponent(itemmd.link), 'video', {
-      title: decodeURIComponent(itemmd.title),
-      icon: itemmd.icon ? decodeURIComponent(itemmd.icon) : null,
-      description: new RichText(coloredStr('Link: ', orange) + decodeURIComponent(itemmd.link)),
-    });
-    addOptionForRemovingFromMyFavorites(page, item, decodeURIComponent(itemmd.title), pos);
-    pos++;
-  }
-}
-
 // Favorites
 new page.Route(plugin.id + ':favorites', function(page) {
   setPageHeader(page, 'My Favorites');
@@ -1842,7 +1822,7 @@ new page.Route(plugin.id + ':myfavs', function(page) {
     var pos = 0;
     for (var i in list) {
       var itemmd = JSON.parse(list[i]);
-      var item = page.appendItem(decodeURIComponent(itemmd.link), 'playable', {
+      var item = page.appendItem(decodeURIComponent(itemmd.link), 'stream', {
         title: decodeURIComponent(itemmd.title),
         icon: itemmd.icon ? decodeURIComponent(itemmd.icon) : null,
         description: new RichText(coloredStr('Link: ', orange) + decodeURIComponent(itemmd.link)),
