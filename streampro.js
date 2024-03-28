@@ -1676,10 +1676,10 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''}); // 28/03/24
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABC23000056U.m3u8', 'playable', { title: 'Midsomer Murders', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABC23000056U_20240319T022645SQUARE.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CAAJ40000077N.m3u8', 'playable', { title: 'FilmRise Free Movies', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CAAJ40000077N_20240319T022621SQUARE.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABA3700002ML.m3u8', 'playable', { title: 'Baywatch', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABA3700002ML_20240116T231212SQUARE.png_20240116231213.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABC2300008J0.m3u8', 'playable', { title: 'MotorTrend FAST TV', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABC2300008J0_20230125T022433SQUARE.png_20230125022434.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABC23000056U.m3u8', 'video', { title: 'Midsomer Murders', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABC23000056U_20240319T022645SQUARE.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CAAJ40000077N.m3u8', 'video', { title: 'FilmRise Free Movies', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CAAJ40000077N_20240319T022621SQUARE.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABA3700002ML.m3u8', 'video', { title: 'Baywatch', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABA3700002ML_20240116T231212SQUARE.png_20240116231213.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABC2300008J0.m3u8', 'video', { title: 'MotorTrend FAST TV', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABC2300008J0_20230125T022433SQUARE.png_20230125022434.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:Canada', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
