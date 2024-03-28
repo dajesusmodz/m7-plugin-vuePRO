@@ -1727,6 +1727,16 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://r.mjh.nz/PlutoTV/60d359c98f262f00070c364e-alt.m3u8', 'playable', { title: 'Doctor Who', icon: 'https://images.pluto.tv/channels/60d359c98f262f00070c364e/colorLogoPNG.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:France', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
+  if (service.selectRegion == "Canada") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 28/03/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/5f8ed0720dc198000728f9d3-alt.m3u8', 'playable', { title: 'Wanted: Dead or Alive', icon: 'https://images.pluto.tv/channels/6089788de5c8410007808e26/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/5efbd39f8c4ce900075d7698-alt.m3u8', 'playable', { title: 'Star Trek', icon: 'https://images.pluto.tv/channels/5efbd39f8c4ce900075d7698/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/65653817c917a5000844bc30-alt.m3u8', 'playable', { title: 'Criminal Minds', icon: 'https://images.pluto.tv/channels/65653817c917a5000844bc30/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/5c6eeb85c05dfc257e5a50c4-alt.m3u8', 'playable', { title: 'Degrassi', icon: 'https://images.pluto.tv/channels/5c6eeb85c05dfc257e5a50c4/colorLogoPNG.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Canada', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
 
   // Rakuten TV
 
