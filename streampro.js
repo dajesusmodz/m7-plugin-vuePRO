@@ -75,10 +75,11 @@ function trim(s) {
 service.create(plugin.title, plugin.id + ':start', 'streampro', true, logo);
 
 settings.globalSettings(plugin.id, plugin.title, logo, plugin.synopsis);
-settings.createMultiOpt('selectRegion', 'Provider Region', [
+settings.createMultiOpt('selectRegion', 'Channel Region', [
           ['United States', 'United States'],
           ['United Kingdom', 'United Kingdom'],
           ['France', 'France'],
+          ['Canada', 'Canada'],
           ['Off', 'Off', true],
         ], function(v) {
         service.selectRegion = v;
@@ -1482,7 +1483,7 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "United Kingdom") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/211144/1659455637_427352.jpeg'; setPageHeader(page, "StreamPRO - UK")};
   if (service.selectRegion == "United States") {page.metadata.icon = 'https://visa.express/georgia/wp-content/uploads/sites/5/2022/09/1579293111_57-83.jpg'; setPageHeader(page, "StreamPRO - US")};
   if (service.selectRegion == "France") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "StreamPRO - France")};
-  if (service.selectRegion == "South - Africa") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "StreamPRO - France")};
+  if (service.selectRegion == "Canada") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "StreamPRO - Canada")};
 
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
@@ -1582,7 +1583,7 @@ new page.Route(plugin.id + ':start', function(page) {
   // ---------------------------------------------------------- STREAM PROVIDERS ---------------------------------------------------------- \\
 
   if (service.selectRegion == "Off") {
-    page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch Free-To-Air Content.'});
+    page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Channel Region:" to watch Free Channels.'});
   }
 
   if (service.selectRegion == "United States") {
@@ -1628,6 +1629,16 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('http://livetv.ktv.zone/13/play.m3u8', 'playable', { title: 'TFX', icon: 'https://upload.wikimedia.org/wikipedia/fr/thumb/8/83/TFX_logo_2018.svg/640px-TFX_logo_2018.svg.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_france.m3u8:France', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
+  if (service.selectRegion == "Canada") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 28/03/24
+    page.appendItem('https://bozztv.com/teleyupp1/teleup-ydcl2V1MVC/playlist.m3u8', 'playable', { title: 'CBC Toronto', icon: 'https://i.imgur.com/H5yEbxf.png', });
+    page.appendItem('https://i.mjh.nz/PlutoTV/62cbf398b8e02600071deda5-alt.m3u8', 'playable', { title: 'Global News Halifax', icon: 'https://i.imgur.com/IpfmG93.png', });
+    page.appendItem('http://152.89.62.111:8080/nXyAiP3DNp/QgOuvocpGv/223012', 'playable', { title: 'NTV', icon: 'https://i.imgur.com/b8W3Aah.png', });
+    page.appendItem('http://live.canadastartv.com:1935/canadastartv/canadastartv/playlist.m3u', 'playable', { title: 'Star TV', icon: 'https://i.imgur.com/Ap54LCC.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_canada.m3u8:Canada', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
 
   // Samsung TV Plus
 
@@ -1635,31 +1646,41 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''}); // 20/02/24
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBC1300009VM.m3u8', 'playable', { title: 'LOL! Network', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBC1300009VM_20240213T215421SQUARE.png_20240213215422.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBB1900002KF.m3u8', 'playable', { title: 'Real Americas Voice', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBB1900002KF_20221109T013546SQUARE.png_20221109013547.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USAJ26000015Y.m3u8', 'playable', { title: 'Drama Life', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USAJ26000015Y_20221109T013415SQUARE.png_20221109013415.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBD700012OA.m3u8', 'playable', { title: 'The Bob Ross Channel', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBD700012OA_20230627T215017SQUARE.png_20230627215018.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBC1300009VM.m3u8', 'video', { title: 'LOL! Network', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBC1300009VM_20240213T215421SQUARE.png_20240213215422.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBB1900002KF.m3u8', 'video', { title: 'Real Americas Voice', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBB1900002KF_20221109T013546SQUARE.png_20221109013547.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USAJ26000015Y.m3u8', 'video', { title: 'Drama Life', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USAJ26000015Y_20221109T013415SQUARE.png_20221109013415.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBD700012OA.m3u8', 'video', { title: 'The Bob Ross Channel', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBD700012OA_20230627T215017SQUARE.png_20230627215018.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''}); // 20/02/24
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100006XM.m3u8', 'playable', { title: 'Sky Mix', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100006XM_20231213T033116SQUARE.png_20231213033116.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100003J5.m3u8', 'playable', { title: 'UKTV Play - Laughs', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100003J5_20231213T104001SQUARE.png_20231213104002.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBA330003941.m3u8', 'playable', { title: 'Catfish', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBA330003941_20221215T020813SQUARE.png_20221215020814.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBC9000062G.m3u8', 'playable', { title: 'Come Dine With Me', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBC9000062G_20230809T053358SQUARE.png_20230809053358.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100006XM.m3u8', 'video', { title: 'Sky Mix', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100006XM_20231213T033116SQUARE.png_20231213033116.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBD3100003J5.m3u8', 'video', { title: 'UKTV Play - Laughs', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBD3100003J5_20231213T104001SQUARE.png_20231213104002.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBA330003941.m3u8', 'video', { title: 'Catfish', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBA330003941_20221215T020813SQUARE.png_20221215020814.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBC9000062G.m3u8', 'video', { title: 'Come Dine With Me', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBC9000062G_20230809T053358SQUARE.png_20230809053358.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20Kingdom', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''}); // 20/03/24
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBA3300035UK.m3u8', 'playable', { title: 'Juste Pour Rire', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBA3300035UK_20230412T042644SQUARE.png_20230412042645.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBC4700002RF.m3u8', 'playable', { title: 'Alerte à Malibu', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC4700002RF_20231213T103950SQUARE.png_20231213103951.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBC47000054S.m3u8', 'playable', { title: 'Les filles d-à côté', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC47000054S_20230510T043943SQUARE.png_20230510043944.png', });
-    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBD410000436.m3u8', 'playable', { title: 'Les secrets de nos régions', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD410000436_20231115T012249SQUARE.png_20231115012250.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBA3300035UK.m3u8', 'video', { title: 'Juste Pour Rire', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBA3300035UK_20230412T042644SQUARE.png_20230412042645.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBC4700002RF.m3u8', 'video', { title: 'Alerte à Malibu', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC4700002RF_20231213T103950SQUARE.png_20231213103951.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBC47000054S.m3u8', 'video', { title: 'Les filles d-à côté', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBC47000054S_20230510T043943SQUARE.png_20230510043944.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBD410000436.m3u8', 'video', { title: 'Les secrets de nos régions', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD410000436_20231115T012249SQUARE.png_20231115012250.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:France', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "Canada") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 28/03/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABC23000056U.m3u8', 'playable', { title: 'Midsomer Murders', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABC23000056U_20240319T022645SQUARE.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CAAJ40000077N.m3u8', 'playable', { title: 'FilmRise Free Movies', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CAAJ40000077N_20240319T022621SQUARE.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABA3700002ML.m3u8', 'playable', { title: 'Baywatch', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABA3700002ML_20240116T231212SQUARE.png_20240116231213.png', });
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABC2300008J0.m3u8', 'playable', { title: 'MotorTrend FAST TV', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABC2300008J0_20230125T022433SQUARE.png_20230125022434.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:Canada', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
   // Pluto TV
