@@ -1652,6 +1652,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBD700012OA.m3u8', 'video', { title: 'The Bob Ross Channel', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBD700012OA_20230627T215017SQUARE.png_20230627215018.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
     page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: ''});
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('', 'separator', {title: ''});
@@ -1662,6 +1663,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBA330003941.m3u8', 'video', { title: 'Catfish', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBA330003941_20221215T020813SQUARE.png_20221215020814.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/GBBC9000062G.m3u8', 'video', { title: 'Come Dine With Me', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/GBBC9000062G_20230809T053358SQUARE.png_20230809053358.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20Kingdom', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: ''});
   }
   if (service.selectRegion == "France") {
@@ -1674,6 +1676,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/FRBD410000436.m3u8', 'video', { title: 'Les secrets de nos régions', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/FRBD410000436_20231115T012249SQUARE.png_20231115012250.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:France', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
     page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: ''});
   }
   if (service.selectRegion == "Canada") {
     page.appendItem('', 'separator', {title: ''});
@@ -1684,6 +1687,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABA3700002ML.m3u8', 'video', { title: 'Baywatch', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABA3700002ML_20240116T231212SQUARE.png_20240116231213.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABC2300008J0.m3u8', 'video', { title: 'MotorTrend FAST TV', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABC2300008J0_20230125T022433SQUARE.png_20230125022434.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:Canada', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: ''});
   }
 
