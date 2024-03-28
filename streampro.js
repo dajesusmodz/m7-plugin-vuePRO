@@ -1822,7 +1822,7 @@ new page.Route(plugin.id + ':myfavs', function(page) {
     var pos = 0;
     for (var i in list) {
       var itemmd = JSON.parse(list[i]);
-      var item = page.appendItem(decodeURIComponent(itemmd.link), 'stream', {
+      var item = page.appendItem(decodeURIComponent(itemmd.link), 'video', {
         title: decodeURIComponent(itemmd.title),
         icon: itemmd.icon ? decodeURIComponent(itemmd.icon) : null,
         description: new RichText(coloredStr('Link: ', orange) + decodeURIComponent(itemmd.link)),
