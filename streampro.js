@@ -25,10 +25,10 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var page = require('showtime/page');
-var service = require('showtime/service');
-var settings = require('showtime/settings');
-var http = require('showtime/http');
+var page = require('movian/page');
+var service = require('movian/service');
+var settings = require('movian/settings');
+var http = require('movian/http');
 var string = require('native/string');
 var popup = require('native/popup');
 var io = require('native/io');
@@ -600,7 +600,7 @@ function addOptionToRemovePlaylist(page, item, title, pos) {
 function showPlaylist(page) {
   var playlist = eval(playlists.list);
 
-  popup.notify('Some channels may be Geo-Restricted.', 10);
+  popup.notify('Some content may be Geo-Restricted.', 10);
 
   var pos = 0;
   for (var i in playlist) {
@@ -873,7 +873,7 @@ new page.Route('m3u:(.*):(.*)', function(page, pl, title) {
   page.loading = false;
 });
 
-var XML = require('showtime/xml');
+var XML = require('movian/xml');
 
 function setColors(s) {
   if (!s) return '';
@@ -1482,6 +1482,7 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "United Kingdom") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/211144/1659455637_427352.jpeg'; setPageHeader(page, "StreamPRO - UK")};
   if (service.selectRegion == "United States") {page.metadata.icon = 'https://visa.express/georgia/wp-content/uploads/sites/5/2022/09/1579293111_57-83.jpg'; setPageHeader(page, "StreamPRO - US")};
   if (service.selectRegion == "France") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "StreamPRO - France")};
+  if (service.selectRegion == "South - Africa") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "StreamPRO - France")};
 
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
@@ -1579,7 +1580,7 @@ new page.Route(plugin.id + ':start', function(page) {
   }
 
   if (service.selectRegion == "Off") {
-    page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch TV Channels.'});
+    page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Provider Region:" to watch Free-To-Air Content.'});
   }
 
   if (service.selectRegion == "United States") {
@@ -1730,47 +1731,6 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:United States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
-  if (service.selectRegion == "United States") {
-    page.appendItem('', 'separator', {title: ' '});
-    page.appendItem('', 'separator', {title: 'Radio'});
-  }
-  if (service.selectRegion == "United Kingdom") {
-    page.appendItem('', 'separator', {title: ' '});
-    page.appendItem('', 'separator', {title: 'Radio'});
-  }
-  if (service.selectRegion == "France") {
-    page.appendItem('', 'separator', {title: ' '});
-    page.appendItem('', 'separator', {title: 'Radio'});
-  }
-
-  if (service.selectRegion == "United States") {
-    page.appendItem('', 'separator', {title: '  Radio-Placeholder1:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''});
-    page.appendItem('link1', 'playable', { title: 'COPS', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HORIZ.jpg', });
-    page.appendItem('link2', 'playable', { title: 'Pattrn', icon: 'https://image.xumo.com/v1/channels/channel/88883604/248x140.png?type=channelTile', });
-    page.appendItem('link3', 'playable', { title: 'HSN', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HSN_Redbox_248x140.jpg', });
-    page.appendItem('link4', 'playable', { title: 'Unbeaten', icon: 'https://d1hj79gnft8hfg.cloudfront.net/Unbeaten February 248x140.jpeg', });
-    page.appendItem('m3u:https%3A%2F%2Fwww.apsattv.com%2Fredbox.m3u:United States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
-  }
-  if (service.selectRegion == "United Kingdom") {
-    page.appendItem('', 'separator', {title: '  Radio-Placeholder1:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''});
-    page.appendItem('link1', 'playable', { title: 'COPS', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HORIZ.jpg', });
-    page.appendItem('link2', 'playable', { title: 'Pattrn', icon: 'https://image.xumo.com/v1/channels/channel/88883604/248x140.png?type=channelTile', });
-    page.appendItem('link3', 'playable', { title: 'HSN', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HSN_Redbox_248x140.jpg', });
-    page.appendItem('link4', 'playable', { title: 'Unbeaten', icon: 'https://d1hj79gnft8hfg.cloudfront.net/Unbeaten February 248x140.jpeg', });
-    page.appendItem('m3u:https%3A%2F%2Fwww.apsattv.com%2Fredbox.m3u:United States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
-  }
-  if (service.selectRegion == "France") {
-    page.appendItem('', 'separator', {title: '  Radio-Placeholder1:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''});
-    page.appendItem('link1', 'playable', { title: 'COPS', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HORIZ.jpg', });
-    page.appendItem('link2', 'playable', { title: 'Pattrn', icon: 'https://image.xumo.com/v1/channels/channel/88883604/248x140.png?type=channelTile', });
-    page.appendItem('link3', 'playable', { title: 'HSN', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HSN_Redbox_248x140.jpg', });
-    page.appendItem('link4', 'playable', { title: 'Unbeaten', icon: 'https://d1hj79gnft8hfg.cloudfront.net/Unbeaten February 248x140.jpeg', });
-    page.appendItem('m3u:https%3A%2F%2Fwww.apsattv.com%2Fredbox.m3u:United States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
-  }
-
   page.appendItem('', 'separator', {title: ''});
   page.appendItem('', 'separator', {title: 'User Playlists'});
   page.appendItem('', 'separator', {title: ''});
@@ -1790,7 +1750,7 @@ new page.Route(plugin.id + ':start', function(page) {
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
 
   page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  StreamPRO Version:  3.0 (Pre-Release)                                                                                                                                                                                                                                                        '});
+  page.appendItem('', 'separator', {title: '  StreamPRO Version:  3.0 (Pre-Release)                                                                                                                                                                                                                                                          '});
   page.appendItem('', 'separator', {title: ''});
 
   // menu to delete playlists
