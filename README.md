@@ -1,4 +1,4 @@
-A User-Friendly IPTV Player for Movian / M7 Media Center featuring a collection of 3rd Party Free-to-Air Stream Providers!
+A User-Friendly M3U/XML IPTV Player for Movian/M7 Media Center featuring a collection of 3rd Party Free-to-Air Content Providers!
 
 
 ![StreamPRO Logo](/logo.png)
