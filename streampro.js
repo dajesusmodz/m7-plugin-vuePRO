@@ -96,10 +96,10 @@ service.updatechannel = v;
 //settings.createString('acestreamIp', 'IP address of AceStream Proxy. Enter IP only.', '192.168.0.93', function(v) {
   //service.acestreamIp = v;
 //});
-settings.createBool('disableMyFavorites', 'Don\'t show My Favorites', false, function(v) {
+settings.createBool('disableMyFavorites', 'Hide My Favorites', false, function(v) {
   service.disableMyFavorites = v;
 });
-settings.createBool('debug', 'Enable debug logging', false, function(v) {
+settings.createBool('debug', 'Enable Debug Logging', false, function(v) {
   service.debug = v;
 });
 
