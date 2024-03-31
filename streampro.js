@@ -1584,10 +1584,6 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: 'Channels'});
   }
 
-  // LG Channels
-
-
-
   // Samsung TV Plus
 
   if (service.selectRegion == "United States") {
