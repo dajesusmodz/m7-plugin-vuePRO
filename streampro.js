@@ -1458,6 +1458,7 @@ new page.Route(plugin.id + ':onePlaylistStart', function(page) {
 
 // Start page
 new page.Route(plugin.id + ':start', function(page) {
+  page.loading = true;
   
   if (service.selectRegion == "Off") {page.metadata.icon = logo; setPageHeader(page, "StreamPRO")};
   if (service.selectRegion == "United Kingdom") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/211144/1659455637_427352.jpeg'; setPageHeader(page, "StreamPRO - United Kingdom")};
@@ -1583,46 +1584,9 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: 'Channels'});
   }
 
-  // Free-TV
+  // LG Channels
 
-  if (service.selectRegion == "United States") {
-    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''}); // 20/02/24
-    page.appendItem('https://buzzrota-web.amagi.tv/playlist480.m3u8', 'playable', { title: 'Buzz @', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Buzzr_logo.svg/768px-Buzzr_logo.svg.png', });
-    page.appendItem('https://bcovlive-a.akamaihd.net/5e531be3ed6c41229b2af2d9bffba88d/us-east-1/6183977686001/profile_1/chunklist.m3u8', 'playable', { title: 'Retro TV', icon: 'https://i.imgur.com/PNTYOgg.png', });
-    page.appendItem('https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8', 'playable', { title: 'ABC News', icon: 'https://i.imgur.com/nki2HDQ.png', });
-    page.appendItem('https://cinedigm.vo.llnwd.net/conssui/amagi_hls_data_xumo1234A-docuramaA/CDN/master.m3u8', 'playable', { title: 'Docurama', icon: 'https://i.imgur.com/bNg8mze.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_usa.m3u8:USA', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
-  }
-  if (service.selectRegion == "United Kingdom") {
-    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''}); // 20/02/24
-    page.appendItem('http://92.114.85.81:8000/play/a01g/index.m3u8', 'playable', { title: 'Channel 5', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Channel_5_%28UK%29_2016.svg/530px-Channel_5_%28UK%29_2016.svg.png', });
-    page.appendItem('http://92.114.85.81:8000/play/a00y/index.m3u8', 'playable', { title: 'ITV 1', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/ITV1_logo_%282022%29.svg/640px-ITV1_logo_%282022%29.svg.png', });
-    page.appendItem('http://92.114.85.80:8000/play/a03s', 'playable', { title: 'Challenge', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Challenge_%282016-.n.v.%29.png/640px-Challenge_%282016-.n.v.%29.png', });
-    page.appendItem('https://lightning-now70s-samsungnz.amagi.tv/playlist.m3u8', 'playable', { title: 'Now 70s', icon: 'https://i.imgur.com/qiCCX5X.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_uk.m3u8:UK', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
-  }
-  if (service.selectRegion == "France") {
-    page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''}); // 20/03/24
-    page.appendItem('https://s13.tntendirect.com/cherie25/live/playlist.m3u8', 'playable', { title: 'Chérie 25', icon: 'https://upload.wikimedia.org/wikipedia/fr/thumb/f/f0/Ch%C3%A9rie_25_logo_2015.svg/51px-Ch%C3%A9rie_25_logo_2015.svg.png', });
-    page.appendItem('https://ott.tv5monde.com/Content/HLS/Live/channel(europe)/index.m3u8', 'playable', { title: 'TV5 Monde Europe', icon: 'https://i.imgur.com/uPmwTo9.png', });
-    page.appendItem('http://livetv.ktv.zone/105/play.m3u8', 'playable', { title: 'France 3', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/France_3_2018.svg/899px-France_3_2018.svg.png', });
-    page.appendItem('http://livetv.ktv.zone/13/play.m3u8', 'playable', { title: 'TFX', icon: 'https://upload.wikimedia.org/wikipedia/fr/thumb/8/83/TFX_logo_2018.svg/640px-TFX_logo_2018.svg.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_france.m3u8:France', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
-  }
-  if (service.selectRegion == "Canada") {
-    page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''}); // 28/03/24
-    page.appendItem('https://bozztv.com/teleyupp1/teleup-ydcl2V1MVC/playlist.m3u8', 'playable', { title: 'CBC Toronto', icon: 'https://i.imgur.com/H5yEbxf.png', });
-    page.appendItem('https://i.mjh.nz/PlutoTV/62cbf398b8e02600071deda5-alt.m3u8', 'playable', { title: 'Global News Halifax', icon: 'https://i.imgur.com/IpfmG93.png', });
-    page.appendItem('http://152.89.62.111:8080/nXyAiP3DNp/QgOuvocpGv/223012', 'playable', { title: 'NTV', icon: 'https://i.imgur.com/b8W3Aah.png', });
-    page.appendItem('http://live.canadastartv.com:1935/canadastartv/canadastartv/playlist.m3u', 'playable', { title: 'Star TV', icon: 'https://i.imgur.com/Ap54LCC.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_canada.m3u8:Canada', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
-  }
+
 
   // Samsung TV Plus
 
@@ -1757,6 +1721,47 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FRoku%2Fall.m3u8:United States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
 
+  // Free-TV
+
+  if (service.selectRegion == "United States") {
+    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 20/02/24
+    page.appendItem('https://buzzrota-web.amagi.tv/playlist480.m3u8', 'playable', { title: 'Buzz @', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Buzzr_logo.svg/768px-Buzzr_logo.svg.png', });
+    page.appendItem('https://bcovlive-a.akamaihd.net/5e531be3ed6c41229b2af2d9bffba88d/us-east-1/6183977686001/profile_1/chunklist.m3u8', 'playable', { title: 'Retro TV', icon: 'https://i.imgur.com/PNTYOgg.png', });
+    page.appendItem('https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8', 'playable', { title: 'ABC News', icon: 'https://i.imgur.com/nki2HDQ.png', });
+    page.appendItem('https://cinedigm.vo.llnwd.net/conssui/amagi_hls_data_xumo1234A-docuramaA/CDN/master.m3u8', 'playable', { title: 'Docurama', icon: 'https://i.imgur.com/bNg8mze.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_usa.m3u8:USA', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "United Kingdom") {
+    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 20/02/24
+    page.appendItem('http://92.114.85.81:8000/play/a01g/index.m3u8', 'playable', { title: 'Channel 5', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Channel_5_%28UK%29_2016.svg/530px-Channel_5_%28UK%29_2016.svg.png', });
+    page.appendItem('http://92.114.85.81:8000/play/a00y/index.m3u8', 'playable', { title: 'ITV 1', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/ITV1_logo_%282022%29.svg/640px-ITV1_logo_%282022%29.svg.png', });
+    page.appendItem('http://92.114.85.80:8000/play/a03s', 'playable', { title: 'Challenge', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Challenge_%282016-.n.v.%29.png/640px-Challenge_%282016-.n.v.%29.png', });
+    page.appendItem('https://lightning-now70s-samsungnz.amagi.tv/playlist.m3u8', 'playable', { title: 'Now 70s', icon: 'https://i.imgur.com/qiCCX5X.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_uk.m3u8:UK', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "France") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 20/03/24
+    page.appendItem('https://s13.tntendirect.com/cherie25/live/playlist.m3u8', 'playable', { title: 'Chérie 25', icon: 'https://upload.wikimedia.org/wikipedia/fr/thumb/f/f0/Ch%C3%A9rie_25_logo_2015.svg/51px-Ch%C3%A9rie_25_logo_2015.svg.png', });
+    page.appendItem('https://ott.tv5monde.com/Content/HLS/Live/channel(europe)/index.m3u8', 'playable', { title: 'TV5 Monde Europe', icon: 'https://i.imgur.com/uPmwTo9.png', });
+    page.appendItem('http://livetv.ktv.zone/105/play.m3u8', 'playable', { title: 'France 3', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/France_3_2018.svg/899px-France_3_2018.svg.png', });
+    page.appendItem('http://livetv.ktv.zone/13/play.m3u8', 'playable', { title: 'TFX', icon: 'https://upload.wikimedia.org/wikipedia/fr/thumb/8/83/TFX_logo_2018.svg/640px-TFX_logo_2018.svg.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_france.m3u8:France', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "Canada") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Broadcast Television:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 28/03/24
+    page.appendItem('https://bozztv.com/teleyupp1/teleup-ydcl2V1MVC/playlist.m3u8', 'playable', { title: 'CBC Toronto', icon: 'https://i.imgur.com/H5yEbxf.png', });
+    page.appendItem('https://i.mjh.nz/PlutoTV/62cbf398b8e02600071deda5-alt.m3u8', 'playable', { title: 'Global News Halifax', icon: 'https://i.imgur.com/IpfmG93.png', });
+    page.appendItem('http://152.89.62.111:8080/nXyAiP3DNp/QgOuvocpGv/223012', 'playable', { title: 'NTV', icon: 'https://i.imgur.com/b8W3Aah.png', });
+    page.appendItem('http://live.canadastartv.com:1935/canadastartv/canadastartv/playlist.m3u', 'playable', { title: 'Star TV', icon: 'https://i.imgur.com/Ap54LCC.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_canada.m3u8:Canada', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+
   // User Playlists
 
   page.appendItem('', 'separator', {title: ''});
@@ -1798,6 +1803,7 @@ new page.Route(plugin.id + ':start', function(page) {
   });
 
   showPlaylist(page);
+  page.loading = false;
 });
 
 // My Favorites Page
