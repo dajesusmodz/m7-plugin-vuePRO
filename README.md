@@ -88,10 +88,8 @@
 **Coming Soon:**
 
 * Stirr:
-
 (United States)
 * Pluto TV:
-
 (Brazil)
 (Chile)
 (Germany)
@@ -102,7 +100,6 @@
 (Norway)
 (Sweden)
 * Samsung TV Plus:
-
 (Austria)
 (Switzerland)
 (Denmark)
@@ -111,7 +108,6 @@
 (Italy)
 (Korea)
 * FreeTV (OTA):
-
 (Brazil)
 (Chile)
 (Germany)
