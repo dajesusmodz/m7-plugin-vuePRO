@@ -150,4 +150,4 @@ If you'd like to submit a playlist file for review, please ensure that it adhere
 
 **6) Use the correct format** - the file format should be ".m3u" or ".m3u8" .
 
-7) Head on over to the discussions tab to submit a link! Thank you for your effort and contribution.
+**7)** Head on over to the discussions tab to submit a link! Thank you for your effort and contribution.
