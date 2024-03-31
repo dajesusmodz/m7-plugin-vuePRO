@@ -53,6 +53,7 @@
 
 5) Open the StreamPRO plugin from the Movian/M7 home screen.
 
+ ![Pre-Release Download (May Contain Bugs)](/unstable.zip?raw=true)
 
 **StreamPRO Currently Serves:**
 * United States 🇺🇸
@@ -131,8 +132,6 @@
 **Updating:**
 
 Use the built-in updater service by pressing the 'Check for Updates' button in the side menu from the Start Page. 
-
- ![Pre-Release Version - May Contain Bugs](/unstable.zip?raw=true)
 
 
 **Submitting Provider Links:**
