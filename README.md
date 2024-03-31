@@ -29,7 +29,7 @@ Installation / Use:
 6) Open the StreamPRO plugin from the Movian/M7 home screen.
 
 StreamPRO Currently Serves:
-* United States 🇺🇸 🇲🇽
+* United States 🇺🇸
 * United Kingdom 🇬🇧
 * France 🇫🇷
 * Canada 🇨🇦 (Pre-Release)
