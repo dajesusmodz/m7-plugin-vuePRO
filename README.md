@@ -28,11 +28,48 @@ Installation / Use:
 
 6) Open the StreamPRO plugin from the Movian/M7 home screen.
 
-StreamPRO Currently Serves (More Coming):
-* United States 🇺🇸
+StreamPRO Currently Serves:
+* United States 🇺🇸 🇲🇽
 * United Kingdom 🇬🇧
 * France 🇫🇷
-* Canada 🇨🇦 (Coming Soon)
+* Canada 🇨🇦 (Pre-Release)
+
+Providers:
+* Local TV / Terrestrial Television (Via FreeTV on GitHub) -
+(United States)
+(United Kingdom)
+(France)
+(Canada)
+* Pluto TV (Via i.mjh.nz) -
+(United States)
+(United Kingdom)
+(France)
+(Canada)
+* Rakuten TV (Via Apsattv) -
+(United Kingdom)
+* Samsung TV Plus (Via i.mjh.nz) -
+(United States)
+(United Kingdom)
+(France)
+(Canada)
+* Redbox TV (Via Apsattv) -
+(United States)
+* Roku (Via i.mjh.nz) -
+(United States)
+
+Coming Soon:
+* Stirr -
+(United States)
+* Pluto TV -
+(Brazil)
+(Castilla-leòn)
+(Estonia)
+(Denmark)
+(Democratic People's Republic of Korea)
+(Italy)
+(Mexico)
+(Norway)
+(Sweden)
 
 Available Languages:
 * English
