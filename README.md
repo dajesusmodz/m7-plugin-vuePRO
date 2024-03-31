@@ -84,10 +84,14 @@ Providers:
 * Roku (Via i.mjh.nz) -
 (United States)
 
+
 Coming Soon:
-* Stirr -
+
+* Stirr:
+
 (United States)
-* Pluto TV -
+* Pluto TV:
+
 (Brazil)
 (Chile)
 (Germany)
@@ -98,6 +102,7 @@ Coming Soon:
 (Norway)
 (Sweden)
 * Samsung TV Plus:
+
 (Austria)
 (Switzerland)
 (Denmark)
@@ -106,6 +111,7 @@ Coming Soon:
 (Italy)
 (Korea)
 * FreeTV (OTA):
+
 (Brazil)
 (Chile)
 (Germany)
@@ -120,7 +126,9 @@ Coming Soon:
 (India)
 (Korea)
 
+
 Available Languages:
+
 * English
 
 
@@ -129,3 +137,22 @@ Updating:
 Use the built-in updater service by pressing the 'Check for Updates' button in the side menu from the Start Page. 
 
  ![Pre-Release Version - May Contain Bugs](/unstable.zip?raw=true)
+
+
+Submitting Provider Links:
+
+If you'd like to submit a playlist file for review, please ensure that it adheres to the following criteria.
+
+1) No untidy grammar - Channels should use their correct official titles. For example, "Channel 4" should be written as such. No "Channel four" or "CHANNEL 4"
+
+2) No Duplicate Channels Without Good Reason - Unless there are regional variants or something similar, there should be no duplicate channels.
+
+3) No Dead / Shortcut Links - Playlists should be maintained and updated to a reasonable standard and links should remain online for as long as possible. No weekly/monthly link changes or tinyurl links. We accept direct links only. 
+
+4) Include Logos - At least 95% of your channels should include working logo links.
+
+5) Group Using Regions - If you intend on supporting multiple regions, please include them all in one file with their respective region names as the group titles as they are listed above in the Readme.
+
+6) Use the correct format - the file format should be ".m3u" or ".m3u8" .
+
+7) Head on over to the discussions tab to submit a link! Thank you for your effort and contribution.
