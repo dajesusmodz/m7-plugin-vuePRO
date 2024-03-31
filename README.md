@@ -105,7 +105,20 @@ Coming Soon:
 (India)
 (Italy)
 (Korea)
-
+* FreeTV (OTA):
+(Brazil)
+(Chile)
+(Germany)
+(Denmark)
+(Spain)
+(Italy)
+(Mexico)
+(Norway)
+(Sweden)
+(Austria)
+(Switzerland)
+(India)
+(Korea)
 
 Available Languages:
 * English
