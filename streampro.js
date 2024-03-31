@@ -1561,7 +1561,7 @@ new page.Route(plugin.id + ':start', function(page) {
     }
   }
 
-  // ---------------------------------------------------------- STREAM PROVIDERS ---------------------------------------------------------- \\
+  // ---------------------------------------------------------- CONTENT PROVIDERS ---------------------------------------------------------- \\
 
   if (service.selectRegion == "Off") {
     page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Channel Region:" to watch Free Channels.'});
