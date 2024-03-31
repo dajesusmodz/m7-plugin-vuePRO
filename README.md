@@ -15,18 +15,39 @@ Features:
 * Browse a range of Free-To-Air Stream Providers.
 * Stay up-to-date with the build-in update service.
 
-Installation / Use:
-1) Download streampro.zip from 'Releases' and save it to your USB drive.
+How to Install (Playstation 3):
+1) Download streampro.zip from 'Releases' and save it to your USB.
 
 2) Plug in your USB drive to the PS3 System.
 
 3) Open your USB drive in Movian and find StreamPRO.
 
-4) Select StreamPRO, and select Install.
+4) Open StreamPRO, and select Install.
 
-5) Select your region - Go to Movian > Settings > StreamPRO > 'Provider Region'.
+5) Select your region - Go to Movian > Settings > StreamPRO > 'Channel Region'.
 
 6) Open the StreamPRO plugin from the Movian/M7 home screen.
+
+How to Install (PC / Mac):
+1) Download streampro.zip from 'Releases'.
+
+2) Open Movian / M7, then click and drag streampro.zip onto the M7 window.
+
+5) Select your region - Go to Movian > Settings > StreamPRO > 'Channel Region'.
+
+6) Open the StreamPRO plugin from the Movian/M7 home screen.
+
+How to Install (Android):
+1) Download streampro.zip from 'Releases' to your downloads folder.
+
+2) Open Movian / M7 and navigate to your downloads folder.
+(You may need to give M7 'All File Access' to browse your internal file system.)
+
+3) Open StreamPRO and click Install.
+
+4) Select your region - Go to Movian > Settings > StreamPRO > 'Channel Region'.
+
+5) Open the StreamPRO plugin from the Movian/M7 home screen.
 
 StreamPRO Currently Serves:
 * United States 🇺🇸
