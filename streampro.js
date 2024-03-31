@@ -74,7 +74,7 @@ function trim(s) {
 
 service.create(plugin.title, plugin.id + ':start', 'streampro', true, logo);
 
-settings.globalSettings(plugin.id, StreamPRO Settings, logo, plugin.synopsis);
+settings.globalSettings(plugin.id, plugin.title, logo, plugin.synopsis);
 settings.createMultiOpt('selectRegion', 'Channel Region', [
           ['United States', 'United States'],
           ['United Kingdom', 'United Kingdom'],
