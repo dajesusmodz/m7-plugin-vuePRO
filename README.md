@@ -101,7 +101,6 @@ Coming Soon:
 
 * Samsung TV Plus:
 (Austria)
-(Canada)
 (Switzerland)
 (Denmark)
 (Spain)
