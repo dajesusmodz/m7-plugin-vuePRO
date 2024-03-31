@@ -87,7 +87,6 @@ Providers:
 Coming Soon:
 * Stirr -
 (United States)
-
 * Pluto TV -
 (Brazil)
 (Chile)
@@ -98,7 +97,6 @@ Coming Soon:
 (Mexico)
 (Norway)
 (Sweden)
-
 * Samsung TV Plus:
 (Austria)
 (Switzerland)
