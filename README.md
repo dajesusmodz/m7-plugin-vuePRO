@@ -9,11 +9,13 @@ Screenshots:
 ![StreamPRO Logo](/Screenshots/2.png)
 ![StreamPRO Logo](/Screenshots/3.png)
 
+
 Features:
 * Catalogue and watch streams from your own .m3u/.xml links.
 * Add your favourite channels to the Start Page.
 * Browse a range of Free-To-Air Stream Providers.
 * Stay up-to-date with the build-in update service.
+
 
 How to Install (Playstation 3):
 1) Download streampro.zip from 'Releases' and save it to your USB.
@@ -28,6 +30,7 @@ How to Install (Playstation 3):
 
 6) Open the StreamPRO plugin from the Movian/M7 home screen.
 
+
 How to Install (PC / Mac):
 1) Download streampro.zip from 'Releases'.
 
@@ -36,6 +39,7 @@ How to Install (PC / Mac):
 5) Select your region - Go to Movian > Settings > StreamPRO > 'Channel Region'.
 
 6) Open the StreamPRO plugin from the Movian/M7 home screen.
+
 
 How to Install (Android):
 1) Download streampro.zip from 'Releases' to your downloads folder.
@@ -49,11 +53,13 @@ How to Install (Android):
 
 5) Open the StreamPRO plugin from the Movian/M7 home screen.
 
+
 StreamPRO Currently Serves:
 * United States 🇺🇸
 * United Kingdom 🇬🇧
 * France 🇫🇷
 * Canada 🇨🇦 (Pre-Release)
+
 
 Providers:
 * Local TV / Terrestrial Television (Via FreeTV on GitHub) -
@@ -81,19 +87,32 @@ Providers:
 Coming Soon:
 * Stirr -
 (United States)
+
 * Pluto TV -
 (Brazil)
-(Castilla-leòn)
-(Estonia)
+(Chile)
+(Germany)
 (Denmark)
-(Democratic People's Republic of Korea)
+(Spain)
 (Italy)
 (Mexico)
 (Norway)
 (Sweden)
 
+* Samsung TV Plus:
+(Austria)
+(Canada)
+(Switzerland)
+(Denmark)
+(Spain)
+(India)
+(Italy)
+(Korea)
+
+
 Available Languages:
 * English
+
 
 Updating:
 
