@@ -61,7 +61,7 @@
 * France 🇫🇷
 * Canada 🇨🇦 (Pre-Release)
 * Brazil 🇧🇷 (Pre-Release)
-* Korea 🇰🇷 (Pre-Release)
+* South Korea 🇰🇷 (Pre-Release)
 
 
 **Providers:**
