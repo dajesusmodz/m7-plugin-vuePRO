@@ -1796,7 +1796,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('http://ye23.vip/z7z8/2021/kbs2020.php?id=1', 'playable', { title: 'KBS 1TV', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/KBS_1_logo.svg/512px-KBS_1_logo.svg.png', }); // 10/05/24
-    page.appendItem('http://123.254.72.24:1935/tvlive/livestream2/playlist.m3u8', 'playable', { title: 'MBC TV', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Munhwa_Broadcasting_Company.svg/512px-Munhwa_Broadcasting_Company.svg.png', }); // 10/05/24
+    page.appendItem('http://123.254.72.24:1935/tvlive/livestream2/playlist.m3u8', 'playable', { title: 'MBC TV', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/MBC_Drama_Plus_TV_Channel_Logo.png/1200px-MBC_Drama_Plus_TV_Channel_Logo.png', }); // 10/05/24
     page.appendItem('http://1.245.74.5:1935/live/tv/.m3u8', 'playable', { title: 'TJB TV', icon: 'https://i.imgur.com/q9Nx801.png', }); // 10/05/24
     page.appendItem('http://123.140.197.22/stream/1/play.m3u8', 'playable', { title: 'JIBS TV', icon: 'https://i.imgur.com/RVWpBoz.png', }); // 10/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_korea.m3u8:Korea', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 10/05/24
