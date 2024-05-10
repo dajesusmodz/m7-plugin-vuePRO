@@ -71,6 +71,7 @@
 (France)
 (Canada)
 (Brazil)
+(Korea)
 * Pluto TV (Via i.mjh.nz) -
 (United States)
 (United Kingdom)
@@ -82,6 +83,7 @@
 * Samsung TV Plus (Via i.mjh.nz) -
 (United States)
 (United Kingdom)
+(Korea)
 (France)
 (Canada)
 * Redbox TV (Via Apsattv) -
@@ -122,7 +124,6 @@
 (Austria)
 (Switzerland)
 (India)
-(Korea)
 
 
 **Available Languages:**
