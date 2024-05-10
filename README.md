@@ -69,6 +69,7 @@
 (United Kingdom)
 (France)
 (Canada)
+(Brazil)
 * Pluto TV (Via i.mjh.nz) -
 (United States)
 (United Kingdom)
@@ -110,7 +111,6 @@
 (Italy)
 (Korea)
 * FreeTV (OTA):
-(Brazil)
 (Chile)
 (Germany)
 (Denmark)

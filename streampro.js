@@ -1763,6 +1763,16 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('http://livetv.ktv.zone/13/play.m3u8', 'playable', { title: 'TFX', icon: 'https://upload.wikimedia.org/wikipedia/fr/thumb/8/83/TFX_logo_2018.svg/640px-TFX_logo_2018.svg.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_france.m3u8:France', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
+  if (service.selectRegion == "Brazil") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/chunklist.m3u8', 'playable', { title: 'ALL Sports Brasil', icon: 'https://i.imgur.com/wULpnYR.png', }); // 10/05/24
+    page.appendItem('https://596639ebdd89b.streamlock.net/8032/8032/index.m3u8', 'playable', { title: 'COM Brazil', icon: 'https://i.imgur.com/c8ztQnF.png', }); // 10/05/24
+    page.appendItem('https://tv.unisc.br/hls/test.m3u8', 'playable', { title: 'Futura', icon: 'https://upload.wikimedia.org/wikipedia/pt/d/d9/Logo-futura-horizontal.png', }); // 10/05/24
+    page.appendItem('http://rbc.directradios.com:1935/rbc/rbc/live.m3u8', 'playable', { title: 'RBC', icon: 'https://portal.rbc1.com.br/public/portal/img/layout/logorbc.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_brazil.m3u8:Brazil', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
   if (service.selectRegion == "Canada") {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
