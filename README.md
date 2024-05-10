@@ -65,31 +65,37 @@
 
 
 **Providers:**
-* Local TV / Terrestrial Television (Via FreeTV on GitHub) -
-(United States)
-(United Kingdom)
-(France)
-(Canada)
-(Brazil)
-(Korea)
-* Pluto TV (Via i.mjh.nz) -
-(United States)
-(United Kingdom)
-(France)
-(Canada)
-(Brazil)
-* Rakuten TV (Via Apsattv) -
-(United Kingdom)
-* Samsung TV Plus (Via i.mjh.nz) -
-(United States)
-(United Kingdom)
-(Korea)
-(France)
-(Canada)
-* Redbox TV (Via Apsattv) -
-(United States)
-* Roku (Via i.mjh.nz) -
-(United States)
+
+Local TV / Terrestrial Television (Via FreeTV on GitHub)
+* United States
+* United Kingdom
+* France
+* Canada
+* Brazil
+* Korea
+
+Pluto TV (Via i.mjh.nz)
+* United States
+* United Kingdom
+* France
+* Canada
+* Brazil
+
+Rakuten TV (Via Apsattv)
+* United Kingdom
+
+Samsung TV Plus (Via i.mjh.nz)
+* United States
+* United Kingdom
+* Korea
+* France
+* Canada
+
+Redbox TV (Via Apsattv)
+* United States
+
+Roku (Via i.mjh.nz)
+* United States
 
 
 **Coming Soon:**
