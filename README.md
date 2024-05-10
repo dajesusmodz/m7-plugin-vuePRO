@@ -59,9 +59,9 @@
 * United States 🇺🇸
 * United Kingdom 🇬🇧
 * France 🇫🇷
-* Canada 🇨🇦 (Pre-Release)
-* Brazil 🇧🇷 (Pre-Release)
-* South Korea 🇰🇷 (Pre-Release)
+* Canada 🇨🇦
+* Brazil 🇧🇷
+* South Korea 🇰🇷
 
 
 **Providers:**
