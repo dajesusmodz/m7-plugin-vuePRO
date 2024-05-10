@@ -60,6 +60,7 @@
 * United Kingdom 🇬🇧
 * France 🇫🇷
 * Canada 🇨🇦 (Pre-Release)
+* Brazil 🇧🇷 (Pre-Release)
 
 
 **Providers:**
@@ -73,6 +74,7 @@
 (United Kingdom)
 (France)
 (Canada)
+(Brazil)
 * Rakuten TV (Via Apsattv) -
 (United Kingdom)
 * Samsung TV Plus (Via i.mjh.nz) -
@@ -91,7 +93,6 @@
 * Stirr:
 (United States)
 * Pluto TV:
-(Brazil)
 (Chile)
 (Germany)
 (Denmark)

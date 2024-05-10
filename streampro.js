@@ -80,6 +80,7 @@ settings.createMultiOpt('selectRegion', 'Channel Region', [
           ['United Kingdom', 'United Kingdom'],
           ['France', 'France'],
           ['Canada', 'Canada'],
+          ['Brazil', 'Brazil'],
           ['Off', 'Off', true],
         ], function(v) {
         service.selectRegion = v;
@@ -1465,6 +1466,7 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "United States") {page.metadata.icon = 'https://visa.express/georgia/wp-content/uploads/sites/5/2022/09/1579293111_57-83.jpg'; setPageHeader(page, "StreamPRO - United States")};
   if (service.selectRegion == "France") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "StreamPRO - France")};
   if (service.selectRegion == "Canada") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png'; setPageHeader(page, "StreamPRO - Canada")};
+  if (service.selectRegion == "Brazil") {page.metadata.icon = 'https://naurok-test2.nyc3.digitaloceanspaces.com/uploads/test/2225640/1287696/204682_1644400839.png'; setPageHeader(page, "StreamPRO - Brazil")};
 
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
@@ -1583,6 +1585,10 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: ' '});
     page.appendItem('', 'separator', {title: 'Channels'});
   }
+  if (service.selectRegion == "Brazil") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
 
   // Samsung TV Plus
 
@@ -1646,6 +1652,16 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://r.mjh.nz/PlutoTV/5f99e24636d67d0007a94e6d-alt.m3u8', 'playable', { title: 'Comedy Central - Animation', icon: 'https://images.pluto.tv/channels/5f99e24636d67d0007a94e6d/colorLogoPNG.png', });
     page.appendItem('https://r.mjh.nz/PlutoTV/554158e864526b29254ff105-alt.m3u8', 'playable', { title: 'FailArmy', icon: 'https://images.pluto.tv/channels/554158e864526b29254ff105/colorLogoPNG.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:USA', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "Brazil") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://r.mjh.nz/PlutoTV/64f6180130ab3300083d896b-alt.m3u8', 'playable', { title: 'PFL MMA', icon: 'https://images.pluto.tv/channels/64f6180130ab3300083d896b/colorLogoPNG.png', }); // 10/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/65df713dec9fda0008b7a81d-alt.m3u8', 'playable', { title: 'South Park: Coleção Kyle', icon: 'https://images.pluto.tv/channels/65df713dec9fda0008b7a81d/colorLogoPNG.png', }); // 10/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/5f6df6293a12e10007017396-alt.m3u8', 'playable', { title: 'A vida moderna de Rocko', icon: 'https://images.pluto.tv/channels/5f6df6293a12e10007017396/colorLogoPNG.png', }); // 10/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/6048fc47a44e540007745d2b-alt.m3u8', 'playable', { title: 'RedeTV!', icon: 'https://images.pluto.tv/channels/6048fc47a44e540007745d2b/colorLogoPNG.png', }); // 10/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Brazil', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 10/05/24
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('', 'separator', {title: ''});
