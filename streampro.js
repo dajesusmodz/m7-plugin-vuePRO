@@ -81,6 +81,7 @@ settings.createMultiOpt('selectRegion', 'Channel Region', [
           ['France', 'France'],
           ['Canada', 'Canada'],
           ['Brazil', 'Brazil'],
+          ['South Korea', 'South Korea'],
           ['Off', 'Off', true],
         ], function(v) {
         service.selectRegion = v;
@@ -1467,6 +1468,7 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "France") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "StreamPRO - France")};
   if (service.selectRegion == "Canada") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png'; setPageHeader(page, "StreamPRO - Canada")};
   if (service.selectRegion == "Brazil") {page.metadata.icon = 'https://naurok-test2.nyc3.digitaloceanspaces.com/uploads/test/2225640/1287696/204682_1644400839.png'; setPageHeader(page, "StreamPRO - Brazil")};
+  if (service.selectRegion == "South Korea") {page.metadata.icon = 'https://logodix.com/logo/34000.jpg'; setPageHeader(page, "StreamPRO - South Korea")};
 
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
@@ -1589,6 +1591,10 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: ' '});
     page.appendItem('', 'separator', {title: 'Channels'});
   }
+  if (service.selectRegion == "South Korea") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
 
   // Samsung TV Plus
 
@@ -1601,6 +1607,18 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/USAJ26000015Y.m3u8', 'video', { title: 'Drama Life', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USAJ26000015Y_20221109T013415SQUARE.png_20221109013415.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/USBD700012OA.m3u8', 'video', { title: 'The Bob Ross Channel', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/USBD700012OA_20230627T215017SQUARE.png_20230627215018.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:United%20States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "South Korea") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/KRBC3200023BG.m3u8', 'video', { title: 'Mnet 연애 리얼리티 모아보기', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/KRBC3200023BG_20240319T050755SQUARE.png', }); // 10/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/KR700003L9.m3u8', 'video', { title: 'KBS 추노', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/KR700003L9_20240319T050752SQUARE.png', }); // 10/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/KRBD2700002IV.m3u8', 'video', { title: 'TV조선 골프왕', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/KRBD2700002IV_20230913T010401SQUARE.png_20230913010402.png', }); // 10/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/KR4000020F.m3u8', 'video', { title: 'JTBC 내 아이디는 강남미인', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/KR4000020F_20240508T020759SQUARE.png', }); // 10/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:South%20Korea', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 10/05/24
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: ''});
   }

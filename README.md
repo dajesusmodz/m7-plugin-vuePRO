@@ -61,6 +61,7 @@
 * France 🇫🇷
 * Canada 🇨🇦 (Pre-Release)
 * Brazil 🇧🇷 (Pre-Release)
+* Korea 🇰🇷 (Pre-Release)
 
 
 **Providers:**
@@ -109,7 +110,6 @@
 (Spain)
 (India)
 (Italy)
-(Korea)
 * FreeTV (OTA):
 (Chile)
 (Germany)
