@@ -1722,43 +1722,27 @@ new page.Route(plugin.id + ':start', function(page) {
   }
   if (service.selectRegion == "Brazil") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Ads:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''});
-    page.appendItem('https://r.mjh.nz/PlutoTV/64f6180130ab3300083d896b-alt.m3u8', 'playable', { title: 'PFL MMA', icon: 'https://images.pluto.tv/channels/64f6180130ab3300083d896b/colorLogoPNG.png', }); // 10/05/24
-    page.appendItem('https://r.mjh.nz/PlutoTV/65df713dec9fda0008b7a81d-alt.m3u8', 'playable', { title: 'South Park: Coleção Kyle', icon: 'https://images.pluto.tv/channels/65df713dec9fda0008b7a81d/colorLogoPNG.png', }); // 10/05/24
-    page.appendItem('https://r.mjh.nz/PlutoTV/5f6df6293a12e10007017396-alt.m3u8', 'playable', { title: 'A vida moderna de Rocko', icon: 'https://images.pluto.tv/channels/5f6df6293a12e10007017396/colorLogoPNG.png', }); // 10/05/24
-    page.appendItem('https://r.mjh.nz/PlutoTV/6048fc47a44e540007745d2b-alt.m3u8', 'playable', { title: 'RedeTV!', icon: 'https://images.pluto.tv/channels/6048fc47a44e540007745d2b/colorLogoPNG.png', }); // 10/05/24
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Brazil', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 10/05/24
+    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 20/02/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { title: 'Smiling Tigers - Boat Ride (Single)', icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Ads:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''}); // 20/02/24
-    page.appendItem('https://r.mjh.nz/PlutoTV/64ff1d3d3a0d700008b110e9-alt.m3u8', 'playable', { title: 'Robot Wars by MECH+', icon: 'https://images.pluto.tv/channels/64ff1d3d3a0d700008b110e9/colorLogoPNG.png', });
-    page.appendItem('https://r.mjh.nz/PlutoTV/625567abd664ea0007605f34-alt.m3u8', 'playable', { title: 'Worlds Greatest', icon: 'https://images.pluto.tv/channels/625567abd664ea0007605f34/colorLogoPNG.png', });
-    page.appendItem('https://r.mjh.nz/PlutoTV/62da7819be7a97000878eb92-alt.m3u8', 'playable', { title: 'CSI - Miami', icon: 'https://images.pluto.tv/channels/62da7819be7a97000878eb92/colorLogoPNG.png', });
-    page.appendItem('https://r.mjh.nz/PlutoTV/64edf6eaa7ec0d000812f58c-alt.m3u8', 'playable', { title: 'South Park', icon: 'https://images.pluto.tv/channels/64edf6eaa7ec0d000812f58c/colorLogoPNG.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Great%20Britain', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { title: 'Smiling Tigers - Boat Ride (Single)', icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
   }
   if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Ads:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''}); // 20/03/24
-    page.appendItem('https://r.mjh.nz/PlutoTV/5f8ed0720dc198000728f9d3-alt.m3u8', 'playable', { title: 'People are Awesome', icon: 'https://images.pluto.tv/channels/5f8ed0720dc198000728f9d3/colorLogoPNG.png', });
-    page.appendItem('https://r.mjh.nz/PlutoTV/5f8edb6df1ebb800072edf10-alt.m3u8', 'playable', { title: 'Les Nouveaux Detectives', icon: 'https://images.pluto.tv/channels/5f8edb6df1ebb800072edf10/colorLogoPNG.png', });
-    page.appendItem('https://r.mjh.nz/PlutoTV/63921a1bf76e7d0007c998a6-alt.m3u8', 'playable', { title: 'Enquêtes de Choc', icon: 'https://images.pluto.tv/channels/63921a1bf76e7d0007c998a6/colorLogoPNG.png', });
-    page.appendItem('https://r.mjh.nz/PlutoTV/60d359c98f262f00070c364e-alt.m3u8', 'playable', { title: 'Doctor Who', icon: 'https://images.pluto.tv/channels/60d359c98f262f00070c364e/colorLogoPNG.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:France', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 20/02/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { title: 'Smiling Tigers - Boat Ride (Single)', icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
   }
   if (service.selectRegion == "Canada") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Ads:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''}); // 28/03/24
-    page.appendItem('https://r.mjh.nz/PlutoTV/5f8ed0720dc198000728f9d3-alt.m3u8', 'playable', { title: 'Wanted: Dead or Alive', icon: 'https://images.pluto.tv/channels/6089788de5c8410007808e26/colorLogoPNG.png', });
-    page.appendItem('https://r.mjh.nz/PlutoTV/5efbd39f8c4ce900075d7698-alt.m3u8', 'playable', { title: 'Star Trek', icon: 'https://images.pluto.tv/channels/5efbd39f8c4ce900075d7698/colorLogoPNG.png', });
-    page.appendItem('https://r.mjh.nz/PlutoTV/65653817c917a5000844bc30-alt.m3u8', 'playable', { title: 'Criminal Minds', icon: 'https://images.pluto.tv/channels/65653817c917a5000844bc30/colorLogoPNG.png', });
-    page.appendItem('https://r.mjh.nz/PlutoTV/5c6eeb85c05dfc257e5a50c4-alt.m3u8', 'playable', { title: 'Degrassi', icon: 'https://images.pluto.tv/channels/5c6eeb85c05dfc257e5a50c4/colorLogoPNG.png', });
-    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Canada', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 20/02/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { title: 'Smiling Tigers - Boat Ride (Single)', icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
   }
 
   // Rakuten TV
