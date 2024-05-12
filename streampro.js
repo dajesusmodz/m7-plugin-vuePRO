@@ -82,6 +82,7 @@ settings.createMultiOpt('selectRegion', 'Channel Region', [
           ['Canada', 'Canada'],
           ['Brazil', 'Brazil'],
           ['South Korea', 'South Korea'],
+          ['Mexico', 'Mexico'],
           ['Off', 'Off', true],
         ], function(v) {
         service.selectRegion = v;
@@ -1469,6 +1470,7 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "Canada") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png'; setPageHeader(page, "StreamPRO - Canada")};
   if (service.selectRegion == "Brazil") {page.metadata.icon = 'https://naurok-test2.nyc3.digitaloceanspaces.com/uploads/test/2225640/1287696/204682_1644400839.png'; setPageHeader(page, "StreamPRO - Brazil")};
   if (service.selectRegion == "South Korea") {page.metadata.icon = 'https://logodix.com/logo/34000.jpg'; setPageHeader(page, "StreamPRO - South Korea")};
+  if (service.selectRegion == "Mexico") {page.metadata.icon = 'https://images.squarespace-cdn.com/content/v1/5223336ee4b02da2a90b23ec/1472608876004-7LB93W4U82JDKEQAOU76/Flag_of_Mexico_1917.png'; setPageHeader(page, "StreamPRO - Mexico")};
 
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
@@ -1595,6 +1597,10 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: ' '});
     page.appendItem('', 'separator', {title: 'Channels'});
   }
+  if (service.selectRegion == "Mexico") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
 
   // Samsung TV Plus
 
@@ -1711,6 +1717,16 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://r.mjh.nz/PlutoTV/5c6eeb85c05dfc257e5a50c4-alt.m3u8', 'playable', { title: 'Degrassi', icon: 'https://images.pluto.tv/channels/5c6eeb85c05dfc257e5a50c4/colorLogoPNG.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Canada', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
+  if (service.selectRegion == "Mexico") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://r.mjh.nz/PlutoTV/5e793a7cfbdf780007f7eb75-alt.m3u8', 'playable', { title: 'Descubriendo Pluto TV', icon: 'https://images.pluto.tv/channels/5e793a7cfbdf780007f7eb75/colorLogoPNG.png', }); // 12/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/63eb947c4e83e70008ab877b-alt.m3u8', 'playable', { title: 'NCIS', icon: 'https://images.pluto.tv/channels/63eb947c4e83e70008ab877b/colorLogoPNG.png', }); // 12/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/656e465b9d5ac400083d2db9-alt.m3u8', 'playable', { title: 'Franky Mostro', icon: 'https://images.pluto.tv/channels/656e465b9d5ac400083d2db9/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/62d08af527ce19000731eaa0-alt.m3u8', 'playable', { title: 'La Familia del Barrio', icon: 'https://images.pluto.tv/channels/62d08af527ce19000731eaa0/colorLogoPNG.png', });
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Mexico', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
 
   // Ads
 
@@ -1769,6 +1785,19 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://qvchsn-hsn-2-us.redbox.wurl.tv/playlist.m3u8', 'playable', { title: 'HSN', icon: 'https://images.redbox.com/images/reels/fltv/Stylized/HSN_Redbox_248x140.jpg', });
     page.appendItem('https://inverleigh-unbeaten-redbox.amagi.tv/hls/amagi_hls_data_redboxAAA-inverleigh-unbeaten-redbox/CDN/playlist.m3u8?p=Redbox&deviceid=&is_lat=', 'playable', { title: 'Unbeaten', icon: 'https://d1hj79gnft8hfg.cloudfront.net/Unbeaten February 248x140.jpeg', });
     page.appendItem('m3u:https%3A%2F%2Fwww.apsattv.com%2Fredbox.m3u:United States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+
+  // Stirr
+
+  if (service.selectRegion == "United States") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Stirr:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://dai.google.com/linear/hls/event/4aD5IJf0QgKUJwPbq2fngg/master.m3u8', 'playable', { title: 'STIRR | National', icon: 'https://i.mjh.nz/Stirr/.images/86de280abc.png', }); // 12/05/24
+    page.appendItem('https://dai.google.com/linear/hls/event/e1QjWFRNSR2YFYGsPbkfgg/master.m3u8', 'playable', { title: 'CHARGE', icon: 'https://i.mjh.nz/Stirr/.images/8b4d0a3429.png', }); // 12/05/24
+    page.appendItem('https://dai.google.com/linear/hls/event/VMzvtHhOQdOAzbV_hQKQbQ/master.m3u8', 'playable', { title: 'So...Real', icon: 'https://i.mjh.nz/Stirr/.images/9d37cac4a9.png', }); // 12/05/24
+    page.appendItem('https://dai.google.com/linear/hls/event/xC8SDBfbTKCTCa20kFJQXQ/master.m3u8', 'playable', { title: 'LiveXLive', icon: 'https://i.mjh.nz/Stirr/.images/4fabd4d858.png', }); // 12/05/24
+    page.appendItem('m3u:https%3A%2F%2Fi.mjh.nz%2FStirr%2Fall.m3u8:United States', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 12/05/24
   }
 
   // Roku
@@ -1843,6 +1872,16 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('http://152.89.62.111:8080/nXyAiP3DNp/QgOuvocpGv/223012', 'playable', { title: 'NTV', icon: 'https://i.imgur.com/b8W3Aah.png', });
     page.appendItem('http://live.canadastartv.com:1935/canadastartv/canadastartv/playlist.m3u', 'playable', { title: 'Star TV', icon: 'https://i.imgur.com/Ap54LCC.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_canada.m3u8:Canada', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "Mexico") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('http://cls.alcarria.tv/live/alcarriatv-livestream.m3u8', 'playable', { title: 'Alcarria TV', icon: 'https://i.imgur.com/zNSuxVZ.jpg', }); // 10/05/24
+    page.appendItem('http://wms30.tecnoxia.com/soelvi/abr_soelvi/playlist.m3u8', 'playable', { title: 'Hipodromo de las Americas', icon: 'https://i.imgur.com/wc8MlGw.png', }); // 10/05/24
+    page.appendItem('http://dcunilive21-lh.akamaihd.net/i/dclive_1@59479/index_1_av-p.m3u8', 'playable', { title: 'MVM NoticiasⓈ', icon: 'https://i.imgur.com/dhLXN9n.png', }); // 10/05/24
+    page.appendItem('http://wowzacontrol.com:1936/stream56/stream56/playlist.m3u8', 'playable', { title: 'RCG 3 Saltillo', icon: 'https://i.imgur.com/NefH5qZ.png', }); // 10/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_mexico.m3u8:Mexico', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 10/05/24
   }
 
   // User Playlists

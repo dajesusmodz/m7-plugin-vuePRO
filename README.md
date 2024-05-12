@@ -97,11 +97,12 @@ Redbox TV (Via Apsattv)
 Roku (Via i.mjh.nz)
 * United States
 
+Stirr (Via i.mjh.nz)
+* United States (Pre-Release)
+
 
 **Coming Soon:**
 
-* Stirr:
-(United States)
 * Pluto TV:
 (Chile)
 (Germany)
