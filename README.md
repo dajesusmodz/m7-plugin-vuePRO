@@ -73,6 +73,7 @@ Local TV / Terrestrial Television (Via FreeTV on GitHub)
 * Canada
 * Brazil
 * Korea
+* Mexico (Pre-Release)
 
 Pluto TV (Via i.mjh.nz)
 * United States
@@ -80,6 +81,7 @@ Pluto TV (Via i.mjh.nz)
 * France
 * Canada
 * Brazil
+* Mexico (Pre-Release)
 
 Rakuten TV (Via Apsattv)
 * United Kingdom
@@ -109,7 +111,6 @@ Stirr (Via i.mjh.nz)
 (Denmark)
 (Spain)
 (Italy)
-(Mexico)
 (Norway)
 (Sweden)
 * Samsung TV Plus:
@@ -125,7 +126,6 @@ Stirr (Via i.mjh.nz)
 (Denmark)
 (Spain)
 (Italy)
-(Mexico)
 (Norway)
 (Sweden)
 (Austria)
