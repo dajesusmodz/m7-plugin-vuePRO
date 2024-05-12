@@ -83,6 +83,7 @@ settings.createMultiOpt('selectRegion', 'Channel Region', [
           ['Brazil', 'Brazil'],
           ['South Korea', 'South Korea'],
           ['Mexico', 'Mexico'],
+          ['Chile', 'Chile'],
           ['Off', 'Off', true],
         ], function(v) {
         service.selectRegion = v;
@@ -1471,6 +1472,7 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "Brazil") {page.metadata.icon = 'https://naurok-test2.nyc3.digitaloceanspaces.com/uploads/test/2225640/1287696/204682_1644400839.png'; setPageHeader(page, "StreamPRO - Brazil")};
   if (service.selectRegion == "South Korea") {page.metadata.icon = 'https://logodix.com/logo/34000.jpg'; setPageHeader(page, "StreamPRO - South Korea")};
   if (service.selectRegion == "Mexico") {page.metadata.icon = 'https://images.squarespace-cdn.com/content/v1/5223336ee4b02da2a90b23ec/1472608876004-7LB93W4U82JDKEQAOU76/Flag_of_Mexico_1917.png'; setPageHeader(page, "StreamPRO - Mexico")};
+  if (service.selectRegion == "Chile") {page.metadata.icon = 'https://i.ytimg.com/vi/7D1vZAXk1xI/maxresdefault.jpg'; setPageHeader(page, "StreamPRO - Chile")};
 
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
@@ -1723,9 +1725,19 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('https://r.mjh.nz/PlutoTV/5e793a7cfbdf780007f7eb75-alt.m3u8', 'playable', { title: 'Descubriendo Pluto TV', icon: 'https://images.pluto.tv/channels/5e793a7cfbdf780007f7eb75/colorLogoPNG.png', }); // 12/05/24
     page.appendItem('https://r.mjh.nz/PlutoTV/63eb947c4e83e70008ab877b-alt.m3u8', 'playable', { title: 'NCIS', icon: 'https://images.pluto.tv/channels/63eb947c4e83e70008ab877b/colorLogoPNG.png', }); // 12/05/24
-    page.appendItem('https://r.mjh.nz/PlutoTV/656e465b9d5ac400083d2db9-alt.m3u8', 'playable', { title: 'Franky Mostro', icon: 'https://images.pluto.tv/channels/656e465b9d5ac400083d2db9/colorLogoPNG.png', });
-    page.appendItem('https://r.mjh.nz/PlutoTV/62d08af527ce19000731eaa0-alt.m3u8', 'playable', { title: 'La Familia del Barrio', icon: 'https://images.pluto.tv/channels/62d08af527ce19000731eaa0/colorLogoPNG.png', });
+    page.appendItem('https://r.mjh.nz/PlutoTV/656e465b9d5ac400083d2db9-alt.m3u8', 'playable', { title: 'Franky Mostro', icon: 'https://images.pluto.tv/channels/656e465b9d5ac400083d2db9/colorLogoPNG.png', }); // 12/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/62d08af527ce19000731eaa0-alt.m3u8', 'playable', { title: 'La Familia del Barrio', icon: 'https://images.pluto.tv/channels/62d08af527ce19000731eaa0/colorLogoPNG.png', }); // 12/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Mexico', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+  }
+  if (service.selectRegion == "Chile") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://r.mjh.nz/PlutoTV/625461ef01f27a0007976ad1-alt.m3u8', 'playable', { title: 'MTV Catfish', icon: 'https://images.pluto.tv/channels/625461ef01f27a0007976ad1/colorLogoPNG.png', }); // 12/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/63eb947c4e83e70008ab877b-alt.m3u8', 'playable', { title: 'NCIS', icon: 'https://images.pluto.tv/channels/63eb947c4e83e70008ab877b/colorLogoPNG.png', }); // 12/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/5dd85eac039bba0009e86d1d-alt.m3u8', 'playable', { title: 'Pluto TV Naturaleza', icon: 'https://images.pluto.tv/channels/5dd85eac039bba0009e86d1d/colorLogoPNG.png', }); // 12/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/5ea71d48af1d0b0007d837f4-alt.m3u8', 'playable', { title: 'The New Detectives', icon: 'https://images.pluto.tv/channels/5ea71d48af1d0b0007d837f4/colorLogoPNG.png', }); // 12/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Chile', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 12/05/24
   }
 
   // Ads
@@ -1733,32 +1745,51 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "United States") {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''}); // 20/02/24
-    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { title: 'Smiling Tigers - Boat Ride (Single)', icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('', 'separator', {title: ''}); // 12/05/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
   if (service.selectRegion == "Brazil") {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''}); // 20/02/24
-    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { title: 'Smiling Tigers - Boat Ride (Single)', icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('', 'separator', {title: ''}); // 12/05/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''}); // 20/02/24
-    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { title: 'Smiling Tigers - Boat Ride (Single)', icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('', 'separator', {title: ''}); // 12/05/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
   if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''}); // 20/02/24
-    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { title: 'Smiling Tigers - Boat Ride (Single)', icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('', 'separator', {title: ''}); // 12/05/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
   if (service.selectRegion == "Canada") {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
-    page.appendItem('', 'separator', {title: ''}); // 20/02/24
-    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { title: 'Smiling Tigers - Boat Ride (Single)', icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('', 'separator', {title: ''}); // 12/05/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
+  }
+  if (service.selectRegion == "Mexico") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 12/05/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
+  }
+  if (service.selectRegion == "Chile") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 12/05/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
 
   // Rakuten TV
@@ -1877,13 +1908,22 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('http://cls.alcarria.tv/live/alcarriatv-livestream.m3u8', 'playable', { title: 'Alcarria TV', icon: 'https://i.imgur.com/zNSuxVZ.jpg', }); // 10/05/24
-    page.appendItem('http://wms30.tecnoxia.com/soelvi/abr_soelvi/playlist.m3u8', 'playable', { title: 'Hipodromo de las Americas', icon: 'https://i.imgur.com/wc8MlGw.png', }); // 10/05/24
-    page.appendItem('http://dcunilive21-lh.akamaihd.net/i/dclive_1@59479/index_1_av-p.m3u8', 'playable', { title: 'MVM NoticiasⓈ', icon: 'https://i.imgur.com/dhLXN9n.png', }); // 10/05/24
-    page.appendItem('http://wowzacontrol.com:1936/stream56/stream56/playlist.m3u8', 'playable', { title: 'RCG 3 Saltillo', icon: 'https://i.imgur.com/NefH5qZ.png', }); // 10/05/24
+    page.appendItem('http://cls.alcarria.tv/live/alcarriatv-livestream.m3u8', 'playable', { title: 'Alcarria TV', icon: 'https://i.imgur.com/zNSuxVZ.jpg', }); // 12/05/24
+    page.appendItem('http://wms30.tecnoxia.com/soelvi/abr_soelvi/playlist.m3u8', 'playable', { title: 'Hipodromo de las Americas', icon: 'https://i.imgur.com/wc8MlGw.png', }); // 12/05/24
+    page.appendItem('http://dcunilive21-lh.akamaihd.net/i/dclive_1@59479/index_1_av-p.m3u8', 'playable', { title: 'MVM NoticiasⓈ', icon: 'https://i.imgur.com/dhLXN9n.png', }); // 12/05/24
+    page.appendItem('http://wowzacontrol.com:1936/stream56/stream56/playlist.m3u8', 'playable', { title: 'RCG 3 Saltillo', icon: 'https://i.imgur.com/NefH5qZ.png', }); // 12/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_mexico.m3u8:Mexico', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 10/05/24
   }
-
+  if (service.selectRegion == "Chile") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://unlimited1-cl-isp.dps.live/ucvtv2/ucvtv2.smil/playlist.m3u8', 'playable', { title: 'UCV Televisión', icon: 'https://i.imgur.com/2VL4Pts.png', }); // 12/05/24
+    page.appendItem('https://sktv-forwarders.7m.pl/get.php?x=TVN', 'playable', { title: 'TVN Ⓖ', icon: 'https://i.imgur.com/WoN1dai.png', }); // 12/05/24
+    page.appendItem('https://mdstrm.com/live-stream-playlist/5c0e8b19e4c87f3f2d3e6a59.m3u8', 'playable', { title: 'TV+ Ⓖ', icon: 'https://i.imgur.com/NtuZIEJ.png', }); // 12/05/24
+    page.appendItem('https://origin.dpsgo.com/ssai/event/GI-9cp_bT8KcerLpZwkuhw/master.m3u8', 'playable', { title: '13 Cultura', icon: 'https://i.imgur.com/49QkKWv.png', }); // 12/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_chile.m3u8:Chile', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 12/05/24
+  }
   // User Playlists
 
   page.appendItem('', 'separator', {title: ''});
