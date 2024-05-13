@@ -53,7 +53,7 @@
 
 5) Open the StreamPRO plugin from the Movian/M7 home screen.
 
- ![Pre-Release Download (May Contain Bugs)](/unstable.zip?raw=true)
+
 
 **StreamPRO Currently Serves:**
 * United States 🇺🇸
@@ -111,6 +111,7 @@ Roku (Via i.mjh.nz)
 Stirr (Via i.mjh.nz)
 * United States (Pre-Release)
 
+ ![Pre-Release Download (May Contain Bugs)](/unstable.zip?raw=true)
 
 **Coming Soon:**
 
