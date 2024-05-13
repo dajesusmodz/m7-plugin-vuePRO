@@ -22,7 +22,7 @@
 
 2) Plug in your USB drive to the PS3 System.
 
-3) Open your USB drive in Movian and find StreamPRO.
+3) Open your USB drive in Movian/M7 and find StreamPRO.
 
 4) Open StreamPRO, and select Install.
 
@@ -34,7 +34,7 @@
 **How to Install (PC / Mac):**
 1) Download streampro.zip from 'Releases'.
 
-2) Open Movian / M7, then click and drag streampro.zip onto the M7 window.
+2) Open Movian/M7, then click and drag streampro.zip onto the M7 window.
 
 5) Select your region - Go to Movian > Settings > StreamPRO > 'Channel Region'.
 
