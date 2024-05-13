@@ -1777,6 +1777,16 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://r.mjh.nz/PlutoTV/622f40c901d4b70007ad7609-alt.m3u8', 'playable', { title: 'Sabrina - Total verhext!', icon: 'https://images.pluto.tv/channels/622f40c901d4b70007ad7609/colorLogoPNG.png', }); // 13/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Germany', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 13/05/24
   }
+  if (service.selectRegion == "Denmark") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://r.mjh.nz/PlutoTV/654a3fe6986ad20008a42add-alt.m3u8', 'playable', { title: 'Langt fra Bryggen', icon: 'https://images.pluto.tv/channels/654a3fe6986ad20008a42add/colorLogoPNG.png', }); // 13/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/6464cc595a0cd500088c7749-alt.m3u8', 'playable', { title: 'Americas Next Top Model', icon: 'https://images.pluto.tv/channels/6464cc595a0cd500088c7749/colorLogoPNG.png', }); // 13/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/642af9a19189ce00088f44ab-alt.m3u8', 'playable', { title: 'Yu-Gi-Oh!', icon: 'https://images.pluto.tv/channels/642af9a19189ce00088f44ab/colorLogoPNG.png', }); // 13/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/62b9b63d3bbe9000073c0a2d-alt.m3u8', 'playable', { title: 'Wildfire', icon: 'https://images.pluto.tv/channels/62b9b63d3bbe9000073c0a2d/colorLogoPNG.png', }); // 13/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Denmark', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 13/05/24
+  }
 
   // Ads
 
