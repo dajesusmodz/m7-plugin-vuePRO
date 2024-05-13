@@ -62,11 +62,14 @@
 * Canada 🇨🇦
 * Brazil 🇧🇷
 * South Korea 🇰🇷
+* Mexico 🇲🇽 (Pre-Release)
+* Chile 🇨🇱 (Pre-Release)
+* Germany 🇩🇪 (Pre-Release)
 
 
 **Providers:**
 
-Local TV / Terrestrial Television (Via FreeTV on GitHub)
+OTA TV / Terrestrial Television (Via FreeTV on GitHub)
 * United States
 * United Kingdom
 * France
@@ -74,6 +77,9 @@ Local TV / Terrestrial Television (Via FreeTV on GitHub)
 * Brazil
 * Korea
 * Mexico (Pre-Release)
+* Chile (Pre-Release)
+* Germany (Pre-Release)
+* Switzerland (Pre-Release)
 
 Pluto TV (Via i.mjh.nz)
 * United States
@@ -82,6 +88,8 @@ Pluto TV (Via i.mjh.nz)
 * Canada
 * Brazil
 * Mexico (Pre-Release)
+* Chile (Pre-Release)
+* Germany (Pre-Release)
 
 Rakuten TV (Via Apsattv)
 * United Kingdom
@@ -92,6 +100,7 @@ Samsung TV Plus (Via i.mjh.nz)
 * Korea
 * France
 * Canada
+* Switzerland (Pre-Release)
 
 Redbox TV (Via Apsattv)
 * United States
@@ -106,8 +115,6 @@ Stirr (Via i.mjh.nz)
 **Coming Soon:**
 
 * Pluto TV:
-(Chile)
-(Germany)
 (Denmark)
 (Spain)
 (Italy)
@@ -115,21 +122,17 @@ Stirr (Via i.mjh.nz)
 (Sweden)
 * Samsung TV Plus:
 (Austria)
-(Switzerland)
 (Denmark)
 (Spain)
 (India)
 (Italy)
 * FreeTV (OTA):
-(Chile)
-(Germany)
 (Denmark)
 (Spain)
 (Italy)
 (Norway)
 (Sweden)
 (Austria)
-(Switzerland)
 (India)
 
 
@@ -157,6 +160,8 @@ If you'd like to submit a playlist file for review, please ensure that it adhere
 
 **5) Group Using Regions** - If you intend on supporting multiple regions, please include them all in one file with their respective region names as the group titles as they are listed above in the Readme.
 
-**6) Use the correct format** - the file format should be ".m3u" or ".m3u8" .
+**6) Use the correct format** - The file format should be ".m3u" or ".m3u8" .
 
-**7)** Head on over to the discussions tab to submit a link! Thank you for your effort and contribution.
+**7) No pirate TV playlists** - We strictly only accept free-to-air content through services like the ones listed above.
+
+**8) Submit** - Head over to the discussions tab to submit a link.

@@ -84,6 +84,8 @@ settings.createMultiOpt('selectRegion', 'Channel Region', [
           ['South Korea', 'South Korea'],
           ['Mexico', 'Mexico'],
           ['Chile', 'Chile'],
+          ['Germany', 'Germany'],
+          ['Switzerland', 'Switzerland'],
           ['Off', 'Off', true],
         ], function(v) {
         service.selectRegion = v;
@@ -1473,6 +1475,8 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "South Korea") {page.metadata.icon = 'https://logodix.com/logo/34000.jpg'; setPageHeader(page, "StreamPRO - South Korea")};
   if (service.selectRegion == "Mexico") {page.metadata.icon = 'https://images.squarespace-cdn.com/content/v1/5223336ee4b02da2a90b23ec/1472608876004-7LB93W4U82JDKEQAOU76/Flag_of_Mexico_1917.png'; setPageHeader(page, "StreamPRO - Mexico")};
   if (service.selectRegion == "Chile") {page.metadata.icon = 'https://i.ytimg.com/vi/7D1vZAXk1xI/maxresdefault.jpg'; setPageHeader(page, "StreamPRO - Chile")};
+  if (service.selectRegion == "Germany") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/1600px-Flag_of_Germany.svg.png'; setPageHeader(page, "StreamPRO - Germany")};
+  if (service.selectRegion == "Switzerland") {page.metadata.icon = 'https://enforcetxrf.eu/wp-content/uploads/sw.jpg'; setPageHeader(page, "StreamPRO - Switzerland")};
 
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
@@ -1603,6 +1607,18 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: ' '});
     page.appendItem('', 'separator', {title: 'Channels'});
   }
+  if (service.selectRegion == "Chile") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
+  if (service.selectRegion == "Germany") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
+  if (service.selectRegion == "Switzerland") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
 
   // Samsung TV Plus
 
@@ -1663,6 +1679,18 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABA3700002ML.m3u8', 'video', { title: 'Baywatch', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABA3700002ML_20240116T231212SQUARE.png_20240116231213.png', });
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/CABC2300008J0.m3u8', 'video', { title: 'MotorTrend FAST TV', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CABC2300008J0_20230125T022433SQUARE.png_20230125022434.png', });
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:Canada', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "Switzerland") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CHAJ3200003RF.m3u8', 'video', { title: 'The Pet Collective', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CHAJ3200003RF_20230222T012027SQUARE.png_20230222012028.png', }); //13/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CHBB49000054U.m3u8', 'video', { title: 'Stars in Gefahr', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CHBB49000054U_20230809T053659SQUARE.png_20230809053659.png', }); //13/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CHAJ700007XE.m3u8', 'video', { title: 'Pluto TV Serie', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CHAJ700007XE_20230809T053648SQUARE.png_20230809053649.png', }); //13/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/CHAJ0500419A.m3u8', 'video', { title: 'Focus TV', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CHAJ0500419A_20240321T050322SQUARE.png', }); //13/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:Switzerland', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); //13/05/24
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: ''});
   }
@@ -1739,61 +1767,85 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://r.mjh.nz/PlutoTV/5ea71d48af1d0b0007d837f4-alt.m3u8', 'playable', { title: 'The New Detectives', icon: 'https://images.pluto.tv/channels/5ea71d48af1d0b0007d837f4/colorLogoPNG.png', }); // 12/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Chile', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 12/05/24
   }
+  if (service.selectRegion == "Germany") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://r.mjh.nz/PlutoTV/6270ea4345f5bc0007823048-alt.m3u8', 'playable', { title: 'Fury', icon: 'https://images.pluto.tv/channels/6270ea4345f5bc0007823048/colorLogoPNG.png', }); // 13/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/6523ca21a70bf000081fe675-alt.m3u8', 'playable', { title: 'South Park: Kyle Collection', icon: 'https://r.mjh.nz/PlutoTV/646b14d0e1979c0008915a09-alt.m3u8', }); // 13/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/630348a54c48ce00077eb6c7-alt.m3u8', 'playable', { title: 'Becker', icon: 'https://images.pluto.tv/channels/630348a54c48ce00077eb6c7/colorLogoPNG.png', }); // 13/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/622f40c901d4b70007ad7609-alt.m3u8', 'playable', { title: 'Sabrina - Total verhext!', icon: 'https://images.pluto.tv/channels/622f40c901d4b70007ad7609/colorLogoPNG.png', }); // 13/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Germany', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 13/05/24
+  }
 
   // Ads
 
   if (service.selectRegion == "United States") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  (Ad)                                                                                                                                                                                                                                                                                      '});
     page.appendItem('', 'separator', {title: ''}); // 12/05/24
     page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
     page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
   if (service.selectRegion == "Brazil") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  (Ad)                                                                                                                                                                                                                                                                                      '});
     page.appendItem('', 'separator', {title: ''}); // 12/05/24
     page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
     page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
   if (service.selectRegion == "United Kingdom") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  (Ad)                                                                                                                                                                                                                                                                                      '});
     page.appendItem('', 'separator', {title: ''}); // 12/05/24
     page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
     page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
   if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  (Ad)                                                                                                                                                                                                                                                                                      '});
     page.appendItem('', 'separator', {title: ''}); // 12/05/24
     page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
     page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
   if (service.selectRegion == "Canada") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  (Ad)                                                                                                                                                                                                                                                                                      '});
     page.appendItem('', 'separator', {title: ''}); // 12/05/24
     page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
     page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
   if (service.selectRegion == "South Korea") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  (Ad)                                                                                                                                                                                                                                                                                      '});
     page.appendItem('', 'separator', {title: ''}); // 13/05/24
     page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
     page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
   if (service.selectRegion == "Mexico") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  (Ad)                                                                                                                                                                                                                                                                                      '});
     page.appendItem('', 'separator', {title: ''}); // 12/05/24
     page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
     page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
   if (service.selectRegion == "Chile") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  (Ad)                                                                                                                                                                                                                                                                                      '});
+    page.appendItem('', 'separator', {title: ''}); // 12/05/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
+  }
+  if (service.selectRegion == "Germany") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  (Ad)                                                                                                                                                                                                                                                                                      '});
+    page.appendItem('', 'separator', {title: ''}); // 12/05/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
+  }
+  if (service.selectRegion == "Switzerland") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  (Ad)                                                                                                                                                                                                                                                                                      '});
     page.appendItem('', 'separator', {title: ''}); // 12/05/24
     page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
     page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
@@ -1854,7 +1906,7 @@ new page.Route(plugin.id + ':start', function(page) {
   // FreeTV
 
   if (service.selectRegion == "United States") {
-    page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
     page.appendItem('', 'separator', {title: ''}); // 20/02/24
     page.appendItem('https://buzzrota-web.amagi.tv/playlist480.m3u8', 'playable', { title: 'Buzz @', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Buzzr_logo.svg/768px-Buzzr_logo.svg.png', });
     page.appendItem('https://bcovlive-a.akamaihd.net/5e531be3ed6c41229b2af2d9bffba88d/us-east-1/6183977686001/profile_1/chunklist.m3u8', 'playable', { title: 'Retro TV', icon: 'https://i.imgur.com/PNTYOgg.png', });
@@ -1863,7 +1915,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_usa.m3u8:USA', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', });
   }
   if (service.selectRegion == "United Kingdom") {
-    page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
     page.appendItem('', 'separator', {title: ''}); // 20/02/24
     page.appendItem('http://92.114.85.81:8000/play/a01g/index.m3u8', 'playable', { title: 'Channel 5', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Channel_5_%28UK%29_2016.svg/530px-Channel_5_%28UK%29_2016.svg.png', });
     page.appendItem('http://92.114.85.81:8000/play/a00y/index.m3u8', 'playable', { title: 'ITV 1', icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/ITV1_logo_%282022%29.svg/640px-ITV1_logo_%282022%29.svg.png', });
@@ -1873,7 +1925,7 @@ new page.Route(plugin.id + ':start', function(page) {
   }
   if (service.selectRegion == "France") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
     page.appendItem('', 'separator', {title: ''}); // 20/03/24
     page.appendItem('https://s13.tntendirect.com/cherie25/live/playlist.m3u8', 'playable', { title: 'Chérie 25', icon: 'https://upload.wikimedia.org/wikipedia/fr/thumb/f/f0/Ch%C3%A9rie_25_logo_2015.svg/51px-Ch%C3%A9rie_25_logo_2015.svg.png', });
     page.appendItem('https://ott.tv5monde.com/Content/HLS/Live/channel(europe)/index.m3u8', 'playable', { title: 'TV5 Monde Europe', icon: 'https://i.imgur.com/uPmwTo9.png', });
@@ -1883,7 +1935,7 @@ new page.Route(plugin.id + ':start', function(page) {
   }
   if (service.selectRegion == "Brazil") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/chunklist.m3u8', 'playable', { title: 'ALL Sports Brasil', icon: 'https://i.imgur.com/wULpnYR.png', }); // 10/05/24
     page.appendItem('https://596639ebdd89b.streamlock.net/8032/8032/index.m3u8', 'playable', { title: 'COM Brazil', icon: 'https://i.imgur.com/c8ztQnF.png', }); // 10/05/24
@@ -1893,7 +1945,7 @@ new page.Route(plugin.id + ':start', function(page) {
   }
   if (service.selectRegion == "South Korea") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('http://ye23.vip/z7z8/2021/kbs2020.php?id=1', 'playable', { title: 'KBS 1TV', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/KBS_1_logo.svg/512px-KBS_1_logo.svg.png', }); // 10/05/24
     page.appendItem('http://123.254.72.24:1935/tvlive/livestream2/playlist.m3u8', 'playable', { title: 'MBC TV', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/MBC_Drama_Plus_TV_Channel_Logo.png/1200px-MBC_Drama_Plus_TV_Channel_Logo.png', }); // 10/05/24
@@ -1903,7 +1955,7 @@ new page.Route(plugin.id + ':start', function(page) {
   }
   if (service.selectRegion == "Canada") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
     page.appendItem('', 'separator', {title: ''}); // 28/03/24
     page.appendItem('https://bozztv.com/teleyupp1/teleup-ydcl2V1MVC/playlist.m3u8', 'playable', { title: 'CBC Toronto', icon: 'https://i.imgur.com/H5yEbxf.png', });
     page.appendItem('https://i.mjh.nz/PlutoTV/62cbf398b8e02600071deda5-alt.m3u8', 'playable', { title: 'Global News Halifax', icon: 'https://i.imgur.com/IpfmG93.png', });
@@ -1913,7 +1965,7 @@ new page.Route(plugin.id + ':start', function(page) {
   }
   if (service.selectRegion == "Mexico") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('http://cls.alcarria.tv/live/alcarriatv-livestream.m3u8', 'playable', { title: 'Alcarria TV', icon: 'https://i.imgur.com/zNSuxVZ.jpg', }); // 12/05/24
     page.appendItem('http://wms30.tecnoxia.com/soelvi/abr_soelvi/playlist.m3u8', 'playable', { title: 'Hipodromo de las Americas', icon: 'https://i.imgur.com/wc8MlGw.png', }); // 12/05/24
@@ -1923,7 +1975,7 @@ new page.Route(plugin.id + ':start', function(page) {
   }
   if (service.selectRegion == "Chile") {
     page.appendItem('', 'separator', {title: ''});
-    page.appendItem('', 'separator', {title: '  Local TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('https://unlimited1-cl-isp.dps.live/ucvtv2/ucvtv2.smil/playlist.m3u8', 'playable', { title: 'UCV Televisión', icon: 'https://i.imgur.com/2VL4Pts.png', }); // 12/05/24
     page.appendItem('https://sktv-forwarders.7m.pl/get.php?x=TVN', 'playable', { title: 'TVN Ⓖ', icon: 'https://i.imgur.com/WoN1dai.png', }); // 12/05/24
@@ -1931,6 +1983,27 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://origin.dpsgo.com/ssai/event/GI-9cp_bT8KcerLpZwkuhw/master.m3u8', 'playable', { title: '13 Cultura', icon: 'https://i.imgur.com/49QkKWv.png', }); // 12/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_chile.m3u8:Chile', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 12/05/24
   }
+  if (service.selectRegion == "Germany") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://mcdn.daserste.de/daserste/de/master.m3u8', 'playable', { title: 'Das Erste Ⓖ', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Das_Erste_2014.svg/640px-Das_Erste_2014.svg.png', }); // 13/05/24
+    page.appendItem('http://zdf-hls-15.akamaized.net/hls/live/2016498/de/veryhigh/master.m3u8', 'playable', { title: '3sat Ⓖ', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/3sat_2019.svg/640px-3sat_2019.svg.png', }); // 13/05/24
+    page.appendItem('https://sdn-global-live-streaming-packager-cache.3qsdn.com/26658/26658_264_live.m3u8', 'playable', { title: 'Schlager Deluxe', icon: 'https://i.imgur.com/YPpgUOg.png', }); // 13/05/24
+    page.appendItem('https://kikageohls.akamaized.net/hls/live/2022693/livetvkika_de/master.m3u8', 'playable', { title: 'KiKa Ⓖ', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Kika_2012.svg/640px-Kika_2012.svg.png', }); // 13/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_germany.m3u8:Germany', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 13/05/24
+  }
+  if (service.selectRegion == "Switzerland") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('http://51.91.73.99:25461/sweden/PM66f7Y43H/25849', 'playable', { title: 'SRF 1', icon: 'https://i.imgur.com/KCPHba2.png', }); // 13/05/24
+    page.appendItem('https://cdnapisec.kaltura.com/p/1719221/sp/171922100/playManifest/entryId/1_t5h46v64/format/applehttp/protocol/https/a.m3u8', 'playable', { title: 'TV0', icon: 'https://i.imgur.com/5QFZ05B.png', }); // 13/05/24
+    page.appendItem('http://hotiptv.site:8080/zkby2013/1d469e6d9e42/67585', 'playable', { title: 'RTS Un', icon: 'https://i.imgur.com/gWuuBZc.png', }); // 13/05/24
+    page.appendItem('http://livevideo.infomaniak.com/streaming/livecast/tvm3/playlist.m3u8', 'playable', { title: 'TVM 3', icon: 'https://i.imgur.com/3v6iZE6.png', }); // 13/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_switzerland.m3u8:Switzerland', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 13/05/24
+  }
+
   // User Playlists
 
   page.appendItem('', 'separator', {title: ''});
