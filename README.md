@@ -65,6 +65,7 @@
 * Mexico 🇲🇽 (Pre-Release)
 * Chile 🇨🇱 (Pre-Release)
 * Germany 🇩🇪 (Pre-Release)
+* Switzerland 🇨🇭 (Pre-Release)
 
 
 **Providers:**
