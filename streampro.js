@@ -1777,6 +1777,13 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
     page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
+  if (service.selectRegion == "South Korea") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''}); // 13/05/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
+  }
   if (service.selectRegion == "Mexico") {
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: '  (Ad) Stream Now!:                                                                                                                                                                                                                                                               '});
