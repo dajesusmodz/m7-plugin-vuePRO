@@ -77,10 +77,11 @@ OTA TV / Terrestrial Television (Via FreeTV on GitHub)
 * Canada
 * Brazil
 * Korea
-* Mexico (Pre-Release)
-* Chile (Pre-Release)
-* Germany (Pre-Release)
-* Switzerland (Pre-Release)
+* Mexico
+* Chile
+* Germany
+* Switzerland
+* Denmark
 
 Pluto TV (Via i.mjh.nz)
 * United States
@@ -88,9 +89,10 @@ Pluto TV (Via i.mjh.nz)
 * France
 * Canada
 * Brazil
-* Mexico (Pre-Release)
-* Chile (Pre-Release)
-* Germany (Pre-Release)
+* Mexico
+* Chile
+* Germany
+* Denmark
 
 Rakuten TV (Via Apsattv)
 * United Kingdom
@@ -101,7 +103,7 @@ Samsung TV Plus (Via i.mjh.nz)
 * Korea
 * France
 * Canada
-* Switzerland (Pre-Release)
+* Switzerland
 
 Redbox TV (Via Apsattv)
 * United States
@@ -110,26 +112,23 @@ Roku (Via i.mjh.nz)
 * United States
 
 Stirr (Via i.mjh.nz)
-* United States (Pre-Release)
+* United States
 
  ![Pre-Release Download (May Contain Bugs)](/unstable.zip?raw=true)
 
 **Coming Soon:**
 
 * Pluto TV:
-(Denmark)
 (Spain)
 (Italy)
 (Norway)
 (Sweden)
 * Samsung TV Plus:
 (Austria)
-(Denmark)
 (Spain)
 (India)
 (Italy)
 * FreeTV (OTA):
-(Denmark)
 (Spain)
 (Italy)
 (Norway)

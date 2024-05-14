@@ -86,6 +86,7 @@ settings.createMultiOpt('selectRegion', 'Channel Region', [
           ['Chile', 'Chile'],
           ['Germany', 'Germany'],
           ['Switzerland', 'Switzerland'],
+          ['Denmark', 'Denmark'],
           ['Off', 'Off', true],
         ], function(v) {
         service.selectRegion = v;
@@ -1477,6 +1478,8 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "Chile") {page.metadata.icon = 'https://i.ytimg.com/vi/7D1vZAXk1xI/maxresdefault.jpg'; setPageHeader(page, "StreamPRO - Chile")};
   if (service.selectRegion == "Germany") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/1600px-Flag_of_Germany.svg.png'; setPageHeader(page, "StreamPRO - Germany")};
   if (service.selectRegion == "Switzerland") {page.metadata.icon = 'https://enforcetxrf.eu/wp-content/uploads/sw.jpg'; setPageHeader(page, "StreamPRO - Switzerland")};
+  if (service.selectRegion == "Denmark") {page.metadata.icon = 'https://storage.needpix.com/rsynced_images/flag-983155_1280.jpg'; setPageHeader(page, "StreamPRO - Denmark")};
+
 
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
@@ -1616,6 +1619,10 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: 'Channels'});
   }
   if (service.selectRegion == "Switzerland") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
+  if (service.selectRegion == "Denmark") {
     page.appendItem('', 'separator', {title: ' '});
     page.appendItem('', 'separator', {title: 'Channels'});
   }
@@ -1860,6 +1867,13 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
     page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
   }
+  if (service.selectRegion == "Denmark") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  (Ad)                                                                                                                                                                                                                                                                                      '});
+    page.appendItem('', 'separator', {title: ''}); // 12/05/24
+    page.appendItem('https://free-qr.com/qrcodes/8b81c77ffb19ee1705327af1107c04c6.png', 'image', { icon: 'https://assets.audiomack.com/newrockrecords/fe697bc6271bc4596a7476e058faba909b4d0abf52c62d5be22e1a585620a117.jpeg', });
+    page.appendItem('https://i.postimg.cc/7ZjtHf6M/letyougoqr.png', 'image', { icon: 'https://i.postimg.cc/Y02yQQSQ/adtest2.png', });
+  }
 
   // Rakuten TV
 
@@ -2013,6 +2027,16 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('http://livevideo.infomaniak.com/streaming/livecast/tvm3/playlist.m3u8', 'playable', { title: 'TVM 3', icon: 'https://i.imgur.com/3v6iZE6.png', }); // 13/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_switzerland.m3u8:Switzerland', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 13/05/24
   }
+  if (service.selectRegion == "Denmark") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://drlive01texthls.akamaized.net/hls/live/2014186/drlive01text/master.m3u8', 'playable', { title: 'DR1 Ⓖ', icon: 'https://i.imgur.com/wEq8UnG.png', }); // 13/05/24
+    page.appendItem('https://drlive02texthls.akamaized.net/hls/live/2014188/drlive02text/master.m3u8', 'playable', { title: 'DR2 Ⓖ', icon: 'https://i.imgur.com/b79UKYN.png', }); // 13/05/24
+    page.appendItem('https://drlive03texthls.akamaized.net/hls/live/2014191/drlive03text/master.m3u8', 'playable', { title: 'DR Ramasjang Ⓖ', icon: 'https://i.imgur.com/YD0z2mN.png', }); // 13/05/24
+    page.appendItem('https://cdnapi.kaltura.com/p/2158211/sp/327418300/playManifest/entryId/1_24gfa7qq/protocol/https/format/applehttp/a.m3u8', 'playable', { title: 'Folketinget TV', icon: 'https://i.imgur.com/RqQDUzX.png', }); // 13/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_denmark.m3u8:Denmark', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 13/05/24
+  }
 
   // User Playlists
 
@@ -2035,7 +2059,7 @@ new page.Route(plugin.id + ':start', function(page) {
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
 
   page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  StreamPRO Version:  3.1 (Pre-Release)                                                                                                                                                                                                                                                          '});
+  page.appendItem('', 'separator', {title: '  StreamPRO Version:  3.1 (Release)                                                                                                                                                                                                                                                          '});
   page.appendItem('', 'separator', {title: ''});
 
   // menu to delete playlists
