@@ -588,7 +588,7 @@ function addOptionToRemovePlaylist(page, item, title, pos) {
 function showPlaylist(page) {
   var playlist = eval(playlists.list);
 
-  popup.notify('Some content may be Geo-Restricted.', 10);
+  popup.notify('(!) Some Content May Be Geo-Restricted', 10);
 
   var pos = 0;
   for (var i in playlist) {
