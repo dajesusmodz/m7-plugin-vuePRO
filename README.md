@@ -62,10 +62,11 @@
 * Canada 🇨🇦
 * Brazil 🇧🇷
 * South Korea 🇰🇷
-* Mexico 🇲🇽 (Pre-Release)
-* Chile 🇨🇱 (Pre-Release)
-* Germany 🇩🇪 (Pre-Release)
-* Switzerland 🇨🇭 (Pre-Release)
+* Mexico 🇲🇽
+* Chile 🇨🇱
+* Germany 🇩🇪
+* Switzerland 🇨🇭
+* Denmark 🇩🇰
 
 
 **Providers:**
