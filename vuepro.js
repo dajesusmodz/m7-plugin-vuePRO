@@ -1470,7 +1470,7 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "Off") {page.metadata.icon = logo; setPageHeader(page, "vuePRO")};
   if (service.selectRegion == "United Kingdom") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/211144/1659455637_427352.jpeg'; setPageHeader(page, "vuePRO | UK")};
   if (service.selectRegion == "United States") {page.metadata.icon = 'https://visa.express/georgia/wp-content/uploads/sites/5/2022/09/1579293111_57-83.jpg'; setPageHeader(page, "vuePRO | US")};
-  if (service.selectRegion == "France") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "vuePRO - France")};
+  if (service.selectRegion == "France") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "vuePRO | FR")};
   if (service.selectRegion == "Canada") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png'; setPageHeader(page, "vuePRO | CA")};
   if (service.selectRegion == "Brazil") {page.metadata.icon = 'https://naurok-test2.nyc3.digitaloceanspaces.com/uploads/test/2225640/1287696/204682_1644400839.png'; setPageHeader(page, "vuePRO | BR")};
   if (service.selectRegion == "South Korea") {page.metadata.icon = 'https://logodix.com/logo/34000.jpg'; setPageHeader(page, "vuePRO | KR")};
