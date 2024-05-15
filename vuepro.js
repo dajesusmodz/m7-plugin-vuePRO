@@ -87,6 +87,8 @@ settings.createMultiOpt('selectRegion', 'Channel Region (May Be Geo-Restricted)'
           ['Germany', 'Germany'],
           ['Switzerland', 'Switzerland'],
           ['Denmark', 'Denmark'],
+          ['Sweden', 'Sweden'],
+          ['Spain', 'Spain'],
           ['Off', 'Off', true],
         ], function(v) {
         service.selectRegion = v;
@@ -1479,6 +1481,8 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "Germany") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/1600px-Flag_of_Germany.svg.png'; setPageHeader(page, "vuePRO | DE")};
   if (service.selectRegion == "Switzerland") {page.metadata.icon = 'https://enforcetxrf.eu/wp-content/uploads/sw.jpg'; setPageHeader(page, "vuePRO | CH")};
   if (service.selectRegion == "Denmark") {page.metadata.icon = 'https://storage.needpix.com/rsynced_images/flag-983155_1280.jpg'; setPageHeader(page, "vuePRO | DK")};
+  if (service.selectRegion == "Spain") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1500px-Flag_of_Spain.svg.png'; setPageHeader(page, "vuePRO | ES")};
+  if (service.selectRegion == "Sweden") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1500px-Flag_of_Spain.svg.png'; setPageHeader(page, "vuePRO | ES")};
 
 
   if (service.updatechannel == "Stable") {
@@ -1626,6 +1630,14 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: ' '});
     page.appendItem('', 'separator', {title: 'Channels'});
   }
+  if (service.selectRegion == "Spain") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
+  if (service.selectRegion == "Sweden") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
 
   // Samsung TV Plus
 
@@ -1698,6 +1710,18 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/CHAJ700007XE.m3u8', 'video', { title: 'Pluto TV Serie', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CHAJ700007XE_20230809T053648SQUARE.png_20230809053649.png', }); //13/05/24
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/CHAJ0500419A.m3u8', 'video', { title: 'Focus TV', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CHAJ0500419A_20240321T050322SQUARE.png', }); //13/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:Switzerland', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); //13/05/24
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "Spain") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ESBA140000504.m3u8', 'video', { title: 'Stormcast Novelas', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ESBA140000504_20231115T012203SQUARE.png_20231115012203.png', }); //15/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ESBA3300036W1.m3u8', 'video', { title: 'BelAir TV', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ES12000024R_20240507T094209SQUARE.png', }); //15/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ESBC4100004J1.m3u8', 'video', { title: '24H', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ESBC4100004J1_20230614T005926SQUARE.png_20230614005927.png', }); //15/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ESBC39000033J.m3u8', 'video', { title: 'El País', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ESBC39000033J_20230809T053828SQUARE.png_20230809053829.png', }); //15/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:Spain', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); //15/05/24
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: ''});
   }
@@ -1793,6 +1817,26 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://r.mjh.nz/PlutoTV/642af9a19189ce00088f44ab-alt.m3u8', 'playable', { title: 'Yu-Gi-Oh!', icon: 'https://images.pluto.tv/channels/642af9a19189ce00088f44ab/colorLogoPNG.png', }); // 13/05/24
     page.appendItem('https://r.mjh.nz/PlutoTV/62b9b63d3bbe9000073c0a2d-alt.m3u8', 'playable', { title: 'Wildfire', icon: 'https://images.pluto.tv/channels/62b9b63d3bbe9000073c0a2d/colorLogoPNG.png', }); // 13/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Denmark', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 13/05/24
+  }
+  if (service.selectRegion == "Spain") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://r.mjh.nz/PlutoTV/65dded6966eec80008947157-alt.m3u8', 'playable', { title: 'Call the Midwife', icon: 'https://images.pluto.tv/channels/65dded6966eec80008947157/colorLogoPNG.png', }); // 15/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/657868a7a620e30008fdbfeb-alt.m3u8', 'playable', { title: 'Embrujadas', icon: 'https://images.pluto.tv/channels/657868a7a620e30008fdbfeb/colorLogoPNG.png', }); // 15/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/60b4c06717da110007ee1af6-alt.m3u8', 'playable', { title: 'Pluto TV Telenovelas', icon: 'https://images.pluto.tv/channels/60b4c06717da110007ee1af6/colorLogoPNG.png', }); // 15/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/65254e8d81f9420008342cee-alt.m3u8', 'playable', { title: 'La fiebre del Jade', icon: 'https://images.pluto.tv/channels/65254e8d81f9420008342cee/colorLogoPNG.png', }); // 15/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Spain', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 15/05/24
+  }
+  if (service.selectRegion == "Sweden") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://r.mjh.nz/PlutoTV/65b1077e0d9ab40008245b20-alt.m3u8', 'playable', { title: 'Best of Paradise Hotel: Kyssar & kärlek', icon: 'https://images.pluto.tv/channels/65b1077e0d9ab40008245b20/colorLogoPNG.png', }); // 15/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/65d881914e01740008a36603-alt.m3u8', 'playable', { title: 'South Park: Stan Collection', icon: 'https://images.pluto.tv/channels/65d881914e01740008a36603/colorLogoPNG.png', }); // 15/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/6464cc01e1979c000889570b-alt.m3u8', 'playable', { title: 'Survivor', icon: 'https://images.pluto.tv/channels/6464cc01e1979c000889570b/colorLogoPNG.png', }); // 15/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/65a63ff00d9ab400080b101c-alt.m3u8', 'playable', { title: 'Klovn', icon: 'https://images.pluto.tv/channels/65a63ff00d9ab400080b101c/colorLogoPNG.png', }); // 15/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Sweden', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 15/05/24
   }
 
   // Rakuten TV
@@ -1957,6 +2001,26 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://cdnapi.kaltura.com/p/2158211/sp/327418300/playManifest/entryId/1_24gfa7qq/protocol/https/format/applehttp/a.m3u8', 'playable', { title: 'Folketinget TV', icon: 'https://i.imgur.com/RqQDUzX.png', }); // 13/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_denmark.m3u8:Denmark', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 13/05/24
   }
+  if (service.selectRegion == "Spain") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://rtvelivestream-clnx.rtve.es/rtvesec/la1/la1_main_720.m3u8', 'playable', { title: 'La 1', icon: 'https://i.imgur.com/NbesiPn.png', }); // 15/05/24
+    page.appendItem('https://rtvelivestream-clnx.rtve.es/rtvesec/24h/24h_main_720.m3u8', 'playable', { title: '24h', icon: 'https://i.imgur.com/ZKR2jKr.png', }); // 15/05/24
+    page.appendItem('https://rtvelivestream-clnx.rtve.es/rtvesec/clan/clan_main_720.m3u8', 'playable', { title: 'clan', icon: 'https://i.imgur.com/38xIfQ3.png', }); // 15/05/24
+    page.appendItem('https://laotrahls2-live-hls.secure2.footprint.net/egress/chandler/telemadrid/laotra_1/bitrate_1.m3u8', 'playable', { title: 'La Otra', icon: 'https://i.imgur.com/W1UZyXH.png', }); // 15/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_spain.m3u8:Spain', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 15/05/24
+  }
+  if (service.selectRegion == "Sweden") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://ed2.cdn.svt.se/ed7/d1/c/se/svt1/manifest.mpd?defaultSubLang=1', 'playable', { title: 'SVT 1 Ⓖ', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/SVT1_logo_2016.svg/800px-SVT1_logo_2016.svg.png', }); // 15/05/24
+    page.appendItem('https://ed2.cdn.svt.se/ed7/d1/c/se/svt2/manifest.mpd?defaultSubLang=1', 'playable', { title: 'SVT 2 Ⓖ', icon: 'https://i.imgur.com/iB3veGx.png', }); // 15/05/24
+    page.appendItem('https://ed2.cdn.svt.se/ed7/d1/c/se/svtk/manifest.mpd?defaultSubLang=1', 'playable', { title: 'Kunskapskanalen Ⓖ', icon: 'https://i.imgur.com/9YBxoGc.png', }); // 15/05/24
+    page.appendItem('https://edg03-prd-se-ixn.solidtango.com/edge/451iw2h/playlist.m3u8', 'playable', { title: 'Öppna Kanalen Stockholm Ⓢ', icon: 'https://i.imgur.com/GWlstv5.png"', }); // 15/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_sweden.m3u8:Sweden', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 15/05/24
+  }
 
   // User Playlists
 
@@ -1978,10 +2042,6 @@ new page.Route(plugin.id + ':start', function(page) {
   addActionToTheItem(page, 'Add Custom M3U Playlist', '1Hbuve6', 'M3U');
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
 
-  page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  vuePRO Version:  3.2 (Pre-Release)                                                                                                                                                                                                                                                          '});
-  page.appendItem('', 'separator', {title: ''});
-
   // menu to delete playlists
   page.options.createAction('rmPlaylist', 'Remove Playlist...', function() {
     var list = eval(playlists.list);
@@ -1999,6 +2059,11 @@ new page.Route(plugin.id + ':start', function(page) {
   });
 
   showPlaylist(page);
+
+  page.appendItem('', 'separator', {title: ''});
+  page.appendItem('', 'separator', {title: '  vuePRO Version:  3.2 (Pre-Release)                                                                                                                                                                                                                                                          '});
+  page.appendItem('', 'separator', {title: ''});
+  
   page.loading = false;
 });
 
