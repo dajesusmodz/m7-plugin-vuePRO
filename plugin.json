@@ -1,15 +1,15 @@
 {
-	"description": "<p>A User-Friendly M3U/XML IPTV Player for Movian/M7 Media Center featuring a collection of 3rd Party Free-to-Air Content Providers!",
+	"description": "<p>A User-Friendly Free-To-Air TV Player for M7 Media Center with additional features.",
 	"author": "lprot, dajesusmodz",
-	"homepage": "https://github.com/dajesusmodz/m7-plugin-StreamPRO",
-	"title": "StreamPRO",
-	"synopsis": "User-Friendly M3U/XML IPTV Player.",
+	"homepage": "https://github.com/dajesusmodz/m7-plugin-vuePRO",
+	"title": "vuePRO",
+	"synopsis": "A User-Friendly Free-To-Air TV Player for M7 Media Center with additional features.",
 	"version": "3.2 (Pre-Release)",
-	"file": "streampro.js",
+	"file": "vuePRO.js",
 	"M7Version": "7.0.24",
 	"type": "ecmascript",
-	"id": "streampro",
+	"id": "vuePRO",
 	"icon": "logo.png",
-	"category": "video",
+	"category": "tv",
 	"apiversion": 2
 }

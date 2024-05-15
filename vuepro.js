@@ -6,7 +6,7 @@
 /* eslint-disable one-var */
 /* eslint-disable no-var */
 /*
- *  StreamPRO IPTV Player for Movian / M7 Media Center
+ *  vuePRO IPTV Player for Movian / M7 Media Center
  *
  *  Copyright (C) 2015-2018 lprot
  *  Copyright (C) 2024-2024 dajesusmodz
@@ -72,7 +72,7 @@ function trim(s) {
   return '';
 }
 
-service.create(plugin.title, plugin.id + ':start', 'streampro', true, logo);
+service.create(plugin.title, plugin.id + ':start', 'vuePRO', true, logo);
 
 settings.globalSettings(plugin.id, plugin.title, logo, plugin.synopsis);
 settings.createMultiOpt('selectRegion', 'Channel Region', [
@@ -1467,25 +1467,25 @@ new page.Route(plugin.id + ':onePlaylistStart', function(page) {
 new page.Route(plugin.id + ':start', function(page) {
   page.loading = true;
   
-  if (service.selectRegion == "Off") {page.metadata.icon = logo; setPageHeader(page, "StreamPRO")};
-  if (service.selectRegion == "United Kingdom") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/211144/1659455637_427352.jpeg'; setPageHeader(page, "StreamPRO - United Kingdom")};
-  if (service.selectRegion == "United States") {page.metadata.icon = 'https://visa.express/georgia/wp-content/uploads/sites/5/2022/09/1579293111_57-83.jpg'; setPageHeader(page, "StreamPRO - United States")};
-  if (service.selectRegion == "France") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "StreamPRO - France")};
-  if (service.selectRegion == "Canada") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png'; setPageHeader(page, "StreamPRO - Canada")};
-  if (service.selectRegion == "Brazil") {page.metadata.icon = 'https://naurok-test2.nyc3.digitaloceanspaces.com/uploads/test/2225640/1287696/204682_1644400839.png'; setPageHeader(page, "StreamPRO - Brazil")};
-  if (service.selectRegion == "South Korea") {page.metadata.icon = 'https://logodix.com/logo/34000.jpg'; setPageHeader(page, "StreamPRO - South Korea")};
-  if (service.selectRegion == "Mexico") {page.metadata.icon = 'https://images.squarespace-cdn.com/content/v1/5223336ee4b02da2a90b23ec/1472608876004-7LB93W4U82JDKEQAOU76/Flag_of_Mexico_1917.png'; setPageHeader(page, "StreamPRO - Mexico")};
-  if (service.selectRegion == "Chile") {page.metadata.icon = 'https://i.ytimg.com/vi/7D1vZAXk1xI/maxresdefault.jpg'; setPageHeader(page, "StreamPRO - Chile")};
-  if (service.selectRegion == "Germany") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/1600px-Flag_of_Germany.svg.png'; setPageHeader(page, "StreamPRO - Germany")};
-  if (service.selectRegion == "Switzerland") {page.metadata.icon = 'https://enforcetxrf.eu/wp-content/uploads/sw.jpg'; setPageHeader(page, "StreamPRO - Switzerland")};
-  if (service.selectRegion == "Denmark") {page.metadata.icon = 'https://storage.needpix.com/rsynced_images/flag-983155_1280.jpg'; setPageHeader(page, "StreamPRO - Denmark")};
+  if (service.selectRegion == "Off") {page.metadata.icon = logo; setPageHeader(page, "vuePRO")};
+  if (service.selectRegion == "United Kingdom") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/211144/1659455637_427352.jpeg'; setPageHeader(page, "vuePRO | UK")};
+  if (service.selectRegion == "United States") {page.metadata.icon = 'https://visa.express/georgia/wp-content/uploads/sites/5/2022/09/1579293111_57-83.jpg'; setPageHeader(page, "vuePRO | US")};
+  if (service.selectRegion == "France") {page.metadata.icon = 'https://cdn.britannica.com/82/682-004-F0B47FCB/Flag-France.jpg'; setPageHeader(page, "vuePRO - France")};
+  if (service.selectRegion == "Canada") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/255px-Flag_of_Canada_%28Pantone%29.svg.png'; setPageHeader(page, "vuePRO | CA")};
+  if (service.selectRegion == "Brazil") {page.metadata.icon = 'https://naurok-test2.nyc3.digitaloceanspaces.com/uploads/test/2225640/1287696/204682_1644400839.png'; setPageHeader(page, "vuePRO | BR")};
+  if (service.selectRegion == "South Korea") {page.metadata.icon = 'https://logodix.com/logo/34000.jpg'; setPageHeader(page, "vuePRO | KR")};
+  if (service.selectRegion == "Mexico") {page.metadata.icon = 'https://images.squarespace-cdn.com/content/v1/5223336ee4b02da2a90b23ec/1472608876004-7LB93W4U82JDKEQAOU76/Flag_of_Mexico_1917.png'; setPageHeader(page, "vuePRO | MX")};
+  if (service.selectRegion == "Chile") {page.metadata.icon = 'https://i.ytimg.com/vi/7D1vZAXk1xI/maxresdefault.jpg'; setPageHeader(page, "vuePRO | CL")};
+  if (service.selectRegion == "Germany") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/1600px-Flag_of_Germany.svg.png'; setPageHeader(page, "vuePRO | DE")};
+  if (service.selectRegion == "Switzerland") {page.metadata.icon = 'https://enforcetxrf.eu/wp-content/uploads/sw.jpg'; setPageHeader(page, "vuePRO | CH")};
+  if (service.selectRegion == "Denmark") {page.metadata.icon = 'https://storage.needpix.com/rsynced_images/flag-983155_1280.jpg'; setPageHeader(page, "vuePRO | DK")};
 
 
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
     {
       popup.notify("Updating, please wait...", 5);
-      page.redirect('https://github.com/dajesusmodz/m7-plugin-StreamPRO/releases/latest/download/streampro.zip');
+      page.redirect('https://github.com/dajesusmodz/m7-plugin-vuePRO/releases/latest/download/vuePRO.zip');
     });
   }
 
@@ -1493,7 +1493,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.options.createAction('update', "Check for Updates", function() 
     {
       popup.notify("Updating, please wait...", 5);
-      page.redirect('https://raw.githubusercontent.com/dajesusmodz/m7-plugin-StreamPRO/master/unstable.zip');
+      page.redirect('https://raw.githubusercontent.com/dajesusmodz/m7-plugin-vuePRO/master/unstable.zip');
     });
   }
 
@@ -1579,7 +1579,7 @@ new page.Route(plugin.id + ':start', function(page) {
   // ---------------------------------------------------------- CONTENT PROVIDERS ---------------------------------------------------------- \\
 
   if (service.selectRegion == "Off") {
-    page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > StreamPRO > Channel Region:" to watch Free Channels.'});
+    page.appendItem('', 'separator', {title: 'Navigate to "Movian > Settings > vuePRO > Channel Region:" to watch Free Channels.'});
   }
 
   if (service.selectRegion == "United States") {
@@ -2059,7 +2059,7 @@ new page.Route(plugin.id + ':start', function(page) {
   addActionToTheItem(page, 'Add Custom XML Playlist', '1zVA91a', 'XML');
 
   page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  StreamPRO Version:  3.2 (Pre-Release)                                                                                                                                                                                                                                                          '});
+  page.appendItem('', 'separator', {title: '  vuePRO Version:  3.2 (Pre-Release)                                                                                                                                                                                                                                                          '});
   page.appendItem('', 'separator', {title: ''});
 
   // menu to delete playlists
