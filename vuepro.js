@@ -75,7 +75,7 @@ function trim(s) {
 service.create(plugin.title, plugin.id + ':start', 'vuePRO', true, logo);
 
 settings.globalSettings(plugin.id, plugin.title, logo, plugin.synopsis);
-settings.createMultiOpt('selectRegion', 'Channel Region', [
+settings.createMultiOpt('selectRegion', 'Channel Region (May Be Geo-Restricted)', [
           ['United States', 'United States'],
           ['United Kingdom', 'United Kingdom'],
           ['France', 'France'],
@@ -588,7 +588,7 @@ function addOptionToRemovePlaylist(page, item, title, pos) {
 function showPlaylist(page) {
   var playlist = eval(playlists.list);
 
-  popup.notify('(!) Some Content May Be Geo-Restricted', 10);
+  popup.notify('Check for Updates in the Side-Menu', 10);
 
   var pos = 0;
   for (var i in playlist) {
