@@ -1497,7 +1497,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.options.createAction('update', "Check for Updates", function() 
     {
       popup.notify("Updating, please wait...", 5);
-      page.redirect('https://raw.githubusercontent.com/dajesusmodz/m7-plugin-vuePRO/master/unstable.zip');
+      page.redirect('https://raw.githubusercontent.com/dajesusmodz/m7-plugin-StreamPRO/master/unstable.zip');
     });
   }
 
@@ -2063,7 +2063,7 @@ new page.Route(plugin.id + ':start', function(page) {
   page.appendItem('', 'separator', {title: ''});
   page.appendItem('', 'separator', {title: '  vuePRO Version:  3.2 (Pre-Release)                                                                                                                                                                                                                                                          '});
   page.appendItem('', 'separator', {title: ''});
-  
+
   page.loading = false;
 });
 
