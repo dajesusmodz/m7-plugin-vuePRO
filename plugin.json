@@ -5,7 +5,7 @@
 	"title": "vuePRO",
 	"synopsis": "A User-Friendly Free-To-Air TV Player for M7 Media Center with additional features.",
 	"version": "3.2 (Pre-Release)",
-	"file": "vuePRO.js",
+	"file": "vuepro.js",
 	"M7Version": "7.0.24",
 	"type": "ecmascript",
 	"id": "vuePRO",
