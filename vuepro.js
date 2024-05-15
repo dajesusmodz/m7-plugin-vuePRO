@@ -130,14 +130,14 @@ function addOptionForAddingToMyFavorites(item, link, title, icon) {
       icon: encodeURIComponent(icon),
     });
     store.list = JSON.stringify([entry].concat(eval(store.list)));
-    popup.notify('\'' + title + '\' has been added to My Favorites.', 2);
+    popup.notify('\'' + title + '\' has been added to My Favorites.', 3);
   });
 }
 
 function addOptionForRemovingFromMyFavorites(page, item, title, pos) {
   item.addOptAction('Remove \'' + title + '\' from My Favorites', function() {
     var list = eval(store.list);
-    popup.notify('\'' + title + '\' has been removed from My Favorites.', 2);
+    popup.notify('\'' + title + '\' has been removed from My Favorites.', 3);
     list.splice(pos, 1);
     store.list = JSON.stringify(list);
     page.redirect(plugin.id + ':myfavs');
@@ -579,7 +579,7 @@ new page.Route(plugin.id + ':youtvStart', function(page) {
 function addOptionToRemovePlaylist(page, item, title, pos) {
   item.addOptAction('Remove \'' + title + '\' playlist from the list', function() {
     var playlist = eval(playlists.list);
-    popup.notify('\'' + title + '\' has been removed from the list.', 2);
+    popup.notify('\'' + title + '\' has been removed from the list.', 3);
     playlist.splice(pos, 1);
     playlists.list = JSON.stringify(playlist);
     page.flush();
@@ -590,7 +590,7 @@ function addOptionToRemovePlaylist(page, item, title, pos) {
 function showPlaylist(page) {
   var playlist = eval(playlists.list);
 
-  popup.notify('Check for Updates in the Side-Menu', 10);
+  popup.notify('Check for Updates in the Side-Menu', 7);
 
   var pos = 0;
   for (var i in playlist) {
@@ -1260,7 +1260,7 @@ function addActionToTheItem(page, menuText, id, type) {
           link: type.toLowerCase() + ':' + encodeURIComponent(link),
         });
         playlists.list = JSON.stringify([entry].concat(eval(playlists.list)));
-        popup.notify('Playlist \'' + result.input + '\' has been added to the list.', 2);
+        popup.notify('Playlist \'' + result.input + '\' has been added to the list.', 3);
         page.flush();
         page.redirect(plugin.id + ':start');
       }
@@ -1488,7 +1488,7 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.updatechannel == "Stable") {
     page.options.createAction('update', "Check for Updates", function() 
     {
-      popup.notify("Updating, please wait...", 5);
+      popup.notify("Updating, please wait...", 7);
       page.redirect('https://github.com/dajesusmodz/m7-plugin-vuePRO/releases/latest/download/vuePRO.zip');
     });
   }
@@ -1496,7 +1496,7 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.updatechannel == "Pre-Release") {
     page.options.createAction('update', "Check for Updates", function() 
     {
-      popup.notify("Updating, please wait...", 5);
+      popup.notify("Updating, please wait...", 7);
       page.redirect('https://raw.githubusercontent.com/dajesusmodz/m7-plugin-StreamPRO/master/unstable.zip');
     });
   }
@@ -2048,14 +2048,14 @@ new page.Route(plugin.id + ':start', function(page) {
     for (var i in list) {
       var result = popup.message('Do you want to remove \'' + decodeURIComponent(JSON.parse(list[i]).title) + '\' playlist?', true, true);
       if (result) {
-        popup.notify('\'' + decodeURIComponent(JSON.parse(list[i]).title) + '\' has been removed from from the list.', 2);
+        popup.notify('\'' + decodeURIComponent(JSON.parse(list[i]).title) + '\' has been removed from from the list.', 3);
         list.splice(i, 1);
         playlists.list = JSON.stringify(list);
         page.flush();
         page.redirect(plugin.id + ':start');
       }
     }
-    if (!i) popup.notify('There are no playlists to delete.', 2);
+    if (!i) popup.notify('There are no playlists to delete.', 3);
   });
 
   showPlaylist(page);
@@ -2071,18 +2071,12 @@ new page.Route(plugin.id + ':start', function(page) {
 new page.Route(plugin.id + ':myfavs', function(page) {
   page.metadata.icon = 'https://i.postimg.cc/zGT28Cz2/favs.png';
   setPageHeader(page, "My Favorites");
+  popup.notify("Empty My Favorites in the Side-Menu", 7);
 
   page.options.createAction('cleanFavorites', 'Empty My Favorites', function() {
     store.list = '[]';
-    popup.notify('Favorites has been emptied successfully', 2);
+    popup.notify('Favorites has been emptied successfully', 3);
     page.redirect(plugin.id + ':start');
-  });
-
-  page.appendItem('', 'separator', {
-    title: 'Empty My Favorites in the Side Bar.',
-  });
-  page.appendItem('', 'separator', {
-    title: '',
   });
 
   var list = eval(store.list);
