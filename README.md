@@ -1,6 +1,8 @@
 **A User-Friendly Free-To-Air TV Player for M7 Media Center with additional features.**
 
 
+Official Repository: https://github.com/dajesusmodz/m7-repo-streampro
+
 ![vuePRO Logo](/logo.png)
 
 **Screenshots:**
@@ -8,6 +10,11 @@
 ![vuePRO Logo](/Screenshots/1.png)
 ![vuePRO Logo](/Screenshots/2.png)
 ![vuePRO Logo](/Screenshots/3.png)
+
+**Available in the following plugin repositories:**
+* StreamPRO
+by F0R3V3R50F7
+Link: https://github.com/dajesusmodz/m7-repo-streampro
 
 
 **Features:**
