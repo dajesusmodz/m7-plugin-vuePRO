@@ -20,6 +20,10 @@
 * Browse a range of Free-To-Air Stream Providers.
 * Stay up-to-date with the build-in update service.
 
+ ![Pre-Release Download (May Contain Bugs)](/vuepro_unstable.zip?raw=true)
+
+ ![Latest Stable Version Download)](/vuepro_stable.zip?raw=true)
+
 
 **How to Install (Playstation 3):**
 1) Download vuePRO-stable.zip from 'Releases' and save it to your USB.
@@ -90,9 +94,6 @@
 * Roku (Via i.mjh.nz)
 * Stirr (Via i.mjh.nz)
 
- ![Pre-Release Download (May Contain Bugs)](/vuepro_unstable.zip?raw=true)
- 
- ![Latest Stable Version Download)](/vuepro_stable.zip?raw=true)
 
 **Available Languages:**
 
