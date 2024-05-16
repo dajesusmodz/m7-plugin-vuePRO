@@ -1,4 +1,4 @@
-**A User-Friendly M3U/XML IPTV Player for Movian/M7 Media Center featuring a collection of 3rd Party Free-to-Air Content Providers!**
+**A User-Friendly Free-To-Air TV Player for M7 Media Center with additional features.**
 
 
 ![vuePRO Logo](/logo.png)
