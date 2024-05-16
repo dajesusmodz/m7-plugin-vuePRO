@@ -10,8 +10,10 @@
 
 **Available in the following plugin repositories:**
 * StreamPRO
-by F0R3V3R50F7
-Link: https://github.com/dajesusmodz/m7-repo-streampro
+
+    by F0R3V3R50F7
+
+    Link: https://github.com/dajesusmodz/m7-repo-streampro
 
 
 **Features:**
