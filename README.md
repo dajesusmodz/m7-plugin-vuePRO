@@ -81,63 +81,13 @@
 
 **Providers:**
 
-OTA TV / Terrestrial Television (Via FreeTV on GitHub)
-* United States
-* United Kingdom
-* France
-* Canada
-* Brazil
-* Korea
-* Mexico
-* Chile
-* Germany
-* Switzerland
-* Denmark
-* Spain
-* Sweden
-* Austria
-* Italy
-* India
-* Norway
-
-Pluto TV (Via i.mjh.nz)
-* United States
-* United Kingdom
-* France
-* Canada
-* Brazil
-* Mexico
-* Chile
-* Germany
-* Denmark
-* Spain
-* Sweden
-* Italy
-* Norway
-
-Rakuten TV (Via Apsattv)
-* United Kingdom
-
-Samsung TV Plus (Via i.mjh.nz)
-* United States
-* United Kingdom
-* Korea
-* France
-* Canada
-* Switzerland
-* Spain
-* Austria
-* Italy
-* India
-
-Redbox TV (Via Apsattv)
-* United States
-
-Roku (Via i.mjh.nz)
-* United States
-
-Stirr (Via i.mjh.nz)
-* United States
+* OTA TV / Terrestrial Television (Via FreeTV on GitHub)
+* Pluto TV (Via i.mjh.nz)
+* Rakuten TV (Via Apsattv)
+* Samsung TV Plus (Via i.mjh.nz
+* Redbox TV (Via Apsattv)
+* Roku (Via i.mjh.nz)
+* Stirr (Via i.mjh.nz)
 
  ![Pre-Release Download (May Contain Bugs)](/unstable.zip?raw=true)
 
