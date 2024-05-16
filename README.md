@@ -60,6 +60,7 @@
 
 
 **vuePRO Currently Serves:**
+
 * United States 🇺🇸
 * United Kingdom 🇬🇧
 * France 🇫🇷
