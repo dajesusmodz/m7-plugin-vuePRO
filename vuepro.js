@@ -89,6 +89,10 @@ settings.createMultiOpt('selectRegion', 'Channel Region (May Be Geo-Restricted)'
           ['Denmark', 'Denmark'],
           ['Sweden', 'Sweden'],
           ['Spain', 'Spain'],
+          ['Austria', 'Austria'],
+          ['Italy', 'Italy'],
+          ['India', 'India'],
+          ['Norway', 'Norway'],
           ['Off', 'Off', true],
         ], function(v) {
         service.selectRegion = v;
@@ -1483,6 +1487,10 @@ new page.Route(plugin.id + ':start', function(page) {
   if (service.selectRegion == "Denmark") {page.metadata.icon = 'https://storage.needpix.com/rsynced_images/flag-983155_1280.jpg'; setPageHeader(page, "vuePRO | DK")};
   if (service.selectRegion == "Spain") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1500px-Flag_of_Spain.svg.png'; setPageHeader(page, "vuePRO | ES")};
   if (service.selectRegion == "Sweden") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/1500px-Flag_of_Spain.svg.png'; setPageHeader(page, "vuePRO | ES")};
+  if (service.selectRegion == "Austria") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/100175/1605219523_5895'; setPageHeader(page, "vuePRO | AT")};
+  if (service.selectRegion == "Italy") {page.metadata.icon = 'https://media.baamboozle.com/uploads/images/566573/1646619025_8209.png'; setPageHeader(page, "vuePRO | IT")};
+  if (service.selectRegion == "India") {page.metadata.icon = 'https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png'; setPageHeader(page, "vuePRO | IN")};
+  if (service.selectRegion == "Norway") {page.metadata.icon = 'https://avatars.mds.yandex.net/i?id=e63347002f879e2d2baeed92a07be0aacb9ed817-12421302-images-thumbs&n=13'; setPageHeader(page, "vuePRO | NO")};
 
 
   if (service.updatechannel == "Stable") {
@@ -1497,7 +1505,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.options.createAction('update', "Check for Updates", function() 
     {
       popup.notify("Updating, please wait...", 7);
-      page.redirect('https://raw.githubusercontent.com/dajesusmodz/m7-plugin-StreamPRO/master/unstable.zip');
+      page.redirect('https://raw.githubusercontent.com/dajesusmodz/m7-plugin-vuePRO/master/unstable.zip');
     });
   }
 
@@ -1638,6 +1646,22 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('', 'separator', {title: ' '});
     page.appendItem('', 'separator', {title: 'Channels'});
   }
+  if (service.selectRegion == "Austria") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
+  if (service.selectRegion == "Italy") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
+  if (service.selectRegion == "India") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
+  if (service.selectRegion == "India") {
+    page.appendItem('', 'separator', {title: ' '});
+    page.appendItem('', 'separator', {title: 'Channels'});
+  }
 
   // Samsung TV Plus
 
@@ -1722,6 +1746,42 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/ESBC4100004J1.m3u8', 'video', { title: '24H', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ESBC4100004J1_20230614T005926SQUARE.png_20230614005927.png', }); //15/05/24
     page.appendItem('https://i.mjh.nz/SamsungTVPlus/ESBC39000033J.m3u8', 'video', { title: 'El País', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ESBC39000033J_20230809T053828SQUARE.png_20230809053829.png', }); //15/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:Spain', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); //15/05/24
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "Austria") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ATAJ70000741.m3u8', 'video', { title: 'Pluto TV Serie', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ATAJ70000741_20230809T053602SQUARE.png_20230809053603.png', }); //15/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ATBA33000123Q.m3u8', 'video', { title: 'Crime Serien - Rakuten TV', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ATBA33000123Q_20230809T053609SQUARE.png_20230809053609.png', }); //15/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ATBA3300009MF.m3u8', 'video', { title: 'Zee One', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ATBA3300006WH_20230913T030501SQUARE.png_20230913030502.png', }); //15/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ATAK3504503A.m3u8', 'video', { title: 'El País', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ATAK3504503A_20220914T041035SQUARE.png_20220914041035.png', }); //15/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:Austria', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); //15/05/24
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "Italy") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ITAJ3800007P8.m3u8', 'video', { title: 'Pluto TV Serie', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ITAJ3800007P8_20220404T005740SQUARE.png_20220404005742.png', }); //16/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ITBD1100001B7.m3u8', 'video', { title: 'LA GRANDE ARTE by HOUSE OF DOCS', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ITBD1100001B7_20240402T134259SQUARE.png', }); //16/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ITBC35000016T.m3u8', 'video', { title: 'Grandi Documentari - Wedo Big Stories', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ITBC35000016T_20230926T032330SQUARE.png_20230926032331.png', }); //16/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/ITBD10000040W.m3u8', 'video', { title: 'The Boat Show', icon: 'https://tvpnlogopeu.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/ITBD10000040W_20230823T033135SQUARE.png_20230823033135.png', }); //16/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:Italy', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); //16/05/24
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: ''});
+  }
+  if (service.selectRegion == "India") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Samsung TV Plus:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/INBD400010BD.m3u8', 'video', { title: 'ABP Asmita', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/INBD400010BD_20240131T032435SQUARE.png_20240131032436.png', }); //16/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/INBD47000014D.m3u8', 'video', { title: 'The Q', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/INBD47000014D_20240214T030802SQUARE.png_20240214030803.png', }); //16/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/INBA4900027A9.m3u8', 'video', { title: 'Real Wild', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/INBA4900027A9_20220427T054651SQUARE.png_20220427054652.png', }); //16/05/24
+    page.appendItem('https://i.mjh.nz/SamsungTVPlus/INBD29000010W.m3u8', 'video', { title: 'PGA Tour', icon: 'https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/INBD29000010W_20240131T032319SQUARE.png_20240131032320.png', }); //16/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FSamsungTVPlus%2Fall.m3u8:India', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); //16/05/24
     page.appendItem('', 'separator', {title: ''});
     page.appendItem('', 'separator', {title: ''});
   }
@@ -1837,6 +1897,26 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://r.mjh.nz/PlutoTV/6464cc01e1979c000889570b-alt.m3u8', 'playable', { title: 'Survivor', icon: 'https://images.pluto.tv/channels/6464cc01e1979c000889570b/colorLogoPNG.png', }); // 15/05/24
     page.appendItem('https://r.mjh.nz/PlutoTV/65a63ff00d9ab400080b101c-alt.m3u8', 'playable', { title: 'Klovn', icon: 'https://images.pluto.tv/channels/65a63ff00d9ab400080b101c/colorLogoPNG.png', }); // 15/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Sweden', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 15/05/24
+  }
+  if (service.selectRegion == "Italy") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://r.mjh.nz/PlutoTV/608aa42b5c2b8f0007197529-alt.m3u8', 'playable', { title: 'Pluto TV Film Drama', icon: 'https://images.pluto.tv/channels/608aa42b5c2b8f0007197529/colorLogoPNG.png', }); // 16/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/60802d37ee238e0007c94e64-alt.m3u8', 'playable', { title: 'Andromeda', icon: 'https://images.pluto.tv/channels/60802d37ee238e0007c94e64/colorLogoPNG.png', }); // 16/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/60e4507a06171800072339a3-alt.m3u8', 'playable', { title: 'Il Banco dei Pugni', icon: 'https://images.pluto.tv/channels/60e4507a06171800072339a3/colorLogoPNG.png', }); // 16/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/626bb07a58b8dd0007e9f36e-alt.m3u8', 'playable', { title: 'Case Pazzesche', icon: 'https://images.pluto.tv/channels/626bb07a58b8dd0007e9f36e/colorLogoPNG.png', }); // 16/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Italy', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 16/05/24
+  }
+  if (service.selectRegion == "Norway") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  Pluto TV:                                                                                                                                                                                                                                                               '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://r.mjh.nz/PlutoTV/660d64a7aec9680008f8ba77-alt.m3u8', 'playable', { title: 'Top Gear Classics', icon: 'https://images.pluto.tv/channels/660d64a7aec9680008f8ba77/colorLogoPNG.png', }); // 16/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/6400bdb1219c4c00081751aa-alt.m3u8', 'playable', { title: 'COPS', icon: 'https://images.pluto.tv/channels/6400bdb1219c4c00081751aa/colorLogoPNG.png', }); // 16/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/651582486625510008f9fbce-alt.m3u8', 'playable', { title: 'Robot Wars by MECH+', icon: 'https://images.pluto.tv/channels/651582486625510008f9fbce/colorLogoPNG.png', }); // 16/05/24
+    page.appendItem('https://r.mjh.nz/PlutoTV/645cc855e1979c000875ee47-alt.m3u8', 'playable', { title: 'Svenske Truckers', icon: 'https://images.pluto.tv/channels/645cc855e1979c000875ee47/colorLogoPNG.png', }); // 16/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fi.mjh.nz%2FPlutoTV%2Fall.m3u8:Norway', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 16/05/24
   }
 
   // Rakuten TV
@@ -2018,8 +2098,48 @@ new page.Route(plugin.id + ':start', function(page) {
     page.appendItem('https://ed2.cdn.svt.se/ed7/d1/c/se/svt1/manifest.mpd?defaultSubLang=1', 'playable', { title: 'SVT 1 Ⓖ', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/SVT1_logo_2016.svg/800px-SVT1_logo_2016.svg.png', }); // 15/05/24
     page.appendItem('https://ed2.cdn.svt.se/ed7/d1/c/se/svt2/manifest.mpd?defaultSubLang=1', 'playable', { title: 'SVT 2 Ⓖ', icon: 'https://i.imgur.com/iB3veGx.png', }); // 15/05/24
     page.appendItem('https://ed2.cdn.svt.se/ed7/d1/c/se/svtk/manifest.mpd?defaultSubLang=1', 'playable', { title: 'Kunskapskanalen Ⓖ', icon: 'https://i.imgur.com/9YBxoGc.png', }); // 15/05/24
-    page.appendItem('https://edg03-prd-se-ixn.solidtango.com/edge/451iw2h/playlist.m3u8', 'playable', { title: 'Öppna Kanalen Stockholm Ⓢ', icon: 'https://i.imgur.com/GWlstv5.png"', }); // 15/05/24
+    page.appendItem('https://edg03-prd-se-ixn.solidtango.com/edge/451iw2h/playlist.m3u8', 'playable', { title: 'Öppna Kanalen Stockholm Ⓢ', icon: 'https://i.imgur.com/GWlstv5.png', }); // 15/05/24
     page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_sweden.m3u8:Sweden', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 15/05/24
+  }
+  if (service.selectRegion == "Austria") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://orf1.mdn.ors.at/out/u/orf1/q8c/manifest.m3u8', 'playable', { title: 'ORF 1 Ⓖ', icon: 'https://i.imgur.com/ft2LuRl.jpg', }); // 15/05/24
+    page.appendItem('https://orfs.mdn.ors.at/out/u/orfs/q8c/manifest.m3u8', 'playable', { title: 'ORF Sport + Ⓖ', icon: 'https://i.imgur.com/MVNZ4gf.png', }); // 15/05/24
+    page.appendItem('https://rbmn-live.akamaized.net/hls/live/2002825/geoSTVATweb/master.m3u8', 'playable', { title: 'Servus TV Ⓖ', icon: 'https://i.imgur.com/zDWhSxq.png', }); // 15/05/24
+    page.appendItem('http://p3-6.mov.at:1935/live/weekstream/playlist.m3u8', 'playable', { title: 'P3TV', icon: 'https://i.imgur.com/1sPhZ57.png', }); // 15/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_sweden.m3u8:Sweden', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 15/05/24
+  }
+  if (service.selectRegion == "Italy") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=308718&output=7&forceUserAgent=raiplayappletv', 'playable', { title: 'Rai 2 Ⓖ', icon: 'https://i.imgur.com/zA0PTcs.png', }); // 15/05/24
+    page.appendItem('https://d15umi5iaezxgx.cloudfront.net/LA7/CLN/HLS-B/Live.m3u8', 'playable', { title: 'La7', icon: 'https://i.imgur.com/F90mpSa.png', }); // 15/05/24
+    page.appendItem('https://live02-seg.msf.cdn.mediaset.net/live/ch-lb/lb-clr.isml/index.m3u8', 'playable', { title: '20 Mediaset Ⓖ', icon: 'https://i.imgur.com/It13jwX.png', }); // 15/05/24
+    page.appendItem('https://live02-seg.msf.cdn.mediaset.net/live/ch-ki/ki-clr.isml/index.m3u8', 'playable', { title: 'Iris Ⓖ', icon: 'https://i.imgur.com/Ixz1BY3.png', }); // 15/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_italy.m3u8:Italy', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 15/05/24
+  }
+  if (service.selectRegion == "India") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://ndtvindiaelemarchana.akamaized.net/hls/live/2003679/ndtvindia/master.m3u8', 'playable', { title: 'NDTV India', icon: 'https://i.imgur.com/QjJYohG.png', }); // 16/05/24
+    page.appendItem('https://abplivetv.akamaized.net/hls/live/2043010/hindi/master.m3u8', 'playable', { title: 'ABP News', icon: 'https://i.imgur.com/DKHUFVQ.png', }); // 16/05/24
+    page.appendItem('https://www.youtube.com/doordarshan/live', 'playable', { title: 'DD News Ⓨ', icon: 'https://i.imgur.com/znnVCEf.png', }); // 16/05/24
+    page.appendItem('https://www.youtube.com/DDIndia/live', 'playable', { title: 'DD India Ⓨ', icon: 'https://i.imgur.com/45uptR8.png', }); // 16/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_india.m3u8:India', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 15/05/24
+  }
+  if (service.selectRegion == "Norway") {
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('', 'separator', {title: '  OTA TV:                                                                                                                                                                                                                                                                                 '});
+    page.appendItem('', 'separator', {title: ''});
+    page.appendItem('https://nrk-nrk1.akamaized.net/21/0/hls/nrk_1/playlist.m3u8', 'playable', { title: 'NRK1 Ⓖ', icon: 'https://i.imgur.com/9tj8ds7.png', }); // 16/05/24
+    page.appendItem('https://nrk-nrk2.akamaized.net/22/0/hls/nrk_2/playlist.m3u8', 'playable', { title: 'NRK2 Ⓖ', icon: 'https://i.imgur.com/SiAdoK9.png', }); // 16/05/24
+    page.appendItem('https://ws31-hls-live.akamaized.net/out/u/1416253.m3u8', 'playable', { title: 'TV 2 Sport 1', icon: 'https://i.imgur.com/asKHqNZ.png', }); // 16/05/24
+    page.appendItem('https://frikanalen.no/stream/index.m3u8', 'playable', { title: 'Frikanalen', icon: 'https://i.imgur.com/rY3Owxl.png', }); // 16/05/24
+    page.appendItem('m3uGroup:https%3A%2F%2Fraw.githubusercontent.com%2FFree-TV%2FIPTV%2Fmaster%2Fplaylists%2Fplaylist_norway.m3u8:Norway', 'directory', { title: 'Show All...', icon: 'https://i.postimg.cc/cJLV4kMN/seemore.png', }); // 15/05/24
   }
 
   // User Playlists
@@ -2061,7 +2181,7 @@ new page.Route(plugin.id + ':start', function(page) {
   showPlaylist(page);
 
   page.appendItem('', 'separator', {title: ''});
-  page.appendItem('', 'separator', {title: '  vuePRO Version:  3.2 (Pre-Release)                                                                                                                                                                                                                                                          '});
+  page.appendItem('', 'separator', {title: '  vuePRO Version:  3.2 (Release)                                                                                                                                                                                                                                                          '});
   page.appendItem('', 'separator', {title: ''});
 
   page.loading = false;

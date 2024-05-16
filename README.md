@@ -68,6 +68,11 @@
 * Switzerland 🇨🇭
 * Denmark 🇩🇰
 * Spain 🇪🇸
+* Sweden 🇸🇪
+* Austria 🇦🇹
+* Italy 🇮🇹
+* India 🇮🇳
+* Norway 🇳🇴
 
 
 **Providers:**
@@ -86,6 +91,10 @@ OTA TV / Terrestrial Television (Via FreeTV on GitHub)
 * Denmark
 * Spain
 * Sweden
+* Austria
+* Italy
+* India
+* Norway
 
 Pluto TV (Via i.mjh.nz)
 * United States
@@ -99,6 +108,8 @@ Pluto TV (Via i.mjh.nz)
 * Denmark
 * Spain
 * Sweden
+* Italy
+* Norway
 
 Rakuten TV (Via Apsattv)
 * United Kingdom
@@ -111,6 +122,9 @@ Samsung TV Plus (Via i.mjh.nz)
 * Canada
 * Switzerland
 * Spain
+* Austria
+* Italy
+* India
 
 Redbox TV (Via Apsattv)
 * United States
@@ -122,22 +136,6 @@ Stirr (Via i.mjh.nz)
 * United States
 
  ![Pre-Release Download (May Contain Bugs)](/unstable.zip?raw=true)
-
-**Coming Soon:**
-
-* Pluto TV:
-(Italy)
-(Norway)
-* Samsung TV Plus:
-(Austria)
-(India)
-(Italy)
-* FreeTV (OTA):
-(Italy)
-(Norway)
-(Austria)
-(India)
-
 
 **Available Languages:**
 
