@@ -91,6 +91,7 @@
 * Stirr (Via i.mjh.nz)
 
  ![Pre-Release Download (May Contain Bugs)](/vuepro_unstable.zip?raw=true)
+ 
  ![Latest Stable Version Download)](/vuepro_stable.zip?raw=true)
 
 **Available Languages:**
