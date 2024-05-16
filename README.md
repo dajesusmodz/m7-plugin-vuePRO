@@ -1,13 +1,13 @@
 **A User-Friendly M3U/XML IPTV Player for Movian/M7 Media Center featuring a collection of 3rd Party Free-to-Air Content Providers!**
 
 
-![StreamPRO Logo](/logo.png)
+![vuePRO Logo](/logo.png)
 
 **Screenshots:**
 
-![StreamPRO Logo](/Screenshots/1.png)
-![StreamPRO Logo](/Screenshots/2.png)
-![StreamPRO Logo](/Screenshots/3.png)
+![vuePRO Logo](/Screenshots/1.png)
+![vuePRO Logo](/Screenshots/2.png)
+![vuePRO Logo](/Screenshots/3.png)
 
 
 **Features:**
@@ -18,44 +18,44 @@
 
 
 **How to Install (Playstation 3):**
-1) Download streampro.zip from 'Releases' and save it to your USB.
+1) Download vuePRO-stable.zip from 'Releases' and save it to your USB.
 
 2) Plug in your USB drive to the PS3 System.
 
-3) Open your USB drive in Movian/M7 and find StreamPRO.
+3) Open your USB drive in Movian/M7 and find vuePRO.
 
-4) Open StreamPRO, and select Install.
+4) Open vuePRO, and select Install.
 
-5) Select your region - Go to Movian > Settings > StreamPRO > 'Channel Region'.
+5) Select your region - Go to Movian > Settings > vuePRO > 'Channel Region'.
 
-6) Open the StreamPRO plugin from the Movian/M7 home screen.
+6) Open the vuePRO plugin from the Movian/M7 home screen.
 
 
 **How to Install (PC / Mac):**
-1) Download streampro.zip from 'Releases'.
+1) Download vuePRO-stable.zip from 'Releases'.
 
-2) Open Movian/M7, then click and drag streampro.zip onto the M7 window.
+2) Open Movian/M7, then click and drag vuePRO.zip onto the M7 window.
 
-5) Select your region - Go to Movian > Settings > StreamPRO > 'Channel Region'.
+5) Select your region - Go to Movian > Settings > vuePRO > 'Channel Region'.
 
-6) Open the StreamPRO plugin from the Movian/M7 home screen.
+6) Open the vuePRO plugin from the Movian/M7 home screen.
 
 
 **How to Install (Android):**
-1) Download streampro.zip from 'Releases' to your downloads folder.
+1) Download vuePRO-stable.zip from 'Releases' to your downloads folder.
 
 2) Open Movian / M7 and navigate to your downloads folder.
 (You may need to give M7 'All File Access' to browse your internal file system.)
 
-3) Open StreamPRO and click Install.
+3) Open vuePRO and click Install.
 
-4) Select your region - Go to Movian > Settings > StreamPRO > 'Channel Region'.
+4) Select your region - Go to Movian > Settings > vuePRO > 'Channel Region'.
 
-5) Open the StreamPRO plugin from the Movian/M7 home screen.
+5) Open the vuePRO plugin from the Movian/M7 home screen.
 
 
 
-**StreamPRO Currently Serves:**
+**vuePRO Currently Serves:**
 * United States 🇺🇸
 * United Kingdom 🇬🇧
 * France 🇫🇷
