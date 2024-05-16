@@ -1,5 +1,3 @@
-**A User-Friendly Free-To-Air TV Player for M7 Media Center with additional features.**
-
 ![vuePRO Logo](/logo.png)
 
 **Screenshots:**
