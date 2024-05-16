@@ -1497,7 +1497,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.options.createAction('update', "Check for Updates", function() 
     {
       popup.notify("Updating, please wait...", 7);
-      page.redirect('https://github.com/dajesusmodz/m7-plugin-vuePRO/releases/latest/download/vuePRO.zip');
+      page.redirect('https://github.com/dajesusmodz/m7-plugin-vuePRO/releases/latest/download/vuepro_stable.zip');
     });
   }
 
@@ -1505,7 +1505,7 @@ new page.Route(plugin.id + ':start', function(page) {
     page.options.createAction('update', "Check for Updates", function() 
     {
       popup.notify("Updating, please wait...", 7);
-      page.redirect('https://raw.githubusercontent.com/dajesusmodz/m7-plugin-vuePRO/master/unstable.zip');
+      page.redirect('https://raw.githubusercontent.com/dajesusmodz/m7-plugin-vuePRO/master/vuepro_unstable.zip');
     });
   }
 
