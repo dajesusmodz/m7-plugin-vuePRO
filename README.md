@@ -26,7 +26,7 @@
 
 3) Return to Movian/M7 Home Screen.
 
-4) Navigate to Plugins > Browse Available Plugins > Video Streaming > EZTV
+4) Navigate to Plugins > Browse Available Plugins > Online TV > vuePRO
 
 5) Select Install (Plugin will now update automatically).
 
