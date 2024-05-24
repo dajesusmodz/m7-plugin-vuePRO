@@ -6,27 +6,35 @@
 ![vuePRO Logo](/Screenshots/2.png)
 ![vuePRO Logo](/Screenshots/3.png)
 
-**Available in the following plugin repositories:**
-* StreamPRO
-
-    by F0R3V3R50F7
-
-    Link: https://github.com/dajesusmodz/m7-repo-streampro
-
-
 **Features:**
 * Catalogue and watch streams from your own .m3u/.xml links.
 * Add your favourite channels to the Start Page.
 * Browse a range of Free-To-Air Stream Providers.
 * Stay up-to-date with the build-in update service.
 
- ![Pre-Release Download (May Contain Bugs)](/vuepro_unstable.zip?raw=true)
 
- ![Latest Stable Version Download)](/vuepro_stable.zip?raw=true)
+ ![Pre-Release .Zip Download (May Contain Bugs)](/vuepro_unstable.zip?raw=true)
+
+ ![Latest Stable .Zip Download)](/vuepro_stable.zip?raw=true)
 
 
-**How to Install (Playstation 3):**
-1) Download vuePRO-stable.zip from 'Releases' and save it to your USB.
+ **How to Install (Official Plugin Repository):**
+
+1) Navigate to Movian/M7 > Settings > General > Alternative Plugin Repository URL:
+
+2) Set this value to 'https://bit.ly/streamprom7'
+
+3) Return to Movian/M7 Home Screen.
+
+4) Navigate to Plugins > Browse Available Plugins > Video Streaming > EZTV
+
+5) Select Install (Plugin will now update automatically).
+
+6) Return to Movian/M7 Home Screen and Enjoy!
+
+
+**How to Install .Zip (Playstation 3):**
+1) Download vuePRO-stable.zip above and save it to your USB.
 
 2) Plug in your USB drive to the PS3 System.
 
@@ -39,8 +47,8 @@
 6) Open the vuePRO plugin from the Movian/M7 home screen.
 
 
-**How to Install (PC / Mac):**
-1) Download vuePRO-stable.zip from 'Releases'.
+**How to Install .Zip (PC / Mac):**
+1) Download vuePRO-stable.zip above.
 
 2) Open Movian/M7, then click and drag vuePRO.zip onto the M7 window.
 
@@ -49,8 +57,8 @@
 6) Open the vuePRO plugin from the Movian/M7 home screen.
 
 
-**How to Install (Android):**
-1) Download vuePRO-stable.zip from 'Releases' to your downloads folder.
+**How to Install .Zip (Android):**
+1) Download vuePRO-stable.zip above to your downloads folder.
 
 2) Open Movian / M7 and navigate to your downloads folder.
 (You may need to give M7 'All File Access' to browse your internal file system.)
@@ -100,9 +108,9 @@
 * English
 
 
-**Updating:**
+**Updating (.Zip):**
 
-Use the built-in updater service by pressing the 'Check for Updates' button in the side menu from the Start Page. 
+Use the built-in updater service by pressing the 'Check for Updates' button in the side menu from the Start Page if you're not using our plugin repository. 
 
 
 **Submitting Provider Links:**

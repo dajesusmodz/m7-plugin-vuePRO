@@ -631,6 +631,7 @@ new page.Route('m3uGroup:(.*):(.*)', function(page, pl, groupID) {
   }
   page.metadata.title = decodeURIComponent(groupID) + ' (' + num + ')';
   page.loading = false;
+  popup.notify("Right Click / Hold an Item to View it's Options.", 4);
 });
 
 function readAndParseM3U(page, pl, m3u) {
@@ -865,6 +866,7 @@ new page.Route('m3u:(.*):(.*)', function(page, pl, title) {
   readAndParseM3U(page, pl);
   page.metadata.title = new RichText(decodeURIComponent(title) + ' (' + showM3U(page, pl) + ')');
   page.loading = false;
+  popup.notify("Right Click / Hold an Item to View it's Options.", 4);
 });
 
 var XML = require('movian/xml');

@@ -1,10 +1,10 @@
 {
-	"description": "This is a fork / modification of the Online-TV plugin, originally by iprot.",
+	"description": "<p>Changelog (24/05/24):<p>* Added Notification Prompt for Item Options.",
 	"author": "lprot, F0R3V3R50F7",
 	"homepage": "https://github.com/dajesusmodz/m7-plugin-vuePRO",
 	"title": "vuePRO",
 	"synopsis": "A User-Friendly Free-To-Air TV Player for M7 Media Center with additional features.",
-	"version": "3.2",
+	"version": "3.3",
 	"file": "vuepro.js",
 	"M7Version": "7.0.24",
 	"type": "ecmascript",
